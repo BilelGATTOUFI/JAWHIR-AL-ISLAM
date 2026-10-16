@@ -38,4 +38,10 @@ class frontViews extends _views implements _viewsInterface {
         $arguments["module"]="front";
         return _template::renderTemplate("podcast", $arguments);
     }
+
+    public static function jawahir($arguments){
+    $arguments["module"] = "front";
+    return _template::renderTemplate("jawahir", $arguments); 
+}
+
 }

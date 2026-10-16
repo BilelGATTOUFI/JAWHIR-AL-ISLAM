@@ -46,6 +46,9 @@
                     }
                     ?>
                 <!-- Classic list -->
+                 <li>
+                    <a href="jawahir-islam.html">مجلة جوهر الإسلام الاصدارات </a>
+                </li>
                 <li class="dropdown yamm-fw"><a href="<?=categoryController::link($category->label,$category->category_id);?>" <?php if(count($categoriesChild)){?>data-toggle="dropdown"<?php }?> class="dropdown-toggle"><?=$caret?><?= $category->label ?></a>
                     <?php
                     if(count($categoriesChild)){

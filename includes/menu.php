@@ -22,6 +22,14 @@ $cfg_menu["items"][] = array(
 );
 
 $cfg_menu["items"][] = array(
+    "label" => "مجلة جوهر الإسلام",
+    "icon"  => "ti-book",
+    "link"  => "?module=magazine"
+);
+
+
+
+$cfg_menu["items"][] = array(
     "label" => "Paramètres",
     "icon" => "ti-panel",
     "submenu" => array(
