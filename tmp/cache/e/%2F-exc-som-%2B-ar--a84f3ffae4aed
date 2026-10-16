@@ -1,0 +1,122 @@
+a:11:{s:5:"texte";s:4702:"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ar" lang="ar" dir="rtl">
+<head>
+	<title>exclu_sommaire  - [hacked by adminet]</title>
+		<?php echo recuperer_fond( 'inc/inc-meta', array('id_mot' => '16',
+	'lang' => 'ar'), array("compil"=>array('plugins/auto/ahuntsic/mot.html','html_c98aa234470c7768125b2c34967a29d2','',8,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+		<?php echo recuperer_fond( 'styles', array('id_mot' => '16',
+	'lang' => 'ar'), array("compil"=>array('plugins/auto/ahuntsic/mot.html','html_c98aa234470c7768125b2c34967a29d2','',9,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+</head>
+<body dir="rtl" class="ar mot groupe2 mot16">
+<div id="page">
+
+<!-- *****************************************************************
+	Bandeau, titre du site et menu langue
+	Header and main menu (top and right) 
+    ************************************************************* -->
+	
+<?php echo recuperer_fond( 'inc/inc-bandeau', array('id_mot' => '16',
+	'lang' => 'ar'), array("compil"=>array('plugins/auto/ahuntsic/mot.html','html_c98aa234470c7768125b2c34967a29d2','',19,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+
+<!-- *****************************************************************
+	Contenu principal (centre)
+	Main content (center) 
+    ************************************************************* -->
+	<div id="bloc-contenu">
+		<div class="cartouche">
+			
+			<h1 class="titre-article">exclu_sommaire </h1>
+			<div class="surtitre">&#1601;&#1610; &#1575;&#1604;&#1605;&#1580;&#1605;&#1608;&#1593;&#1577;: _config_</div>
+			<br />
+			<div class="sous-titre">&#1575;&#1604;&#1605;&#1602;&#1575;&#1604;&#1575;&#1578; &#1575;&#1604;&#1605;&#1585;&#1578;&#1576;&#1591;&#1577; &#1576;&#1607;&#1584;&#1575; &#1575;&#1604;&#1605;&#1601;&#1578;&#1575;&#1581;</div>
+		</div><!-- cartouche -->
+		
+		
+		
+		<!-- Articles lies au mot-cle -->
+		<h1 class="structure">&#1575;&#1604;&#1605;&#1602;&#1575;&#1604;&#1575;&#1578;</h1>
+		
+	</div><!-- bloc-contenu -->
+<!-- *****************************************************************
+	Menus contextuels (droite)
+	Contextual menus (right) 
+    ************************************************************* -->
+	<div id="encart">
+	
+      <!-- Menu de navigation mots-cles : les autres mots cles du meme groupe -->
+      
+      <h2 class="structure">&#1575;&#1604;&#1605;&#1601;&#1575;&#1578;&#1610;&#1581; &#1575;&#1604;&#1571;&#1582;&#1585;&#1609; &#1601;&#1610; &#1607;&#1584;&#1607; &#1575;&#1604;&#1605;&#1580;&#1605;&#1608;&#1593;&#1577;</h2>
+      <div class="menu">
+      <ul>
+        <li>
+          <b>_config_</b>
+          <span>(&#1575;&#1604;&#1605;&#1601;&#1575;&#1578;&#1610;&#1581; &#1575;&#1604;&#1571;&#1582;&#1585;&#1609; &#1601;&#1610; &#1607;&#1584;&#1607; &#1575;&#1604;&#1605;&#1580;&#1605;&#1608;&#1593;&#1577;)</span>
+          <ul>
+            
+            <li>
+              <a href="+-Annonce-+" title="">Annonce</a>
+            </li>
+            
+            <li>
+              <a href="+-Editorial-+" title="">Editorial</a>
+            </li>
+            
+            <li>
+              <a href="+-exclu_menu_rub-+" title="">exclu_menu_rub</a>
+            </li>
+            
+            <li>
+              <a href="+-exclu_sommaire-+" title="">exclu_sommaire </a>
+            </li>
+            
+            <li>
+              <a href="+-hacked-by-saif-ule-est,20-+" title="hacked by saif ule est">hacked by saif ule est</a>
+            </li>
+            
+            <li>
+              <a href="+-inclu_menu_principal-+" title="">inclu_menu_principal </a>
+            </li>
+            
+            <li>
+              <a href="+-Rub_type_plan-+" title="">Rub_type_plan</a>
+            </li>
+            
+          </ul>
+        </li>
+      </ul>
+      </div><!-- menu -->
+      
+	
+      <!-- Menu de navigation mots-cles : les autres groupes avec un lien sur le premier mot du groupe -->
+      
+      
+		
+      <!-- Rubriques liees au mot-cle -->
+      
+
+      <!-- Breves liees au mot-cle -->
+      
+
+      <!-- Sites Web lies au mot-cle -->
+      
+      
+	</div><!-- encart -->
+
+<?php echo recuperer_fond( 'inc/inc-menu', array('id_mot' => '16',
+	'lang' => 'ar'), array("compil"=>array('plugins/auto/ahuntsic/mot.html','html_c98aa234470c7768125b2c34967a29d2','',150,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+<?php echo recuperer_fond( 'inc/inc-bas', array('id_mot' => '16',
+	'lang' => 'ar'), array("compil"=>array('plugins/auto/ahuntsic/mot.html','html_c98aa234470c7768125b2c34967a29d2','',151,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+</div>	<!-- page -->
+
+</body>
+</html>
+
+";s:9:"squelette";s:37:"html_c98aa234470c7768125b2c34967a29d2";s:6:"source";s:30:"plugins/auto/ahuntsic/mot.html";s:11:"process_ins";s:3:"php";s:11:"invalideurs";a:1:{s:5:"cache";s:35:"e/%2F-exc-som-%2B-ar--a84f3ffae4aed";}s:7:"entetes";a:1:{s:12:"X-Spip-Cache";i:86400;}s:5:"duree";i:0;s:5:"notes";s:0:"";s:8:"contexte";a:6:{s:4:"lang";s:2:"ar";s:6:"id_mot";s:2:"16";s:4:"date";s:19:"2016-10-23 19:26:39";s:12:"date_default";b:1;s:10:"date_redac";s:19:"2016-10-23 19:26:39";s:18:"date_redac_default";b:1;}s:12:"lastmodified";i:1477243599;s:2:"gz";b:0;}

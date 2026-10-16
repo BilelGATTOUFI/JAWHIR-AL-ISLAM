@@ -1,0 +1,15 @@
+a:11:{s:5:"texte";s:375:"
+
+
+	<div id="menu-lang">
+		<span class="structure">Langues du site : </span>
+		<strong class="langue_contexte">fran&#231;ais</strong>
+
+		<span lang="ar" xml:lang="ar">| 
+		<a href="spip.php?action=converser&amp;var_lang=ar&amp;redirect=/" rel="alternate"  title="Accueil du site : &#1593;&#1585;&#1576;&#1610;" dir="rtl">&#1593;&#1585;&#1576;&#1610;</a>
+		</span>
+
+	</div>
+
+
+";s:9:"squelette";s:37:"html_555401c0169cc26f68377548db912118";s:6:"source";s:48:"plugins/auto/ahuntsic/inc/inc-bas_menu-lang.html";s:11:"process_ins";s:4:"html";s:11:"invalideurs";a:1:{s:5:"cache";s:35:"f/inc-bas-men-lan-fr--b6481efe2881a";}s:7:"entetes";a:1:{s:12:"X-Spip-Cache";i:86400;}s:5:"duree";i:0;s:5:"notes";s:0:"";s:8:"contexte";a:5:{s:4:"lang";s:2:"fr";s:4:"date";s:19:"2016-10-23 19:23:46";s:12:"date_default";b:1;s:10:"date_redac";s:19:"2016-10-23 19:23:46";s:18:"date_redac_default";b:1;}s:12:"lastmodified";i:1477243426;s:2:"gz";b:0;}

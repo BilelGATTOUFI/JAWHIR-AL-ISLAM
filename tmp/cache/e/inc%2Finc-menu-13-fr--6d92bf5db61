@@ -1,0 +1,94 @@
+a:11:{s:5:"texte";s:1888:"<div id="navigation">
+    <h2 class="structure">Navigation</h2>
+
+<?php echo recuperer_fond( 'inc/inc-menu-principal', array('lang' => 'fr'), array("compil"=>array('plugins/auto/ahuntsic/inc/inc-menu.html','html_10298836167fa0dff28e6d5326ad46e0','',4,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+
+
+<div class="menu" id="menu-rubriques">
+
+
+
+
+
+
+   
+        
+   
+        
+   
+
+
+
+
+
+
+
+	<h3 class="structure">Rubriques</h3>
+	<ul>
+		
+		<li class="secteur rub1">
+				<a class="lien" href="-Presentation-" >Présentation</a>
+		
+		
+			<ul>
+		
+				<li class="article art2">
+					<a class="lien article" href="Cheikh-Salaheddine" title="Cheikh Salaheddine">Cheikh Salaheddine</a>
+				</li>
+		
+			</ul>
+		
+		
+		</li>
+	
+		<li class="secteur rub3">
+				<a class="lien" href="-Bibliotheque-" >Bibliothèque</a>
+		
+		
+			<ul>
+		
+				<li class="rubrique rub31">
+					<a class="lien" href="-Prophete-Mohamed-benediction-et-" >Prophète Mohamed-bénédiction et salut de Dieu sur lui</a>
+		
+				</li>
+		
+				<li class="rubrique rub4">
+					<a class="lien" href="-L-Islam-" >L&#8217;Islam</a>
+		
+				</li>
+		
+				<li class="rubrique rub13">
+					<a class="lien" href="-Des-hommes-des-ouvrages-" >Des hommes &amp; des ouvrages</a>
+		
+				</li>
+		
+				<li class="rubrique rub17">
+					<a class="lien" href="-Etudes-Colloques-" >Etudes &amp; Colloques</a>
+		
+				</li>
+		
+				<li class="rubrique rub20">
+					<a class="lien" href="-La-revue-Jawhar-El-Islam-" >La revue (Jawhar El Islam)</a>
+		
+				</li>
+		
+				<li class="rubrique rub23">
+					<a class="lien" href="-Ouvrages-MESTAOUI-" >Ouvrages MESTAOUI</a>
+		
+				</li>
+		
+			</ul>
+		
+		</li>
+	
+	</ul>
+ 
+
+<?php echo recuperer_fond( 'inc/inc-menu-agenda', array('lang' => 'fr'), array("compil"=>array('plugins/auto/ahuntsic/inc/inc-menu.html','html_10298836167fa0dff28e6d5326ad46e0','',101,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+
+</div>
+
+</div>
+";s:9:"squelette";s:37:"html_10298836167fa0dff28e6d5326ad46e0";s:6:"source";s:39:"plugins/auto/ahuntsic/inc/inc-menu.html";s:11:"process_ins";s:3:"php";s:11:"invalideurs";a:1:{s:5:"cache";s:35:"e/inc%2Finc-menu-13-fr--6d92bf5db61";}s:7:"entetes";a:1:{s:12:"X-Spip-Cache";i:86400;}s:5:"duree";i:0;s:5:"notes";s:0:"";s:8:"contexte";a:6:{s:11:"id_rubrique";s:2:"13";s:4:"lang";s:2:"fr";s:4:"date";s:19:"2016-10-23 19:15:01";s:12:"date_default";b:1;s:10:"date_redac";s:19:"2016-10-23 19:15:01";s:18:"date_redac_default";b:1;}s:12:"lastmodified";i:1477242901;s:2:"gz";b:0;}

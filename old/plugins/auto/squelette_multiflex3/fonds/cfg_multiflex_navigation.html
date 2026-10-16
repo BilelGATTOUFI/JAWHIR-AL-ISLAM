@@ -1,0 +1,63 @@
+<!-- titre=<:multiflex:multiflex_navigation:> -->
+
+<!-- autoriser=webmestre -->
+<!-- refus=<:cfg:refus_configuration_webmestre:> -->
+
+<!-- descriptif=Configuration de la navigation du squelette Multiflex -->
+<!-- onglet=multiflex_general -->
+
+<!-- logo=img/multiflex3-128.png -->
+<!-- icone=img/multiflex3-24.png -->
+
+<!-- liens*=multiflex:multiflex_general -->
+<!-- liens*=multiflex:multiflex_couleurs -->
+<!-- liens*=multiflex:multiflex_layouts -->
+<!-- liens*=multiflex:multiflex_navigation -->
+
+
+<!-- nom=multiflex -->
+<!-- casier=navigation -->
+
+#CACHE{0}
+
+<form method="post" action="#SELF">
+<div>
+<div>[(#ENV{_cfg_}|form_hidden)]</div>
+
+
+<fieldset class="cadre"><legend><:multiflex:navigation:></legend>
+	<label for="mfx_apparence"><:multiflex:apparence_navigation:></label>
+	<select name="apparence" id="mfx_apparence" class="forml">
+		<option value="grid"[ selected="(#ENV{apparence}|=={grid}|?{selected})"]><:multiflex:grille:></option>
+		<option value="bullet"[ selected="(#ENV{apparence}|=={bullet}|?{selected})"]><:multiflex:puces:></option>
+		<option value="nobullet"[ selected="(#ENV{apparence}|=={nobullet}|?{selected})"]><:multiflex:sans_puces:></option>
+	</select><br />
+	
+	<label for="mfx_article_a_propos"><:multiflex:a_propos:></label>
+	<select name="article_a_propos" id="mfx_article_a_propos" class="forml">
+		<option value=""[ selected="(#ENV{article_a_propos}|=={''}|?{selected})"]></option>
+		<BOUCLE_article_a_propos(ARTICLES){lang}>
+		<option value="#ID_ARTICLE"[ selected="(#ENV{article_a_propos}|=={#ID_ARTICLE}|?{selected})"]>[(#TITRE|couper{40})]</option>
+		</BOUCLE_article_a_propos>
+	</select><br />
+	
+	<label for="mfx_article_contact"><:multiflex:contact:></label>
+	<select name="article_contact" id="mfx_article_contact" class="forml">
+		<option value=""[ selected="(#ENV{article_contact}|=={''}|?{selected})"]></option>
+		<BOUCLE_article_contact(ARTICLES){lang}>
+		<option value="#ID_ARTICLE"[ selected="(#ENV{article_contact}|=={#ID_ARTICLE}|?{selected})"]>[(#TITRE|couper{40})]</option>
+		</BOUCLE_article_contact>
+	</select>	
+</fieldset>
+
+<br />
+
+<div>
+<input type="submit" name="_cfg_ok" value="<:oK:>" class="fondo" />
+<input type="reset" value="<:reset:>" class="fondo" />
+<input type="submit" name="_cfg_delete" value="<:supprimer:>" class="fondo" />
+</div>
+</div>
+</form>
+
+

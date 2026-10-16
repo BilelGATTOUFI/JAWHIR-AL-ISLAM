@@ -1,0 +1,55 @@
+a:11:{s:5:"texte";s:2780:"<div class="formulaire_spip formulaire_signature ajax" id="sp86">
+
+
+
+ 
+<form method="post" action="/%D8%A7%D9%84%D8%AF%D9%83%D8%AA%D9%88%D8%B1-%D8%B9%D8%A8%D8%AF-%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D9%85?debut_articles_rubrique=45#sp86"><div>
+	<div><input name="debut_articles_rubrique" value="45" type="hidden" /><input name='formulaire_action' type='hidden'
+		value='signature' /><input name='formulaire_action_args' type='hidden'
+		value='pan/We5jag1F6QlFL2FMtP0pt1k8iGwvGQjuOGO8NajtxsMW60XtYRlwSluLU/r4OWGzDLV7e4F6q9vCL55PzjmxZv8cJFXBihSwx0udkNu9YxMG6e+68W+rFA==' /></div><input type="hidden" name="url_page" value="http://www.mestaoui.com/%D8%A7%D9%84%D8%AF%D9%83%D8%AA%D9%88%D8%B1-%D8%B9%D8%A8%D8%AF-%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D9%85?debut_articles_rubrique=45" />
+	
+	<fieldset>
+		<legend>&#1576;&#1610;&#1575;&#1606;&#1575;&#1578; &#1575;&#1604;&#1575;&#1578;&#1589;&#1575;&#1604; &#1575;&#1604;&#1588;&#1582;&#1589;&#1610;&#1577;</legend>
+		<ul>
+			<li class='saisie_nom_email obligatoire'>
+				<label for="session_nom">&#1575;&#1587;&#1605;&#1603; &#1571;&#1608; &#1604;&#1602;&#1576;&#1603;</label>
+				
+				<input type="text" class="text" name="session_nom" id="session_nom" value="" size="30" />
+			</li>
+			<li class='saisie_adresse_email obligatoire'>
+				<label for="session_email">&#1593;&#1606;&#1608;&#1575;&#1606;&#1603; &#1575;&#1604;&#1573;&#1604;&#1603;&#1578;&#1585;&#1608;&#1606;&#1610;</label>
+				
+				<input type="text" class="text" name="session_email" id="session_email" value="" size="30" />
+			</li>
+		</ul>
+	</fieldset>
+	<fieldset>
+		<legend>&#1608;&#1589;&#1604;&#1577; &#1607;&#1575;&#1610;&#1576;&#1585;&#1578;&#1603;&#1587;&#1578;:</legend>
+		
+		<ul>
+			<li class='saisie_signature_nom_site'>
+				<label for="signature_nom_site">&#1575;&#1587;&#1605; &#1605;&#1608;&#1602;&#1593;&#1603;</label>
+				
+				<input type="text" class="text" name="signature_nom_site" id="signature_nom_site" value="" size="30" />
+			</li>
+				<li class='saisie_signature_url_site'>
+				<label for="signature_url_site">&#1593;&#1606;&#1608;&#1575;&#1606; &#1605;&#1608;&#1602;&#1593;&#1603;</label>
+				
+				<input type="text" class="text" name="signature_url_site" id="signature_url_site" value="http://" size="30" />
+			</li>
+		</ul>
+	</fieldset>
+
+	
+	<p style="display: none;">
+		<label for="nobot_signature86">&#1575;&#1604;&#1585;&#1580;&#1575;&#1569; &#1575;&#1604;&#1573;&#1576;&#1602;&#1575;&#1569; &#1593;&#1604;&#1609; &#1607;&#1584;&#1575; &#1575;&#1604;&#1581;&#1602;&#1604; &#1601;&#1575;&#1585;&#1594;&#1575;&#1611;:</label>
+		<input type="text" class="text" name="nobot" id="nobot_signature86" value="" size="10" />
+	</p>
+
+	
+
+	<p class="boutons"><input type="submit" class="submit" value="&#1573;&#1583;&#1582;&#1575;&#1604;" /></p>
+</div>
+</form>
+
+</div>";s:9:"squelette";s:37:"html_33df905667f4992af37cc617e206b53c";s:6:"source";s:42:"squelettes-dist/formulaires/signature.html";s:11:"process_ins";s:4:"html";s:11:"invalideurs";a:1:{s:5:"cache";s:35:"e/for-86----htt-%20-----pa-e509b7cf";}s:7:"entetes";a:1:{s:12:"X-Spip-Cache";i:3600;}s:5:"duree";i:0;s:5:"notes";s:0:"";s:8:"contexte";a:21:{s:10:"id_article";s:2:"86";s:11:"session_nom";s:0:"";s:13:"session_email";s:0:"";s:18:"signature_nom_site";s:0:"";s:18:"signature_url_site";s:7:"http://";s:6:"_texte";s:1:" ";s:8:"_message";s:0:"";s:7:"message";s:0:"";s:9:"site_obli";s:0:"";s:16:"debut_signatures";s:0:"";s:15:"formulaire_args";s:124:"pan/We5jag1F6QlFL2FMtP0pt1k8iGwvGQjuOGO8NajtxsMW60XtYRlwSluLU/r4OWGzDLV7e4F6q9vCL55PzjmxZv8cJFXBihSwx0udkNu9YxMG6e+68W+rFA==";s:7:"erreurs";a:0:{}s:6:"action";s:126:"/%D8%A7%D9%84%D8%AF%D9%83%D8%AA%D9%88%D8%B1-%D8%B9%D8%A8%D8%AF-%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D9%85?debut_articles_rubrique=45";s:4:"form";s:9:"signature";s:2:"id";s:3:"new";s:8:"editable";s:1:" ";s:4:"lang";s:2:"ar";s:4:"date";s:19:"2016-10-23 19:22:10";s:12:"date_default";b:1;s:10:"date_redac";s:19:"2016-10-23 19:22:10";s:18:"date_redac_default";b:1;}s:12:"lastmodified";i:1477243330;s:2:"gz";b:0;}

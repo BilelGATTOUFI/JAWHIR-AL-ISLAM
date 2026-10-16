@@ -1,0 +1,611 @@
+Nov 18 18:55:24 127.0.0.1 (pid 884) Erreur 1091 de mysql: Can't DROP 'id_parent'; check that column/key existsALTER TABLE `mestaoui`.spip_forum DROP INDEX `id_parent`
+ALTER TABLE `mestaoui`.spip_forum DROP INDEX `id_parent`
+Nov 18 18:55:24 127.0.0.1 (pid 884) Erreur 1091 de mysql: Can't DROP 'id_article'; check that column/key existsALTER TABLE `mestaoui`.spip_forum DROP INDEX `id_article`
+ALTER TABLE `mestaoui`.spip_forum DROP INDEX `id_article`
+Nov 18 18:55:24 127.0.0.1 (pid 884) Erreur 1091 de mysql: Can't DROP 'id_breve'; check that column/key existsALTER TABLE `mestaoui`.spip_forum DROP INDEX `id_breve`
+ALTER TABLE `mestaoui`.spip_forum DROP INDEX `id_breve`
+Nov 18 18:55:24 127.0.0.1 (pid 884) Erreur 1091 de mysql: Can't DROP 'id_syndic'; check that column/key existsALTER TABLE `mestaoui`.spip_forum DROP INDEX `id_syndic`
+ALTER TABLE `mestaoui`.spip_forum DROP INDEX `id_syndic`
+Nov 18 18:55:24 127.0.0.1 (pid 884) Erreur 1091 de mysql: Can't DROP 'id_rubrique'; check that column/key existsALTER TABLE `mestaoui`.spip_forum DROP INDEX `id_rubrique`
+ALTER TABLE `mestaoui`.spip_forum DROP INDEX `id_rubrique`
+Nov 18 18:55:24 127.0.0.1 (pid 884) Erreur 1091 de mysql: Can't DROP 'date_thread'; check that column/key existsALTER TABLE `mestaoui`.spip_forum DROP INDEX `date_thread`
+ALTER TABLE `mestaoui`.spip_forum DROP INDEX `date_thread`
+Nov 18 18:55:24 127.0.0.1 (pid 884) Erreur 1091 de mysql: Can't DROP 'statut'; check that column/key existsALTER TABLE `mestaoui`.spip_forum DROP INDEX `statut`
+ALTER TABLE `mestaoui`.spip_forum DROP INDEX `statut`
+Nov 18 18:55:25 127.0.0.1 (pid 884) Erreur 1061 de mysql: Duplicate key name 'optimal'ALTER TABLE `mestaoui`.spip_forum ADD INDEX `optimal` (`statut`,`id_parent`,`id_article`,`date_heure`,`id_breve`,`id_syndic`,`id_rubrique`)
+ALTER TABLE `mestaoui`.spip_forum ADD INDEX `optimal` (`statut`,`id_parent`,`id_article`,`date_heure`,`id_breve`,`id_syndic`,`id_rubrique`)
+Nov 18 18:55:25 127.0.0.1 (pid 884) Erreur 1091 de mysql: Can't DROP 'url_site'; check that column/key existsALTER TABLE `mestaoui`.spip_articles DROP INDEX `url_site`
+ALTER TABLE `mestaoui`.spip_articles DROP INDEX `url_site`
+Nov 18 18:55:25 127.0.0.1 (pid 884) Erreur 1091 de mysql: Can't DROP 'date_modif'; check that column/key existsALTER TABLE `mestaoui`.spip_articles DROP INDEX `date_modif`
+ALTER TABLE `mestaoui`.spip_articles DROP INDEX `date_modif`
+Nov 18 18:55:25 127.0.0.1 (pid 884) Erreur 1091 de mysql: Can't DROP 'lang'; check that column/key existsALTER TABLE `mestaoui`.spip_auteurs  DROP INDEX `lang`
+ALTER TABLE `mestaoui`.spip_auteurs  DROP INDEX `lang`
+Nov 18 18:55:25 127.0.0.1 (pid 884) Erreur 1091 de mysql: Can't DROP 'date'; check that column/key existsALTER TABLE `mestaoui`.spip_versions DROP INDEX `date`
+ALTER TABLE `mestaoui`.spip_versions DROP INDEX `date`
+Nov 18 18:55:25 127.0.0.1 (pid 884) Erreur 1091 de mysql: Can't DROP 'id_auteur'; check that column/key existsALTER TABLE `mestaoui`.spip_versions DROP INDEX `id_auteur`
+ALTER TABLE `mestaoui`.spip_versions DROP INDEX `id_auteur`
+Nov 18 18:55:27 127.0.0.1 (pid 884) Erreur 1054 de mysql: Unknown column 'maj' in 'spip_urls'ALTER TABLE `mestaoui`.spip_urls CHANGE `maj` date DATETIME DEFAULT '0000-00-00 00:00:00' NOT NULL
+ALTER TABLE `mestaoui`.spip_urls CHANGE `maj` date DATETIME DEFAULT '0000-00-00 00:00:00' NOT NULL
+Nov 18 18:55:28 127.0.0.1 (pid 884) Erreur 1054 de mysql: Unknown column 'tables' in 'spip_groupes_mots'ALTER TABLE `mestaoui`.spip_groupes_mots CHANGE `tables` tables_liees text DEFAULT '' NOT NULL AFTER obligatoire
+ALTER TABLE `mestaoui`.spip_groupes_mots CHANGE `tables` tables_liees text DEFAULT '' NOT NULL AFTER obligatoire
+Nov 18 18:55:28 127.0.0.1 (pid 884) Erreur 1060 de mysql: Duplicate column name 'id_objet'ALTER TABLE `mestaoui`.spip_documents_liens ADD id_objet bigint(21) DEFAULT '0' NOT NULL AFTER id_document
+ALTER TABLE `mestaoui`.spip_documents_liens ADD id_objet bigint(21) DEFAULT '0' NOT NULL AFTER id_document
+Nov 18 18:55:28 127.0.0.1 (pid 884) Erreur 1060 de mysql: Duplicate column name 'objet'ALTER TABLE `mestaoui`.spip_documents_liens ADD objet VARCHAR (25) DEFAULT '' NOT NULL AFTER id_objet
+ALTER TABLE `mestaoui`.spip_documents_liens ADD objet VARCHAR (25) DEFAULT '' NOT NULL AFTER id_objet
+Nov 18 18:55:28 127.0.0.1 (pid 884) Erreur 1054 de mysql: Unknown column 'id_article' in 'where clause'
+UPDATE `mestaoui`.spip_documents_liens
+SET id_objet=id_article,objet='article'
+WHERE id_article IS NOT NULL AND id_article>0
+
+UPDATE `mestaoui`.spip_documents_liens
+SET id_objet=id_article,objet='article'
+WHERE id_article IS NOT NULL AND id_article>0
+Nov 18 18:55:28 127.0.0.1 (pid 884) Erreur 1054 de mysql: Unknown column 'id_rubrique' in 'where clause'
+UPDATE `mestaoui`.spip_documents_liens
+SET id_objet=id_rubrique,objet='rubrique'
+WHERE id_rubrique IS NOT NULL AND id_rubrique>0
+
+UPDATE `mestaoui`.spip_documents_liens
+SET id_objet=id_rubrique,objet='rubrique'
+WHERE id_rubrique IS NOT NULL AND id_rubrique>0
+Nov 18 18:55:28 127.0.0.1 (pid 884) Erreur 1054 de mysql: Unknown column 'id_breve' in 'where clause'
+UPDATE `mestaoui`.spip_documents_liens
+SET id_objet=id_breve,objet='breve'
+WHERE id_breve IS NOT NULL AND id_breve>0
+
+UPDATE `mestaoui`.spip_documents_liens
+SET id_objet=id_breve,objet='breve'
+WHERE id_breve IS NOT NULL AND id_breve>0
+Nov 18 18:55:28 127.0.0.1 (pid 884) Erreur 1054 de mysql: Unknown column 'id_auteur' in 'where clause'
+UPDATE `mestaoui`.spip_documents_liens
+SET id_objet=id_auteur,objet='auteur'
+WHERE id_auteur IS NOT NULL AND id_auteur>0
+
+UPDATE `mestaoui`.spip_documents_liens
+SET id_objet=id_auteur,objet='auteur'
+WHERE id_auteur IS NOT NULL AND id_auteur>0
+Nov 18 18:55:28 127.0.0.1 (pid 884) Erreur 1054 de mysql: Unknown column 'id_forum' in 'where clause'
+UPDATE `mestaoui`.spip_documents_liens
+SET id_objet=id_forum,objet='forum'
+WHERE id_forum IS NOT NULL AND id_forum>0
+
+UPDATE `mestaoui`.spip_documents_liens
+SET id_objet=id_forum,objet='forum'
+WHERE id_forum IS NOT NULL AND id_forum>0
+Nov 18 18:55:28 127.0.0.1 (pid 884) Erreur 1091 de mysql: Can't DROP 'id_article'; check that column/key existsALTER TABLE `mestaoui`.spip_documents_liens DROP id_article
+ALTER TABLE `mestaoui`.spip_documents_liens DROP id_article
+Nov 18 18:55:28 127.0.0.1 (pid 884) Erreur 1091 de mysql: Can't DROP 'id_rubrique'; check that column/key existsALTER TABLE `mestaoui`.spip_documents_liens DROP id_rubrique
+ALTER TABLE `mestaoui`.spip_documents_liens DROP id_rubrique
+Nov 18 18:55:28 127.0.0.1 (pid 884) Erreur 1091 de mysql: Can't DROP 'id_breve'; check that column/key existsALTER TABLE `mestaoui`.spip_documents_liens DROP id_breve
+ALTER TABLE `mestaoui`.spip_documents_liens DROP id_breve
+Nov 18 18:55:28 127.0.0.1 (pid 884) Erreur 1091 de mysql: Can't DROP 'id_auteur'; check that column/key existsALTER TABLE `mestaoui`.spip_documents_liens DROP id_auteur
+ALTER TABLE `mestaoui`.spip_documents_liens DROP id_auteur
+Nov 18 18:55:28 127.0.0.1 (pid 884) Erreur 1091 de mysql: Can't DROP 'id_forum'; check that column/key existsALTER TABLE `mestaoui`.spip_documents_liens DROP id_forum
+ALTER TABLE `mestaoui`.spip_documents_liens DROP id_forum
+Nov 18 18:55:28 127.0.0.1 (pid 884) Erreur 1146 de mysql: Table 'mestaoui.spip_documents_auteurs' doesn't exist
+SELECT *
+FROM `mestaoui`.spip_documents_auteurs
+
+SELECT *
+FROM `mestaoui`.spip_documents_auteurs
+Nov 18 18:55:28 127.0.0.1 (pid 884) Erreur 1146 de mysql: Table 'mestaoui.spip_documents_auteur' doesn't exist
+SELECT *
+FROM `mestaoui`.spip_documents_auteur
+
+SELECT *
+FROM `mestaoui`.spip_documents_auteur
+Nov 18 18:55:28 127.0.0.1 (pid 884) Erreur 1146 de mysql: Table 'mestaoui.spip_documents_forums' doesn't exist
+SELECT *
+FROM `mestaoui`.spip_documents_forums
+
+SELECT *
+FROM `mestaoui`.spip_documents_forums
+Nov 18 18:55:28 127.0.0.1 (pid 884) Erreur 1146 de mysql: Table 'mestaoui.spip_documents_forum' doesn't exist
+SELECT *
+FROM `mestaoui`.spip_documents_forum
+
+SELECT *
+FROM `mestaoui`.spip_documents_forum
+Nov 18 18:55:28 127.0.0.1 (pid 884) Erreur 1051 de mysql: Unknown table 'spip_documents_auteurs'DROP TABLE `mestaoui`.spip_documents_auteurs
+DROP TABLE `mestaoui`.spip_documents_auteurs
+Nov 18 18:55:28 127.0.0.1 (pid 884) Erreur 1051 de mysql: Unknown table 'spip_documents_syndic'DROP TABLE `mestaoui`.spip_documents_syndic
+DROP TABLE `mestaoui`.spip_documents_syndic
+Nov 18 18:55:29 127.0.0.1 (pid 884) Erreur 1060 de mysql: Duplicate column name 'webmestre'ALTER TABLE `mestaoui`.spip_auteurs ADD webmestre varchar(3)  DEFAULT 'non' NOT NULL
+ALTER TABLE `mestaoui`.spip_auteurs ADD webmestre varchar(3)  DEFAULT 'non' NOT NULL
+Nov 22 16:47:07 78.239.209.46 (pid 11542) Erreur 1146 de mysql: Table 'mesta963_1.spip_meta' doesn't exist
+SELECT *
+FROM `mesta963_1`.spip_meta
+WHERE nom='langues_proposees'
+
+SELECT *
+FROM `mesta963_1`.spip_meta
+WHERE nom='langues_proposees'
+Nov 22 16:47:07 78.239.209.46 (pid 11542) Erreur 1146 de mysql: Table 'mesta963_1.spip_meta' doesn't exist
+SELECT *
+FROM `mesta963_1`.spip_meta
+WHERE nom='pcre_u'
+
+SELECT *
+FROM `mesta963_1`.spip_meta
+WHERE nom='pcre_u'
+Nov 22 16:47:07 78.239.209.46 (pid 11542) Erreur 1146 de mysql: Table 'mesta963_1.spip_meta' doesn't exist
+SELECT *
+FROM `mesta963_1`.spip_meta
+WHERE nom='langue_site'
+
+SELECT *
+FROM `mesta963_1`.spip_meta
+WHERE nom='langue_site'
+Nov 22 16:47:07 78.239.209.46 (pid 11542) Erreur 1146 de mysql: Table 'mesta963_1.spip_meta' doesn't exist
+SELECT *
+FROM `mesta963_1`.spip_meta
+WHERE nom='langues_proposees'
+
+SELECT *
+FROM `mesta963_1`.spip_meta
+WHERE nom='langues_proposees'
+Aug 21 16:26:25 41.226.214.232 (pid 6482) Echec mysql_connect. Erreur : Access denied for user 'mesta963'@'localhost' (using password: YES)
+Aug 21 16:26:25 41.226.214.232 (pid 6482) Echec connexion serveur mysql : host[localhost] port[] login[mesta963] base[mesta963_1]
+Aug 22 13:30:57 197.0.147.138 (pid 18379) Echec mysql_connect. Erreur : Access denied for user 'mesta963'@'localhost' (using password: YES)
+Aug 22 13:30:57 197.0.147.138 (pid 18379) Echec connexion serveur mysql : host[localhost] port[] login[mesta963] base[mesta963_1]
+Aug 27 18:04:36 197.0.237.204 (pid 8999) Duplicate entry 'الشيخ-عبد-الرحمان' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الشيخ-عبد-الرحمان','article',805)
+Aug 27 18:15:34 197.0.237.204 (pid 14427) Duplicate entry 'من-فضائل-العشر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-فضائل-العشر','article',807)
+Aug 29 15:55:21 41.226.130.79 (pid 3691) Duplicate entry 'في-رحاب-التفسير' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-التفسير','article',809)
+Sep 04 13:51:26 197.1.248.35 (pid 6483) Duplicate entry 'في-وداع-الشيخ-محمد' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-وداع-الشيخ-محمد','article',810)
+Sep 04 13:57:06 197.1.248.35 (pid 9618) Duplicate entry 'في-رياض-السنة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رياض-السنة','article',811)
+Sep 07 17:26:43 193.95.61.162 (pid 3410) Duplicate entry 'من-توجيهات-الإسلام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-توجيهات-الإسلام','article',812)
+Sep 09 12:19:11 193.95.61.162 (pid 29462) Duplicate entry 'في-رياض-السنة-من' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رياض-السنة-من','article',814)
+Sep 17 12:16:32 193.95.61.162 (pid 30464) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',822)
+Sep 22 15:30:37 193.95.61.162 (pid 9076) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',832)
+Sep 23 12:22:02 193.95.61.162 (pid 28309) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',833)
+Sep 24 12:52:56 193.95.61.162 (pid 26416) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',834)
+Sep 27 15:19:36 193.95.61.162 (pid 2187) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',835)
+Sep 28 16:10:49 193.95.61.162 (pid 1122) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',837)
+Sep 30 13:05:32 193.95.61.162 (pid 29991) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',838)
+Oct 01 12:14:21 193.95.61.162 (pid 16191) Duplicate entry 'قراءة-في-كتاب' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('قراءة-في-كتاب','article',839)
+Oct 05 16:20:22 193.95.61.162 (pid 23870) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',842)
+Oct 07 13:08:15 193.95.61.162 (pid 4639) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',843)
+Oct 17 18:21:11 193.95.61.162 (pid 9553) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',847)
+Oct 22 12:49:16 193.95.61.162 (pid 23932) Duplicate entry 'الدعاء-مفتاح-الفرج' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الدعاء-مفتاح-الفرج','article',852)
+Oct 29 12:41:37 193.95.61.162 (pid 8318) Duplicate entry 'الحج-إلى-بيت-الله' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الحج-إلى-بيت-الله','article',857)
+Nov 02 16:37:05 193.95.61.162 (pid 30959) Duplicate entry 'دروس-ينبغي' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('دروس-ينبغي','article',860)
+Nov 15 15:07:41 193.95.61.162 (pid 19785) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',866)
+Nov 17 15:27:37 193.95.61.162 (pid 30090) Duplicate entry 'في-رياض-السنة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رياض-السنة','article',869)
+Nov 19 11:26:39 193.95.61.162 (pid 24536) Duplicate entry 'في-رياض-السنة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رياض-السنة','article',871)
+Nov 22 15:35:04 193.95.61.162 (pid 17906) Duplicate entry 'في-رياض-السنة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رياض-السنة','article',874)
+Nov 23 15:23:42 193.95.61.162 (pid 27223) Duplicate entry 'في-رياض-السنة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رياض-السنة','article',875)
+Nov 27 02:49:57 197.28.3.106 (pid 28643) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',879)
+Nov 28 15:14:04 193.95.61.162 (pid 13328) Duplicate entry 'من-هدي-الإسلام-في' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-هدي-الإسلام-في','article',880)
+Dec 01 16:07:51 193.95.61.162 (pid 17559) Duplicate entry 'قراءة-في-كتاب' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('قراءة-في-كتاب','article',884)
+Dec 06 12:56:23 193.95.61.162 (pid 10252) Duplicate entry 'من-توجيهات-الإسلام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-توجيهات-الإسلام','article',890)
+Dec 07 16:17:07 193.95.61.162 (pid 14846) Duplicate entry 'في-رياض-السنة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رياض-السنة','article',892)
+Dec 07 16:20:12 193.95.61.162 (pid 18150) Duplicate entry 'فتاوى-مختارة-دفن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('فتاوى-مختارة-دفن','article',893)
+Dec 08 14:51:04 193.95.61.162 (pid 2172) Duplicate entry 'فتاوى-مختارة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('فتاوى-مختارة','article',895)
+Dec 09 11:58:20 193.95.61.162 (pid 5346) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',897)
+Dec 09 12:01:04 193.95.61.162 (pid 7493) Duplicate entry 'فتاوى-مختارة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('فتاوى-مختارة','article',899)
+Dec 10 12:26:31 193.95.61.162 (pid 25911) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',900)
+Dec 13 14:38:57 193.95.61.162 (pid 3352) Duplicate entry 'فتاوى-مختارة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('فتاوى-مختارة','article',904)
+Dec 15 15:14:43 193.95.61.162 (pid 8754) Duplicate entry 'في-رحاب-القرآن-من' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن-من','article',905)
+Dec 16 12:01:12 193.95.61.162 (pid 15716) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',907)
+Dec 19 15:09:19 193.95.61.162 (pid 31946) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',909)
+Dec 19 15:11:34 193.95.61.162 (pid 1777) Duplicate entry 'فتاوى-مختارة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('فتاوى-مختارة','article',910)
+Dec 21 14:21:13 193.95.61.162 (pid 30391) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',911)
+Dec 21 14:23:25 193.95.61.162 (pid 31749) Duplicate entry 'فتاوى-مختارة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('فتاوى-مختارة','article',912)
+Dec 23 12:17:29 193.95.61.162 (pid 9569) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',913)
+Dec 24 11:27:38 193.95.61.162 (pid 23120) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',914)
+Jan 03 15:24:52 193.95.61.162 (pid 4186) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',920)
+Jan 10 10:43:18 193.95.61.162 (pid 2951) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',924)
+Jan 11 14:32:37 193.95.61.162 (pid 15973) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',925)
+Jan 12 12:34:37 193.95.61.162 (pid 29659) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',927)
+Jan 15 14:36:03 41.225.126.100 (pid 8402) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',928)
+Jan 16 16:07:42 193.95.61.162 (pid 24771) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',929)
+Jan 17 15:02:01 193.95.61.162 (pid 22466) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',930)
+Jan 18 15:01:32 193.95.61.162 (pid 14812) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',931)
+Jan 19 15:11:43 193.95.61.162 (pid 12262) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',932)
+Jan 21 12:05:17 193.95.61.162 (pid 19388) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',933)
+Jan 24 16:59:36 193.95.61.162 (pid 1302) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',936)
+Jan 26 14:28:42 193.95.61.162 (pid 5690) Duplicate entry 'فتاوى-مختارة-حكم' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('فتاوى-مختارة-حكم','article',937)
+Jan 27 11:00:04 193.95.61.162 (pid 13224) Duplicate entry 'فتاوى-مختارة-حكم' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('فتاوى-مختارة-حكم','article',938)
+Jan 28 11:11:05 193.95.61.162 (pid 24447) Duplicate entry 'فتاوى-مختارة-حكم' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('فتاوى-مختارة-حكم','article',939)
+Jan 31 14:49:21 193.95.61.162 (pid 18188) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',940)
+Jan 31 14:52:18 193.95.61.162 (pid 21135) Duplicate entry 'من-وحي-ذكرى-المولد' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-وحي-ذكرى-المولد','article',942)
+Feb 01 14:59:38 193.95.61.162 (pid 12270) Duplicate entry 'من-وحي-ذكرى-المولد' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-وحي-ذكرى-المولد','article',943)
+Feb 03 11:42:55 193.95.61.162 (pid 1461) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',946)
+Feb 03 18:58:51 197.7.195.82 (pid 4979) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',947)
+Feb 03 19:06:11 197.7.195.82 (pid 12801) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',948)
+Feb 08 18:50:23 197.7.248.27 (pid 28350) Duplicate entry 'فتاوى-مختارة-حكم' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('فتاوى-مختارة-حكم','article',950)
+Feb 09 19:37:37 41.227.23.89 (pid 6007) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',951)
+Feb 10 21:49:24 197.7.255.59 (pid 24974) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',952)
+Feb 13 18:02:54 197.7.177.59 (pid 17448) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',953)
+Feb 14 19:25:49 197.7.75.89 (pid 5552) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',954)
+Feb 15 22:26:35 197.7.221.116 (pid 30188) Duplicate entry 'فتاوى-مختارة-حكم' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('فتاوى-مختارة-حكم','article',955)
+Feb 19 19:09:05 197.7.214.199 (pid 15589) Duplicate entry 'من-وحي-المولد' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-وحي-المولد','article',957)
+Feb 23 23:56:17 197.7.214.236 (pid 27644) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',960)
+Feb 26 21:47:46 197.7.176.118 (pid 18133) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',962)
+Feb 26 21:51:52 197.7.176.118 (pid 12116) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',963)
+Mar 03 18:41:35 197.7.101.122 (pid 9547) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',964)
+Mar 04 23:09:27 197.7.93.7 (pid 17316) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',965)
+Mar 07 21:06:07 197.7.125.17 (pid 31084) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',966)
+Mar 09 20:32:20 197.7.198.204 (pid 27574) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',967)
+Mar 13 11:28:16 197.7.207.149 (pid 24626) Duplicate entry 'مع-القرآن-الكريم' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مع-القرآن-الكريم','article',968)
+Mar 17 22:44:23 197.7.55.90 (pid 3875) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',970)
+Mar 23 18:23:49 41.225.155.239 (pid 3614) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',972)
+Mar 23 18:34:47 41.225.155.239 (pid 9938) Duplicate entry 'تعريف-بعلماء-من' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('تعريف-بعلماء-من','article',973)
+Mar 24 17:52:50 41.225.155.239 (pid 29475) Duplicate entry 'تعريف-بعلماء-من' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('تعريف-بعلماء-من','article',974)
+Mar 28 15:52:54 193.95.61.162 (pid 21232) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',977)
+Mar 30 15:33:34 197.7.253.121 (pid 30358) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',978)
+Mar 31 14:30:59 197.15.11.137 (pid 23281) Duplicate entry 'مفاهيم-إسلامية-في' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية-في','article',979)
+Apr 02 14:07:46 197.15.11.137 (pid 14869) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',980)
+Apr 03 14:23:44 197.15.11.137 (pid 4972) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',981)
+Apr 03 14:32:47 197.15.11.137 (pid 16675) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',982)
+Apr 04 14:07:10 197.15.11.137 (pid 2772) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',983)
+Apr 11 13:54:03 197.15.69.100 (pid 28350) Duplicate entry 'من-توجيهات-الإسلام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-توجيهات-الإسلام','article',985)
+Apr 12 13:49:20 197.15.69.100 (pid 18505) Duplicate entry 'من-توجيهات-الإسلام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-توجيهات-الإسلام','article',986)
+Apr 12 14:00:03 197.15.69.100 (pid 16608) Duplicate entry 'في-رياض-السنة-من' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رياض-السنة-من','article',987)
+Apr 13 14:03:29 197.15.69.100 (pid 19254) Duplicate entry 'من-توجيهات-الإسلام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-توجيهات-الإسلام','article',988)
+Apr 13 14:32:13 197.15.69.100 (pid 31472) Duplicate entry 'مفاهيم-إسلامية-اثر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية-اثر','article',989)
+Apr 16 14:55:49 197.15.27.213 (pid 6688) Duplicate entry 'من-توجيهات-الإسلام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-توجيهات-الإسلام','article',990)
+Apr 17 14:02:53 197.15.27.213 (pid 3323) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',991)
+Apr 17 14:08:39 197.15.27.213 (pid 7096) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',992)
+Apr 18 14:41:16 197.15.27.213 (pid 973) Duplicate entry 'من-توجيهات-الإسلام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-توجيهات-الإسلام','article',993)
+Apr 20 14:21:33 197.15.27.213 (pid 6819) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',994)
+Apr 20 14:48:38 197.15.27.213 (pid 8769) Duplicate entry 'من-توجيهات-الإسلام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-توجيهات-الإسلام','article',995)
+Apr 24 14:36:00 41.227.59.124 (pid 8362) Duplicate entry 'من-توجيهات-الإسلام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-توجيهات-الإسلام','article',996)
+Apr 24 19:10:32 41.227.59.124 (pid 19839) Duplicate entry 'من-توجيهات-الإسلام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-توجيهات-الإسلام','article',997)
+Apr 27 19:24:06 41.227.59.124 (pid 333) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',999)
+Apr 27 19:36:21 41.227.59.124 (pid 8196) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',1001)
+Apr 29 16:00:01 197.7.157.151 (pid 13854) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1002)
+Apr 30 19:51:17 197.7.185.54 (pid 29857) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1003)
+May 07 13:11:14 193.95.61.162 (pid 18933) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',1009)
+May 08 12:24:58 193.95.61.162 (pid 17879) Duplicate entry 'فضيلة-الشيخ-محمد' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('فضيلة-الشيخ-محمد','article',1010)
+May 10 15:17:44 193.95.61.162 (pid 31347) Duplicate entry 'من-توجيهات-الإسلام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-توجيهات-الإسلام','article',1012)
+May 11 15:00:24 197.6.64.180 (pid 24976) Duplicate entry 'من-توجيهات-الإسلام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-توجيهات-الإسلام','article',1014)
+May 12 11:56:49 193.95.61.162 (pid 24310) Duplicate entry 'من-توجيهات-الإسلام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-توجيهات-الإسلام','article',1015)
+May 14 13:20:17 193.95.61.162 (pid 11062) Duplicate entry 'من-توجيهات-الإسلام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-توجيهات-الإسلام','article',1017)
+May 15 12:19:29 193.95.61.162 (pid 28872) Duplicate entry 'من-توجيهات-الإسلام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-توجيهات-الإسلام','article',1018)
+May 16 11:50:49 193.95.61.162 (pid 9558) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1020)
+May 19 12:18:19 193.95.61.162 (pid 10308) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1022)
+May 22 13:00:38 193.95.61.162 (pid 20152) Duplicate entry 'هذا-هو-الإسلام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('هذا-هو-الإسلام','article',1024)
+May 23 13:39:09 193.95.61.162 (pid 6909) Duplicate entry 'هذا-هو-الإسلام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('هذا-هو-الإسلام','article',1025)
+May 31 16:03:34 193.95.61.162 (pid 17316) Duplicate entry 'السماحة-والتسامح' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('السماحة-والتسامح','article',1031)
+Jun 05 15:17:38 193.95.61.162 (pid 10530) Duplicate entry 'التسامح-هو-العظمة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('التسامح-هو-العظمة','article',1035)
+Jun 12 12:15:12 193.95.61.162 (pid 9469) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1042)
+Jun 14 12:26:25 193.95.61.162 (pid 8463) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1044)
+Jun 15 11:37:19 193.95.61.162 (pid 28407) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1045)
+Jun 16 11:50:33 193.95.61.162 (pid 19301) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1046)
+Jun 18 14:53:56 193.95.61.162 (pid 31524) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1047)
+Jun 19 11:12:58 193.95.61.162 (pid 29597) Duplicate entry 'معجزة-الإسراء' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('معجزة-الإسراء','article',1050)
+Jun 20 13:30:36 193.95.61.162 (pid 12397) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1051)
+Jun 24 14:52:37 197.6.51.127 (pid 5307) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1053)
+Jul 04 11:06:59 193.95.61.162 (pid 28771) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1057)
+Jul 06 10:55:53 193.95.61.162 (pid 16515) Duplicate entry 'مفاهيم-إسلامية-اثر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية-اثر','article',1059)
+Jul 10 09:25:19 193.95.61.162 (pid 27796) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1062)
+Jul 16 11:15:56 193.95.61.162 (pid 793) Duplicate entry 'مفاهيم-إسلامية-ليس' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية-ليس','article',1067)
+Jul 19 11:33:28 193.95.61.162 (pid 28833) Duplicate entry 'من-هدي-رسول-الله' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-هدي-رسول-الله','article',1070)
+Jul 21 10:10:53 193.95.61.162 (pid 31985) Duplicate entry 'في-رحاب-التفسير-من' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-التفسير-من','article',1071)
+Jul 23 11:23:10 193.95.61.162 (pid 10119) Duplicate entry 'الصيام-مدرسة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الصيام-مدرسة','article',1072)
+Jul 24 11:07:34 193.95.61.162 (pid 28511) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1073)
+Jul 26 12:30:47 193.95.61.162 (pid 13885) Duplicate entry 'مع-رمضان-في-حكمه' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مع-رمضان-في-حكمه','article',1074)
+Jul 27 11:55:45 193.95.61.162 (pid 21838) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1075)
+Jul 28 13:39:34 193.95.61.162 (pid 5440) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1076)
+Aug 04 13:14:13 193.95.61.162 (pid 5392) Duplicate entry 'من-عبر-دروس-غزوة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-عبر-دروس-غزوة','article',1081)
+Aug 06 14:53:56 193.95.61.162 (pid 31418) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1082)
+Aug 07 12:48:46 193.95.61.162 (pid 11333) Duplicate entry 'من-فضائل-العشر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-فضائل-العشر','article',1083)
+Aug 08 12:23:40 193.95.61.162 (pid 7783) Duplicate entry 'مفاهيم-إسلامية-في' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية-في','article',1085)
+Aug 11 13:31:22 193.95.61.162 (pid 13046) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',1087)
+Aug 21 15:42:46 197.7.31.60 (pid 21218) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1088)
+Aug 21 15:45:35 197.7.31.60 (pid 23300) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1089)
+Aug 22 17:03:43 197.7.18.125 (pid 5612) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1090)
+Aug 24 01:14:59 197.28.170.145 (pid 6538) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1091)
+Aug 25 00:56:56 197.28.179.237 (pid 26362) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1092)
+Aug 30 12:39:13 197.7.11.77 (pid 3498) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1094)
+Aug 31 14:53:51 197.7.4.78 (pid 2045) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1095)
+Sep 11 22:40:54 197.7.29.108 (pid 800) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1102)
+Sep 11 22:42:34 197.7.29.108 (pid 2072) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1103)
+Sep 20 14:35:39 193.95.61.162 (pid 11329) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1108)
+Sep 21 14:43:06 197.7.2.203 (pid 27971) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1109)
+Sep 26 11:56:01 193.95.61.162 (pid 22050) Duplicate entry 'في-رياض-السنة-سعة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رياض-السنة-سعة','article',1111)
+Oct 01 12:56:38 193.95.61.162 (pid 20340) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1117)
+Oct 02 11:34:21 193.95.61.162 (pid 16188) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1118)
+Oct 03 11:39:01 193.95.61.162 (pid 2433) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1119)
+Oct 03 11:42:42 193.95.61.162 (pid 5969) Duplicate entry 'أركان-الحج-إلى-بيت' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('أركان-الحج-إلى-بيت','article',1120)
+Oct 05 11:54:12 193.95.61.162 (pid 14774) Duplicate entry 'في-رياض-السنة-فرحة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رياض-السنة-فرحة','article',1122)
+Oct 13 22:13:39 197.7.64.17 (pid 18954) Duplicate entry 'مفاهيم-إسلامية-من' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية-من','article',1126)
+Oct 17 11:37:33 193.95.61.162 (pid 20563) Duplicate entry 'في-الروضة-النبوية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-الروضة-النبوية','article',1128)
+Oct 19 11:20:27 193.95.61.162 (pid 19068) Duplicate entry 'من-وحي-الحج' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-وحي-الحج','article',1130)
+Oct 23 14:53:19 193.95.61.162 (pid 16282) Duplicate entry 'مفاهيم-إسلامية-دور' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية-دور','article',1132)
+Nov 05 11:46:13 193.95.61.162 (pid 2381) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1133)
+Nov 05 11:51:35 193.95.61.162 (pid 11788) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1135)
+Nov 08 11:38:59 193.95.61.162 (pid 19479) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1139)
+Nov 09 09:20:25 193.95.61.162 (pid 21835) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1140)
+Nov 11 13:27:08 41.225.213.92 (pid 11149) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1141)
+Nov 13 10:50:47 193.95.61.162 (pid 27595) Duplicate entry 'الدكتور-صلاح-الدين' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الدكتور-صلاح-الدين','article',1143)
+Nov 14 11:38:40 193.95.61.162 (pid 13697) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1144)
+Nov 16 10:46:42 193.95.61.162 (pid 19640) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1145)
+Nov 19 11:25:31 193.95.61.162 (pid 1201) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1146)
+Nov 20 12:46:50 193.95.61.162 (pid 31617) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1147)
+Nov 22 09:57:56 197.7.4.221 (pid 15863) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1148)
+Nov 23 09:54:57 193.95.61.162 (pid 29982) Duplicate entry 'مفاهيم-إسلامية-من' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية-من','article',1150)
+Nov 26 10:17:54 197.7.45.185 (pid 6944) Duplicate entry 'مفاهيم-إسلامية-حرص' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية-حرص','article',1152)
+Dec 03 09:34:07 197.7.12.85 (pid 26520) Duplicate entry 'الإسلام-شيء' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الإسلام-شيء','article',1156)
+Dec 04 10:17:24 197.7.37.214 (pid 8611) Duplicate entry 'في-رياض-السنة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رياض-السنة','article',1157)
+Dec 10 10:09:10 197.7.48.144 (pid 26521) Duplicate entry 'في-رياض-السنة-ما' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رياض-السنة-ما','article',1160)
+Dec 12 12:01:09 193.95.61.162 (pid 12056) Duplicate entry 'في-رحاب-القرآن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-رحاب-القرآن','article',1161)
+Jan 15 14:19:22 193.95.61.162 (pid 385774) Duplicate entry 'الشيخ-الحبيب' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الشيخ-الحبيب','article',1188)
+Jan 16 13:05:33 193.95.61.162 (pid 549060) Duplicate entry 'الشيخ-الحبيب' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الشيخ-الحبيب','article',1189)
+Jan 22 15:54:52 193.95.61.162 (pid 665739) Duplicate entry 'الشيخ-الحبيب' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الشيخ-الحبيب','article',1191)
+Jan 22 15:57:15 193.95.61.162 (pid 670406) Duplicate entry 'الشيخ-الحبيب' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الشيخ-الحبيب','article',1192)
+Jan 25 10:31:48 193.95.61.162 (pid 555571) Duplicate entry 'الحديث-الثاني' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الحديث-الثاني','article',1194)
+Jan 25 10:39:12 193.95.61.162 (pid 566195) Duplicate entry 'الحديث-الثالث' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الحديث-الثالث','article',1195)
+Jan 28 10:49:44 193.95.61.162 (pid 645201) Duplicate entry 'الحديث-الرابع' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الحديث-الرابع','article',1196)
+Jan 31 11:41:57 193.95.61.162 (pid 71996) Duplicate entry 'الحديث-السابع' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الحديث-السابع','article',1199)
+Feb 06 10:35:22 193.95.61.162 (pid 639017) Duplicate entry 'الحديث-الحادي' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الحديث-الحادي','article',1203)
+Feb 07 12:13:27 193.95.61.162 (pid 924145) Duplicate entry 'الحديث-الثاني' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الحديث-الثاني','article',1204)
+Feb 11 11:21:08 193.95.61.162 (pid 147954) Duplicate entry 'الحديث-الثالث' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الحديث-الثالث','article',1205)
+Feb 11 11:22:04 193.95.61.162 (pid 149618) Duplicate entry 'الحديث-الرابع' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الحديث-الرابع','article',1206)
+Feb 12 10:43:07 193.95.61.162 (pid 131608) Duplicate entry 'الحديث-الخامس' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الحديث-الخامس','article',1208)
+Feb 13 13:36:42 193.95.61.162 (pid 219649) Duplicate entry 'الحديث-السادس' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الحديث-السادس','article',1209)
+Feb 14 16:13:10 193.95.61.162 (pid 537280) Duplicate entry 'الحديث-السابع' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الحديث-السابع','article',1210)
+Feb 18 10:48:55 193.95.61.162 (pid 53505) Duplicate entry 'الحديث-الثامن' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الحديث-الثامن','article',1211)
+Feb 19 10:21:04 193.95.61.162 (pid 65942) Duplicate entry 'الحديث-التاسع' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الحديث-التاسع','article',1212)
+Feb 22 11:42:46 193.95.61.162 (pid 496358) Duplicate entry 'الحديث-الحادي' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الحديث-الحادي','article',1214)
+Feb 25 11:28:53 193.95.61.162 (pid 111257) Duplicate entry 'الحديث-الثاني' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الحديث-الثاني','article',1215)
+Feb 25 11:28:54 193.95.61.162 (pid 111257) Duplicate entry 'الحديث-الثاني,1215' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الحديث-الثاني,1215','article',1215)
+Feb 27 16:06:14 193.95.61.162 (pid 11165) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1216)
+Feb 28 11:28:51 193.95.61.162 (pid 467810) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1217)
+Mar 04 10:23:30 193.95.61.162 (pid 793589) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1218)
+Mar 05 14:17:39 193.95.61.162 (pid 336709) Duplicate entry 'سيدي-محرز-بن-خلف' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('سيدي-محرز-بن-خلف','article',1219)
+Apr 02 19:37:31 197.15.244.201 (pid 357089) Echec mysql_connect. Erreur : Access denied for user 'mesta963'@'localhost' (using password: YES)
+Apr 02 19:37:31 197.15.244.201 (pid 357089) Echec connexion serveur mysql : host[localhost] port[] login[mesta963] base[mesta963_1]
+Apr 02 20:33:09 182.118.20.164 (pid 442655) Echec mysql_connect. Erreur : Access denied for user 'mesta963'@'localhost' (using password: YES)
+Apr 02 20:33:09 182.118.20.164 (pid 442655) Echec connexion serveur mysql : host[localhost] port[] login[mesta963] base[mesta963_1]
+Apr 04 18:39:00 78.239.209.46 (pid 440747) Echec mysql_connect. Erreur : Access denied for user 'mesta963'@'localhost' (using password: YES)
+Apr 04 18:39:00 78.239.209.46 (pid 440747) Echec connexion serveur mysql : host[localhost] port[] login[mesta963] base[mesta963_1]
+Apr 08 11:35:33 193.95.61.162 (pid 1026913) Echec mysql_connect. Erreur : User mesta963 already has more than 'max_user_connections' active connections
+Apr 08 11:35:36 193.95.61.162 (pid 1026913) Echec connexion serveur mysql : host[localhost] port[] login[mesta963] base[mesta963_1]
+Apr 23 10:38:49 193.95.61.162 (pid 242548) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1241)
+Apr 25 11:24:39 193.95.61.162 (pid 944460) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1243)
+Apr 26 11:18:08 193.95.61.162 (pid 698522) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1244)
+May 02 12:54:41 193.95.61.162 (pid 803149) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1247)
+May 03 12:35:53 193.95.61.162 (pid 837807) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1248)
+May 07 14:49:03 193.95.61.162 (pid 973380) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1249)
+May 09 11:29:02 193.95.61.162 (pid 842645) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1250)
+May 13 10:10:28 193.95.61.162 (pid 33091) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1251)
+May 13 10:11:18 193.95.61.162 (pid 35320) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1252)
+May 19 19:43:26 197.15.90.164 (pid 909582) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1255)
+May 20 14:40:44 193.95.61.162 (pid 621170) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1256)
+May 21 11:59:45 193.95.61.162 (pid 553855) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1257)
+May 22 16:48:30 193.95.61.162 (pid 700789) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1258)
+May 23 15:46:18 193.95.61.162 (pid 359299) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1259)
+May 30 11:18:06 193.95.61.162 (pid 707034) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1262)
+May 31 12:38:41 193.95.61.162 (pid 424883) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1263)
+Jun 11 16:18:42 193.95.61.162 (pid 260137) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1267)
+Jun 18 12:49:33 193.95.61.162 (pid 501852) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1268)
+Jun 19 13:23:30 193.95.61.162 (pid 745987) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1269)
+Jun 20 11:54:52 193.95.61.162 (pid 673952) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1270)
+Jun 21 11:30:51 193.95.61.162 (pid 698910) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1271)
+Jun 26 12:02:52 193.95.61.162 (pid 64114) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1273)
+Jul 02 10:46:42 193.95.61.162 (pid 412072) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1278)
+Jul 03 12:21:49 193.95.61.162 (pid 705287) Duplicate entry 'مفاهيم-إسلامية-ما' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية-ما','article',1279)
+Jul 03 12:27:39 193.95.61.162 (pid 716801) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1280)
+Jul 05 11:44:56 193.95.61.162 (pid 39006) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1281)
+Jul 08 13:05:59 193.95.61.162 (pid 909457) Duplicate entry 'مفاهيم-إسلامية-ما' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية-ما','article',1282)
+Jul 09 11:17:23 193.95.61.162 (pid 823747) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1283)
+Jul 10 10:31:55 193.95.61.162 (pid 958969) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1284)
+Jul 11 10:55:20 193.95.61.162 (pid 146385) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1285)
+Jul 12 12:52:41 193.95.61.162 (pid 467423) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1286)
+Jul 15 13:48:49 193.95.61.162 (pid 782956) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1287)
+Jul 16 12:17:33 193.95.61.162 (pid 766859) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1288)
+Jul 18 12:50:37 193.95.61.162 (pid 115663) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1289)
+Jul 19 11:48:43 193.95.61.162 (pid 140106) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1290)
+Jul 22 14:08:05 193.95.61.162 (pid 369330) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1291)
+Jul 23 12:42:28 193.95.61.162 (pid 146047) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1292)
+Jul 24 11:57:31 193.95.61.162 (pid 199117) Duplicate entry 'مفاهيم-إسلامية-في' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية-في','article',1293)
+Jul 29 10:31:36 193.95.61.162 (pid 906106) Duplicate entry 'مفاهيم-إسلامية' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية','article',1294)
+Jul 31 11:25:45 193.95.61.162 (pid 151985) Duplicate entry 'مفاهيم-إسلامية-من' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مفاهيم-إسلامية-من','article',1295)
+Aug 23 15:36:56 197.15.15.21 (pid 846147) Duplicate entry 'تعريف-شامل-بمجمع' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('تعريف-شامل-بمجمع','article',1303)
+Sep 06 14:31:51 41.225.171.120 (pid 992031) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1306)
+Sep 07 14:05:10 41.225.44.75 (pid 725170) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1307)
+Sep 09 14:21:28 197.15.208.220 (pid 1039304) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1308)
+Sep 11 14:13:38 197.15.89.164 (pid 451264) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1309)
+Sep 11 14:23:01 197.15.89.164 (pid 463792) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1310)
+Sep 16 12:35:43 193.95.61.162 (pid 834545) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1311)
+Sep 17 14:33:15 193.95.61.162 (pid 873002) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1312)
+Sep 18 12:51:03 193.95.61.162 (pid 375015) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1313)
+Sep 20 16:39:02 193.95.61.162 (pid 952499) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1314)
+Sep 23 12:07:43 193.95.61.162 (pid 151584) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1315)
+Oct 05 20:46:46 41.227.46.72 (pid 256325) Duplicate entry 'الشيخ-الحبيب' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الشيخ-الحبيب','article',1321)
+Oct 28 11:39:46 193.95.61.162 (pid 149746) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1323)
+Oct 29 12:52:51 193.95.61.162 (pid 966976) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1324)
+Oct 30 09:46:21 193.95.61.162 (pid 559950) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1325)
+Oct 31 10:25:59 193.95.61.162 (pid 4835) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1326)
+Nov 01 11:57:10 193.95.61.162 (pid 864308) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1327)
+Nov 04 11:11:40 193.95.61.162 (pid 672550) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1328)
+Nov 06 10:26:57 193.95.61.162 (pid 827436) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1329)
+Nov 07 10:06:11 193.95.61.162 (pid 342056) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1330)
+Nov 08 10:30:12 193.95.61.162 (pid 25502) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1331)
+Nov 11 10:56:14 193.95.61.162 (pid 756621) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1332)
+Nov 12 12:12:36 193.95.61.162 (pid 228061) Duplicate entry 'مقدمات-جوهر' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقدمات-جوهر','article',1333)
+Dec 23 17:26:35 197.15.56.33 (pid 168299) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1340)
+Dec 26 10:16:12 193.95.61.162 (pid 741733) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1341)
+Dec 27 10:39:54 193.95.61.162 (pid 74718) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1342)
+Dec 27 10:45:11 193.95.61.162 (pid 78506) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1343)
+Dec 27 10:45:51 193.95.61.162 (pid 78702) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1344)
+Dec 30 12:11:42 193.95.61.162 (pid 198912) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1345)
+Dec 31 10:59:06 193.95.61.162 (pid 535551) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1346)
+Jan 07 11:20:37 193.95.61.162 (pid 381437) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1347)
+Jan 07 11:26:15 193.95.61.162 (pid 389306) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1348)
+Jan 10 10:48:33 193.95.61.162 (pid 277216) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1349)
+Jan 10 10:52:41 193.95.61.162 (pid 282828) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1350)
+Jan 10 10:56:23 193.95.61.162 (pid 287225) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1351)
+Jan 16 15:00:37 193.95.61.162 (pid 1043064) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1352)
+Jan 16 15:04:30 193.95.61.162 (pid 423) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1353)
+Jan 16 15:05:28 193.95.61.162 (pid 2832) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1354)
+Jan 24 10:25:44 193.95.61.162 (pid 88126) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1355)
+Jan 24 10:26:25 193.95.61.162 (pid 88464) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1356)
+Jan 24 10:27:11 193.95.61.162 (pid 88833) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1357)
+Jan 27 17:07:00 193.95.61.162 (pid 570265) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1358)
+Jan 27 17:09:12 193.95.61.162 (pid 573599) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1359)
+Jan 27 17:12:14 193.95.61.162 (pid 578061) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1360)
+Jan 28 11:30:15 193.95.61.162 (pid 82374) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1361)
+Jan 28 11:31:24 193.95.61.162 (pid 83974) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1362)
+Jan 31 14:10:02 193.95.61.162 (pid 105170) Duplicate entry 'في-ذكرى-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-ذكرى-الشيخ','article',1363)
+Feb 14 11:33:28 193.95.61.162 (pid 357152) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1364)
+Feb 14 11:36:07 193.95.61.162 (pid 361077) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1365)
+Feb 14 11:37:35 193.95.61.162 (pid 362619) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1366)
+Mar 25 11:54:11 41.225.16.68 (pid 207368) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1368)
+Mar 27 09:24:49 41.225.16.68 (pid 127736) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1369)
+Mar 27 10:14:52 41.225.16.68 (pid 215722) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1370)
+Mar 28 08:18:03 41.225.16.68 (pid 172146) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1371)
+Mar 31 15:49:57 41.225.16.68 (pid 731531) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1372)
+Apr 01 22:47:13 197.0.154.170 (pid 952817) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1374)
+Apr 01 22:50:26 197.0.154.170 (pid 961094) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1375)
+Apr 01 22:58:33 197.0.154.170 (pid 989309) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1376)
+Apr 02 22:39:58 41.226.69.26 (pid 555213) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1377)
+Apr 02 22:44:36 41.226.69.26 (pid 561184) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1378)
+Apr 02 22:48:55 41.226.69.26 (pid 566070) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1379)
+Apr 02 22:54:19 41.226.69.26 (pid 573611) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1380)
+Apr 06 15:43:30 197.0.219.4 (pid 543498) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1381)
+Apr 06 15:45:59 197.0.219.4 (pid 549529) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1382)
+Apr 06 15:48:58 197.0.219.4 (pid 555178) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1383)
+Apr 06 15:52:22 197.0.219.4 (pid 561799) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1384)
+Apr 06 15:56:21 197.0.219.4 (pid 570228) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1385)
+Apr 06 16:01:20 197.0.219.4 (pid 579949) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1386)
+Apr 08 16:12:41 41.225.16.68 (pid 821584) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1387)
+Apr 08 16:15:04 41.225.16.68 (pid 825871) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1388)
+Apr 08 16:17:15 41.225.16.68 (pid 839882) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1389)
+Apr 08 16:39:03 41.225.16.68 (pid 872844) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1390)
+Apr 08 16:41:05 41.225.16.68 (pid 876791) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1391)
+Apr 08 16:43:01 41.225.16.68 (pid 879091) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1392)
+Apr 08 16:45:03 41.225.16.68 (pid 881549) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1393)
+Apr 08 16:47:31 41.225.16.68 (pid 886796) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1394)
+Apr 11 19:30:25 197.8.56.9 (pid 328660) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1395)
+Apr 11 19:36:43 197.8.56.9 (pid 338087) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1396)
+Apr 11 19:46:19 197.8.56.9 (pid 356397) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1397)
+Apr 12 22:58:37 197.1.206.24 (pid 153697) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1398)
+Apr 12 23:27:39 197.1.206.24 (pid 199327) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1399)
+Apr 12 23:33:50 197.1.206.24 (pid 209205) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1400)
+Apr 12 23:37:27 197.1.206.24 (pid 215409) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1401)
+Apr 12 23:44:38 197.1.206.24 (pid 225867) Duplicate entry 'افتتاحيات-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('افتتاحيات-الشيخ','article',1402)
+May 08 21:49:16 197.2.51.96 (pid 164360) Duplicate entry 'المديح-النبوي-كاحد' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('المديح-النبوي-كاحد','article',1406)
+May 08 21:56:10 197.2.51.96 (pid 174105) Duplicate entry 'الملتقى-العالمي' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الملتقى-العالمي','article',1408)
+May 20 23:53:03 197.0.195.103 (pid 524299) Duplicate entry 'في-مواكبة-وفد-الله' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-مواكبة-وفد-الله','article',1417)
+May 20 23:55:14 197.0.195.103 (pid 526409) Duplicate entry 'في-مواكبة-وفد-الله' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-مواكبة-وفد-الله','article',1418)
+May 20 23:56:46 197.0.195.103 (pid 527278) Duplicate entry 'في-مواكبة-وفد-الله' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-مواكبة-وفد-الله','article',1419)
+May 21 00:08:36 197.0.195.103 (pid 551105) Duplicate entry 'من-شروح-موطا' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-شروح-موطا','article',1422)
+Jun 12 11:26:52 41.225.16.68 (pid 241971) Duplicate entry 'من-ملامح-التجربة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-ملامح-التجربة','article',1427)
+Jul 24 10:37:15 41.225.16.68 (pid 848369) Duplicate entry 'الشيخ-الحبيب' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الشيخ-الحبيب','auteur',4)
+Aug 03 00:53:30 41.226.132.196 (pid 287517) Duplicate entry 'في-الرد-على' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-الرد-على','article',1449)
+Sep 27 11:21:05 197.15.8.218 (pid 336125) Duplicate entry 'قال-رسول-الله-صل�' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('قال-رسول-الله-صلى','article',1480)
+Sep 27 11:25:34 197.15.8.218 (pid 342792) Duplicate entry 'من-معاني-العيد' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-معاني-العيد','article',1481)
+Sep 27 11:29:46 197.15.8.218 (pid 348522) Duplicate entry 'العشر-الأوائل-من' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('العشر-الأوائل-من','article',1482)
+Oct 23 21:45:05 41.226.147.167 (pid 224140) Duplicate entry 'خطبة-جمعية-ألقاه�' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('خطبة-جمعية-ألقاها','article',1497)
+Nov 10 22:48:33 41.226.134.130 (pid ) Echec mysql_connect. Erreur : Access denied for user 'mestaoui_base'@'localhost' (using password: YES)
+Nov 10 22:48:33 41.226.134.130 (pid ) Echec connexion serveur mysql : host[localhost] port[] login[mestaoui_base] base[mesta2014]
+Nov 10 23:07:29 41.226.134.130 (pid ) Echec mysql_connect. Erreur : Access denied for user 'mestaoui_base'@'localhost' (using password: YES)
+Nov 10 23:07:29 41.226.134.130 (pid ) Echec connexion serveur mysql : host[localhost] port[] login[mestaoui_base] base[mesta2014]
+Nov 15 21:01:58 197.1.166.68 (pid ) Duplicate entry 'هدي-الإسلام-في' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('هدي-الإسلام-في','article',1498)
+Nov 30 20:13:07 197.0.156.199 (pid ) Duplicate entry 'ذكر-الله-تبارك' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('ذكر-الله-تبارك','article',1503)
+Dec 11 20:35:35 41.226.183.243 (pid ) Duplicate entry 'هدي-الإسلام-في' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('هدي-الإسلام-في','article',1506)
+Dec 17 11:39:00 41.225.16.68 (pid ) Duplicate entry 'خطبة-جمعة-في-ذكرى' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('خطبة-جمعة-في-ذكرى','article',1509)
+Jan 10 21:49:00 197.0.104.29 (pid ) Duplicate entry 'يا-مصطفى-أنا-في' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('يا-مصطفى-أنا-في','article',1525)
+Jan 28 20:31:20 197.1.223.116 (pid ) Duplicate entry 'الملتقى-العالم�' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الملتقى-العالمي','article',1536)
+Feb 05 21:41:57 197.0.112.88 (pid ) Duplicate entry 'من-هدي-الإسلام-ف�' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-هدي-الإسلام-في','article',1546)
+Feb 05 21:45:58 197.0.112.88 (pid ) Duplicate entry 'من-هدي-الإسلام-ف�' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-هدي-الإسلام-في','article',1547)
+Feb 05 21:49:52 197.0.112.88 (pid ) Duplicate entry 'من-هدي-الإسلام-ف�' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-هدي-الإسلام-في','article',1548)
+Mar 01 21:38:24 197.0.18.247 (pid ) Duplicate entry 'خطبة-جمعية-ألقاه�' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('خطبة-جمعية-ألقاها','article',1550)
+Mar 29 23:08:21 197.2.118.40 (pid ) Duplicate entry 'خطبة-جمعية-ألقاه�' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('خطبة-جمعية-ألقاها','article',1564)
+Apr 07 22:41:25 41.226.167.221 (pid ) Duplicate entry 'من-أدعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-أدعية-الإمام','article',1567)
+Apr 07 22:45:19 41.226.167.221 (pid ) Duplicate entry 'من-أدعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-أدعية-الإمام','article',1568)
+Apr 07 22:53:30 41.226.167.221 (pid ) Duplicate entry 'خطبة-جمعية-ألقاه�' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('خطبة-جمعية-ألقاها','article',1569)
+Apr 28 21:20:47 197.2.28.234 (pid ) Duplicate entry 'من-أدعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-أدعية-الإمام','article',1573)
+Apr 28 21:23:14 197.2.28.234 (pid ) Duplicate entry 'من-أدعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-أدعية-الإمام','article',1575)
+Apr 28 21:24:20 197.2.28.234 (pid ) Duplicate entry 'من-ادعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-ادعية-الإمام','article',1576)
+Apr 28 21:25:22 197.2.28.234 (pid ) Duplicate entry 'من-أدعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-أدعية-الإمام','article',1577)
+Apr 28 21:26:19 197.2.28.234 (pid ) Duplicate entry 'من-أدعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-أدعية-الإمام','article',1578)
+May 23 12:57:15 41.227.63.239 (pid ) Duplicate entry 'قراءة-في-كتاب' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('قراءة-في-كتاب','article',1591)
+May 23 12:59:35 41.227.63.239 (pid ) Duplicate entry 'جهود-الأستاذ-محم�' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('جهود-الأستاذ-محمد','article',1592)
+May 23 17:50:32 41.227.63.239 (pid ) Duplicate entry 'La-tolerance-dans-l-Islam' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('La-tolerance-dans-l-Islam','article',1600)
+May 30 12:26:59 197.15.245.79 (pid ) Duplicate entry 'من-أدعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-أدعية-الإمام','article',1601)
+May 30 12:30:21 197.15.245.79 (pid ) Duplicate entry 'معجزة-الإسراء' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('معجزة-الإسراء','article',1602)
+May 30 12:36:12 197.15.245.79 (pid ) Duplicate entry 'من-أدعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-أدعية-الإمام','article',1604)
+May 30 12:51:19 197.15.245.79 (pid ) Duplicate entry 'سيدنا-محمد-صلى' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('سيدنا-محمد-صلى','article',1605)
+Jun 16 10:12:05 41.225.16.68 (pid ) Duplicate entry 'La-tolerance-dans-l-Islam' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('La-tolerance-dans-l-Islam','article',1622)
+Jun 20 10:24:07 197.15.235.233 (pid ) Duplicate entry 'من-أدعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-أدعية-الإمام','article',1629)
+Jun 20 11:51:59 197.15.235.233 (pid ) Duplicate entry 'من-أدعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-أدعية-الإمام','article',1632)
+Jun 20 13:06:15 197.15.235.233 (pid ) Duplicate entry 'حديث-في-شؤون' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('حديث-في-شؤون','article',1634)
+Jun 20 13:08:16 197.15.235.233 (pid ) Duplicate entry 'حديث-في-شؤون' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('حديث-في-شؤون','article',1635)
+Jul 04 13:21:14 41.225.179.172 (pid ) Duplicate entry 'من-أدعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-أدعية-الإمام','article',1648)
+Jul 04 13:24:22 41.225.179.172 (pid ) Duplicate entry 'من-أدعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-أدعية-الإمام','article',1649)
+Jul 11 11:01:54 41.225.92.97 (pid ) Duplicate entry 'تعريف-بكتاب' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('تعريف-بكتاب','article',1654)
+Jul 11 12:11:41 41.225.92.97 (pid ) Duplicate entry 'من-معاني-العيد' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-معاني-العيد','article',1660)
+Jul 11 12:13:37 41.225.92.97 (pid ) Duplicate entry 'مع-القرآن-الكريم' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مع-القرآن-الكريم','article',1661)
+Jul 18 11:52:13 197.15.206.249 (pid ) Duplicate entry 'قال-الشيخ-الحبيب' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('قال-الشيخ-الحبيب','article',1664)
+Jul 18 11:53:27 197.15.206.249 (pid ) Duplicate entry 'قال-الشيخ-الحبيب' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('قال-الشيخ-الحبيب','article',1665)
+Jul 18 12:45:06 197.15.206.249 (pid ) Duplicate entry 'مقال-جديد' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مقال-جديد','article',1668)
+Jul 18 12:56:19 197.15.206.249 (pid ) Duplicate entry 'من-أدعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-أدعية-الإمام','article',1669)
+Jul 25 11:50:35 197.15.65.72 (pid ) Duplicate entry 'من-أدعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-أدعية-الإمام','article',1678)
+Jul 25 11:51:15 197.15.65.72 (pid ) Duplicate entry 'من-ادعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-ادعية-الإمام','article',1679)
+Jul 30 17:49:36 197.15.65.72 (pid ) Duplicate entry 'مع-خالد-محمد-خالد' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('مع-خالد-محمد-خالد','article',1681)
+Aug 04 19:58:27 197.15.130.228 (pid ) Duplicate entry 'من-ادعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-ادعية-الإمام','article',1682)
+Aug 04 20:01:19 197.15.130.228 (pid ) Duplicate entry 'تعميما-للفائدة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('تعميما-للفائدة','article',1684)
+Aug 04 20:04:16 197.15.130.228 (pid ) Duplicate entry 'الاسلام-دين' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الاسلام-دين','article',1686)
+Aug 08 08:13:13 41.225.182.10 (pid ) Duplicate entry 'من-ادعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-ادعية-الإمام','article',1694)
+Aug 08 08:15:10 41.225.182.10 (pid ) Duplicate entry 'تنبيه-ملح-لزوار' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('تنبيه-ملح-لزوار','article',1695)
+Aug 08 08:18:33 41.225.182.10 (pid ) Duplicate entry 'من-ادعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-ادعية-الإمام','article',1696)
+Aug 15 08:06:55 41.225.207.132 (pid ) Duplicate entry 'تعميما-للفائدة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('تعميما-للفائدة','article',1704)
+Aug 15 08:28:38 41.225.207.132 (pid ) Duplicate entry 'قراءة-وعرض-لنص' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('قراءة-وعرض-لنص','article',1706)
+Aug 15 12:35:07 41.225.207.132 (pid ) Duplicate entry 'من-ادعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-ادعية-الإمام','article',1712)
+Aug 15 12:36:32 41.225.207.132 (pid ) Duplicate entry 'من-ادعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-ادعية-الإمام','article',1713)
+Aug 22 07:58:14 197.15.65.139 (pid ) Duplicate entry 'اعادة-نشر-لنص' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('اعادة-نشر-لنص','article',1715)
+Aug 22 10:40:27 197.15.65.139 (pid ) Duplicate entry 'تعميما-للفائدة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('تعميما-للفائدة','article',1718)
+Aug 22 10:58:43 197.15.65.139 (pid ) Duplicate entry 'من-ادعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-ادعية-الإمام','article',1719)
+Aug 22 11:02:25 197.15.65.139 (pid ) Duplicate entry 'من-ادعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-ادعية-الإمام','article',1720)
+Aug 22 12:23:06 197.15.65.139 (pid ) Duplicate entry 'تعميما-للفائدة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('تعميما-للفائدة','article',1723)
+Aug 26 19:34:51 41.225.207.155 (pid ) Duplicate entry 'من-ادعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-ادعية-الإمام','article',1728)
+Aug 26 19:36:45 41.225.207.155 (pid ) Duplicate entry 'من-ادعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-ادعية-الإمام','article',1729)
+Aug 29 10:57:46 41.225.207.155 (pid ) Duplicate entry 'تعميما-للفائدة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('تعميما-للفائدة','article',1730)
+Aug 29 11:11:26 41.225.207.155 (pid ) Duplicate entry 'من-ادعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-ادعية-الإمام','article',1734)
+Sep 05 13:08:41 41.225.72.49 (pid ) Duplicate entry 'الإيمان-والعمل' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الإيمان-والعمل','article',1743)
+Sep 05 13:13:32 41.225.72.49 (pid ) Duplicate entry 'الحج-إلى-بيت-الل�' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('الحج-إلى-بيت-الله','article',1744)
+Sep 05 13:15:48 41.225.72.49 (pid ) Duplicate entry 'من-فتاوى-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-فتاوى-الشيخ','article',1745)
+Sep 09 18:09:57 197.15.83.204 (pid ) Duplicate entry 'حوار-اجراه-الأستا' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('حوار-اجراه-الأستاذ','article',1753)
+Sep 12 11:05:36 197.15.83.204 (pid ) Duplicate entry 'من-فتاوى-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-فتاوى-الشيخ','article',1756)
+Sep 12 11:09:13 197.15.83.204 (pid ) Duplicate entry 'تعميما-للفائدة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('تعميما-للفائدة','article',1757)
+Sep 12 11:12:36 197.15.83.204 (pid ) Duplicate entry 'تعميما-للفائدة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('تعميما-للفائدة','article',1758)
+Sep 12 11:13:46 197.15.83.204 (pid ) Duplicate entry 'قال-الشيخ-الحبيب' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('قال-الشيخ-الحبيب','article',1759)
+Sep 12 12:07:29 197.15.83.204 (pid ) Duplicate entry 'من-ادعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-ادعية-الإمام','article',1761)
+Sep 12 13:26:46 197.15.83.204 (pid ) Duplicate entry 'تنبيه-لزوار-المو' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('تنبيه-لزوار-الموقع','article',1762)
+Sep 12 13:31:20 197.15.83.204 (pid ) Duplicate entry 'اعلام-بتنظيم-ندو' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('اعلام-بتنظيم-ندوة','article',1763)
+Sep 19 11:04:51 41.225.49.33 (pid ) Duplicate entry 'تفسير-آيات-من-سور�' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('تفسير-آيات-من-سورة','article',1764)
+Sep 19 11:08:51 41.225.49.33 (pid ) Duplicate entry 'من-ادعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-ادعية-الإمام','article',1766)
+Sep 19 11:20:10 41.225.49.33 (pid ) Duplicate entry 'من-فتاوى-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-فتاوى-الشيخ','article',1768)
+Sep 26 12:18:27 41.225.141.0 (pid ) Duplicate entry 'من-فتاوى-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-فتاوى-الشيخ','article',1776)
+Sep 26 12:21:08 41.225.141.0 (pid ) Duplicate entry 'من-ادعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-ادعية-الإمام','article',1777)
+Sep 26 12:51:19 41.225.141.0 (pid ) Duplicate entry 'تعميما-للفائدة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('تعميما-للفائدة','article',1778)
+Sep 26 13:38:03 41.225.65.198 (pid ) Duplicate entry 'تعميما-للفائدة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('تعميما-للفائدة','article',1779)
+Sep 26 13:40:37 41.225.65.198 (pid ) Duplicate entry 'في-ذكرى-مرور' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('في-ذكرى-مرور','article',1780)
+Oct 03 07:51:17 41.225.201.160 (pid ) Duplicate entry 'تعميما-للفائدة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('تعميما-للفائدة','article',1781)
+Oct 03 08:02:30 41.225.201.160 (pid ) Duplicate entry 'من-ادعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-ادعية-الإمام','article',1784)
+Oct 03 08:08:27 41.225.201.160 (pid ) Duplicate entry 'تعميما-للفائدة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('تعميما-للفائدة','article',1785)
+Oct 03 08:13:32 41.225.201.160 (pid ) Duplicate entry 'من-فتاوى-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-فتاوى-الشيخ','article',1786)
+Oct 10 07:45:51 41.227.41.123 (pid ) Duplicate entry 'من-فتاوى-الشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-فتاوى-الشيخ','article',1788)
+Oct 10 13:32:26 41.227.41.123 (pid ) Duplicate entry 'من-ادعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-ادعية-الإمام','article',1791)
+Nov 14 07:34:55 197.15.250.12 (pid 163728) Duplicate entry 'من-ادعية-الإمام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-ادعية-الإمام','article',1802)
+Nov 14 07:44:10 197.15.250.12 (pid 168141) Duplicate entry 'حوار-مع-الشباب' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('حوار-مع-الشباب','article',1806)
+Nov 14 07:48:16 197.15.250.12 (pid 170042) Duplicate entry 'تعميما-للفائدة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('تعميما-للفائدة','article',1808)
+Nov 14 07:50:22 197.15.250.12 (pid 171462) Duplicate entry 'يسالونك-قل-للشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('يسالونك-قل-للشيخ','article',1809)
+Nov 14 07:56:27 197.15.250.12 (pid 175543) Duplicate entry 'تفسير-آيات-من-سور�' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('تفسير-آيات-من-سورة','article',1812)
+Nov 14 08:05:47 197.15.250.12 (pid 181276) Duplicate entry 'يسالونك-قل-للشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('يسالونك-قل-للشيخ','article',1817)
+Nov 14 08:08:30 197.15.250.12 (pid 182776) Duplicate entry 'تعميما-للفائدة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('تعميما-للفائدة','article',1818)
+Nov 14 08:10:56 197.15.250.12 (pid 183991) Duplicate entry 'من-ادعية-الامام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-ادعية-الامام','article',1820)
+Nov 14 08:19:09 197.15.250.12 (pid 190680) Duplicate entry 'من-ادعية-الامام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-ادعية-الامام','article',1824)
+Nov 14 08:30:41 197.15.250.12 (pid 196443) Duplicate entry 'تصحيح-المفاهيم' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('تصحيح-المفاهيم','article',1828)
+Nov 14 08:56:36 197.15.250.12 (pid 214396) Duplicate entry 'تعميما-للفائدة' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('تعميما-للفائدة','article',1830)
+Nov 14 08:58:23 197.15.250.12 (pid 215903) Duplicate entry 'يسالونك-قل-للشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('يسالونك-قل-للشيخ','article',1831)
+Nov 21 11:04:51 41.227.56.241 (pid 916159) Duplicate entry 'من-ادعية-الامام' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('من-ادعية-الامام','article',1832)
+Nov 21 11:07:00 41.227.56.241 (pid 920761) Duplicate entry 'تفسير-آيات-من-سور�' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('تفسير-آيات-من-سورة','article',1833)
+Nov 21 11:49:15 41.227.56.241 (pid 980909) Duplicate entry 'يسالونك-قل-للشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('يسالونك-قل-للشيخ','article',1834)
+Nov 28 07:16:42 41.225.111.13 (pid 545615) Duplicate entry 'يسالونك-قل-للشيخ' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('يسالونك-قل-للشيخ','article',1838)
+Nov 28 07:18:29 41.225.111.13 (pid 546050) Duplicate entry 'تفسير-آيات-من-سور�' for key 'PRIMARY' - INSERT INTO spip_urls (url,type,id_objet) VALUES ('تفسير-آيات-من-سورة','article',1839)
+[-- rotate --]

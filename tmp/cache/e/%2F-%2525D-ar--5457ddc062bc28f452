@@ -1,0 +1,88 @@
+a:11:{s:5:"texte";s:4826:"<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ar" lang="ar" dir="rtl">
+<head>
+	<title>&#1582;&#1591;&#1571; 404 - hacked by adminet</title>
+	<?php echo recuperer_fond( 'inc/inc-meta', array('lang' => 'ar'), array("compil"=>array('plugins/auto/ahuntsic/404.html','html_ada45d03631a85b05968f11a77fddfc8','',8,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+	<?php echo recuperer_fond( 'styles', array('lang' => 'ar'), array("compil"=>array('plugins/auto/ahuntsic/404.html','html_ada45d03631a85b05968f11a77fddfc8','',9,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+</head>
+<body dir="rtl">
+<div id="page">
+
+<!-- *****************************************************************
+	Entete et menu principal (haut et droite)
+	Header and main menu (top and right) 
+    ************************************************************* -->
+	
+<?php echo recuperer_fond( 'inc/inc-bandeau', array('lang' => 'ar'), array("compil"=>array('plugins/auto/ahuntsic/404.html','html_ada45d03631a85b05968f11a77fddfc8','',19,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+
+<div id="principal">
+	
+<!-- *****************************************************************
+	Contenu principal (centre)
+	Main content (center) 
+    ************************************************************* -->
+	<div id="bloc-contenu">		
+		<div class="cartouche">
+			<h1 class="titre-article">&#1582;&#1591;&#1571; 404</h1>
+      <h2>&#1582;&#1591;&#1571; &#1601;&#1610; &#1575;&#1604;&#1575;&#1587;&#1578;&#1601;&#1587;&#1575;&#1585;: &#1604;&#1575; &#1578;&#1608;&#1580;&#1583; &#1606;&#1578;&#1575;&#1574;&#1580;.</h2>
+      <p>&#1604;&#1575; &#1578;&#1608;&#1580;&#1583; &#1571;&#1602;&#1587;&#1575;&#1605; &#1593;&#1604;&#1609; &#1607;&#1584;&#1575; &#1575;&#1604;&#1593;&#1606;&#1608;&#1575;&#1606;</p>
+		</div><!-- cartouche -->
+		<div class="chapo">
+			&#1604;&#1575; &#1610;&#1576;&#1583;&#1608; &#1575;&#1604;&#1605;&#1587;&#1575;&#1585;
+			&#1575;&#1604;&#1584;&#1610; &#1581;&#1583;&#1583;&#1578;&#1607; &#1589;&#1575;&#1604;&#1581;&#1575;&#1611;. &#1575;&#1604;&#1585;&#1580;&#1575;&#1569; &#1575;&#1604;&#1593;&#1608;&#1583;&#1577; &#1575;&#1604;&#1609; &#1575;&#1604;&#1589;&#1601;&#1581;&#1577; &#1575;&#1604;&#1587;&#1575;&#1576;&#1602;&#1577; &#1608;&#1575;&#1604;&#1578;&#1571;&#1603;&#1583; &#1605;&#1606; &#1575;&#1604;&#1605;&#1593;&#1604;&#1608;&#1605;&#1575;&#1578; &#1575;&#1604;&#1605;&#1583;&#1582;&#1604;&#1577;. &#1608;&#1575;&#1604;&#1578;&#1571;&#1603;&#1583; &#1605;&#1606; &#1575;&#1604;&#1605;&#1593;&#1604;&#1608;&#1605;&#1575;&#1578; &#1575;&#1604;&#1605;&#1583;&#1582;&#1604;&#1577;.
+		</div>
+		<div class="texte">
+
+			<h2>&#1578;&#1581;&#1583;&#1610;&#1583;</h2> 
+			<ul>
+				<li>
+					<a href="javascript:history.back()">&#1575;&#1604;&#1589;&#1601;&#1581;&#1577; &#1575;&#1604;&#1587;&#1575;&#1576;&#1602;&#1577;</a> 
+				</li>
+				<li>
+					<a href="http://www.mestaoui.tn/spip.php?page=recherche">&#1576;&#1581;&#1579;</a> 
+				</li>
+				<li>
+					<a href="http://www.mestaoui.com">&#1575;&#1604;&#1589;&#1601;&#1581;&#1577; &#1575;&#1604;&#1571;&#1587;&#1575;&#1587;&#1610;&#1577;</a> 
+				</li>
+				<li>
+					<a href="http://www.mestaoui.tn/spip.php?page=plan">&#1582;&#1585;&#1610;&#1591;&#1577; &#1575;&#1604;&#1605;&#1608;&#1602;&#1593;</a> 
+				</li>
+			</ul>
+		</div>
+	</div><!-- bloc-contenu -->
+
+
+<!-- *****************************************************************
+	Menus contextuels (gauche)
+	Contextual menus (left) 
+    ************************************************************* -->
+	<div id="encart">	
+
+<?php echo recuperer_fond( 'inc/inc-breves', array('lang' => 'ar'), array("compil"=>array('plugins/auto/ahuntsic/404.html','html_ada45d03631a85b05968f11a77fddfc8','',64,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+
+<?php echo recuperer_fond( 'inc/inc-syndic', array('lang' => 'ar'), array("compil"=>array('plugins/auto/ahuntsic/404.html','html_ada45d03631a85b05968f11a77fddfc8','',66,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+
+    <!-- Inscription au site -->
+    
+
+	</div><!-- encart -->
+<?php echo recuperer_fond( 'inc/inc-menu', array('lang' => 'ar'), array("compil"=>array('plugins/auto/ahuntsic/404.html','html_ada45d03631a85b05968f11a77fddfc8','',72,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+</div><!-- principal -->
+
+<!-- *****************************************************************
+	Pied-de-page (bas)
+	Footer (bottom) 
+    ************************************************************* -->
+<?php echo recuperer_fond( 'inc/inc-bas', array('lang' => 'ar'), array("compil"=>array('plugins/auto/ahuntsic/404.html','html_ada45d03631a85b05968f11a77fddfc8','',79,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+</div><!-- page -->
+
+</body>
+</html>";s:9:"squelette";s:37:"html_ada45d03631a85b05968f11a77fddfc8";s:6:"source";s:30:"plugins/auto/ahuntsic/404.html";s:11:"process_ins";s:3:"php";s:11:"invalideurs";a:1:{s:5:"cache";s:35:"e/%2F-%2525D-ar--5457ddc062bc28f452";}s:7:"entetes";a:3:{s:13:"Cache-Control";s:35:"no-store, no-cache, must-revalidate";s:6:"Pragma";s:8:"no-cache";s:12:"X-Spip-Cache";i:86400;}s:5:"duree";i:0;s:5:"notes";s:0:"";s:8:"contexte";a:6:{s:4:"lang";s:2:"ar";s:6:"erreur";s:173:"&#1604;&#1575; &#1578;&#1608;&#1580;&#1583; &#1571;&#1602;&#1587;&#1575;&#1605; &#1593;&#1604;&#1609; &#1607;&#1584;&#1575; &#1575;&#1604;&#1593;&#1606;&#1608;&#1575;&#1606;";s:4:"date";s:19:"2016-10-23 19:06:22";s:12:"date_default";b:1;s:10:"date_redac";s:19:"2016-10-23 19:06:22";s:18:"date_redac_default";b:1;}s:12:"lastmodified";i:1477242382;s:2:"gz";b:0;}

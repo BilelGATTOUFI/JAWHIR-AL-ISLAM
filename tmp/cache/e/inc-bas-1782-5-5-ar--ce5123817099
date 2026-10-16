@@ -1,0 +1,44 @@
+a:11:{s:5:"texte";s:3597:"
+<div id="bas">
+	<a href="http://www.mestaoui.com" title="&#1575;&#1604;&#1589;&#1601;&#1581;&#1577; &#1575;&#1604;&#1571;&#1587;&#1575;&#1587;&#1610;&#1577;">&#1575;&#1604;&#1589;&#1601;&#1581;&#1577; &#1575;&#1604;&#1571;&#1587;&#1575;&#1587;&#1610;&#1577;</a> | 
+	<a href="_%D8%A7%D9%84%D8%A3%D8%B3%D8%AA%D8%A7%D8%B0-%D9%85%D8%AD%D9%85%D8%AF-%D8%B5%D9%84%D8%A7%D8%AD_" title="&#1575;&#1604;&#1575;&#1578;&#1589;&#1575;&#1604;">&#1575;&#1604;&#1575;&#1578;&#1589;&#1575;&#1604;</a> | <a href="http://www.mestaoui.tn/spip.php?page=plan" title="&#1582;&#1585;&#1610;&#1591;&#1577; &#1575;&#1604;&#1605;&#1608;&#1602;&#1593;">&#1582;&#1585;&#1610;&#1591;&#1577; &#1575;&#1604;&#1605;&#1608;&#1602;&#1593;</a> | 
+ 
+	<a href="http://www.mestaoui.tn/spip.php?page=statistiques" title="&#1573;&#1581;&#1589;&#1575;&#1569;&#1575;&#1578; &#1575;&#1604;&#1605;&#1608;&#1602;&#1593;">&#1575;&#1604;&#1573;&#1581;&#1589;&#1575;&#1569;&#1575;&#1578;</a> | 
+	<span style="white-space: nowrap;">&#1586;&#1610;&#1575;&#1585;&#1577;: <?php echo recuperer_fond( 'inc/inc-affvisit', array('lang' => 'ar'), array("compil"=>array('squelettes/inc/inc-bas.html','html_cb09c6a37d265a18e77853d453ac5cad','',7,$GLOBALS['spip_lang'])), _request("connect"));
+?></span>
+
+	<p>
+		<a href="http://www.mestaoui.tn/spip.php?page=backend" rel="nofollow" title="&#1578;&#1585;&#1582;&#1610;&#1589;: &#1593;&#1585;&#1576;&#1610;"><img src="squelettes-dist/feed.png" alt="&#1605;&#1578;&#1575;&#1576;&#1593;&#1577; &#1606;&#1588;&#1575;&#1591; &#1575;&#1604;&#1605;&#1608;&#1602;&#1593;" style="position:relative;bottom:-0.3em;" width="16" height="16" class="format_png" /><span style="text-transform: uppercase;">&nbsp;ar&nbsp;</span></a>
+
+
+
+
+		<a href="http://www.mestaoui.tn/spip.php?page=backend&amp;id_rubrique=5" rel="nofollow" title="&#1578;&#1585;&#1582;&#1610;&#1589; &#1607;&#1584;&#1575; &#1575;&#1604;&#1602;&#1587;&#1605;"><img src="squelettes-dist/feed.png" alt="&#1605;&#1578;&#1575;&#1576;&#1593;&#1577; &#1606;&#1588;&#1575;&#1591; &#1575;&#1604;&#1605;&#1608;&#1602;&#1593;" style="position:relative;bottom:-0.3em;" width="16" height="16" class="format_png" /><span>&nbsp;المكتبـة</span></a>
+
+	<big>&nbsp;
+		<b><a href="http://ar.wikipedia.org/wiki/Really_Simple_Syndication">?</a></b>
+	</big>
+	<center>
+		<iframe src="http://www.facebook.com/plugins/like.php?href=http://www.mestaoui.com/%D8%A7%D9%84%D8%A7%D8%B3%D9%84%D8%A7%D9%85-%D8%B4%D9%81%D8%A7%D8%A1&amp;layout=button_count&amp;show_faces=true&amp;width=450&amp;action=recommend&amp;font=segoe+ui&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe> 
+		<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="Tariqa_Madaniyya" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+		</center>
+	
+	</p>
+	
+	<p>
+ <center><div id="socialtags"></div>
+
+</center>
+	</p>
+
+<?php echo recuperer_fond( 'inc/inc-bas_cc', array('lang' => 'ar'), array("compil"=>array('squelettes/inc/inc-bas.html','html_cb09c6a37d265a18e77853d453ac5cad','',38,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+
+</div><!-- fin bas -->
+
+<?php echo recuperer_fond( 'inc/inc-bas_menu-lang', array('lang' => 'ar'), array("compil"=>array('squelettes/inc/inc-bas.html','html_cb09c6a37d265a18e77853d453ac5cad','',42,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+
+	<!-- SPIP-CRON --><div style="background-image: url('http://www.mestaoui.tn/spip.php?action=cron');"></div>
+
+";s:9:"squelette";s:37:"html_cb09c6a37d265a18e77853d453ac5cad";s:6:"source";s:27:"squelettes/inc/inc-bas.html";s:11:"process_ins";s:3:"php";s:11:"invalideurs";a:1:{s:5:"cache";s:35:"e/inc-bas-1782-5-5-ar--ce5123817099";}s:7:"entetes";a:1:{s:12:"X-Spip-Cache";i:86400;}s:5:"duree";i:0;s:5:"notes";s:0:"";s:8:"contexte";a:8:{s:10:"id_article";s:4:"1782";s:11:"id_rubrique";s:1:"5";s:10:"id_secteur";s:1:"5";s:4:"lang";s:2:"ar";s:4:"date";s:19:"2016-10-23 19:32:10";s:12:"date_default";b:1;s:10:"date_redac";s:19:"2016-10-23 19:32:10";s:18:"date_redac_default";b:1;}s:12:"lastmodified";i:1477243930;s:2:"gz";b:0;}

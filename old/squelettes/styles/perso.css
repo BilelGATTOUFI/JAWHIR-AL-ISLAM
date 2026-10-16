@@ -1,0 +1,115 @@
+/* -------------------------------------------------------
+ 	1. LIENS base
+ ------------------------------------------------------- */
+ 
+a, a:link, a:visited
+{
+	text-decoration: none;
+	color: #a6480a;
+}
+
+a:hover
+{
+	text-decoration: underline;
+	color: #de002a;
+}
+
+a.spip_out,
+a.spip_in,
+a.spip_url,
+a.spip_glossaire { color: #75030e; }
+ 
+
+
+
+/* -------------------------------------------------------
+ 	2. MISE EN PAGE - BLOCS PRINCIPAUX
+ ------------------------------------------------------- */
+ body {
+	color: #5e5657;
+	font:  86%/1.0 Segoe UI, "Trebuchet MS", "Lucida Grande", "Lucida Sans", Tahoma, Arial, 'Helvetica Neue', Helvetica, Geneva, Lucida, sans-serif;
+	text-align: center;
+	font-family: Segoe UI, Verdana, 'Bitstream Vera Sans', Tahoma,  "Lucida Grande", "Lucida Sans", Arial, 'Helvetica Neue', Helvetica, Lucida, Geneva, sans-serif;
+	}
+#page  
+{   background-color: #fffcde;
+	text-align: justify;
+	font-family: Segoe UI, Verdana, 'Bitstream Vera Sans', Tahoma,  "Lucida Grande", "Lucida Sans", Arial, 'Helvetica Neue', Helvetica, Lucida, Geneva, sans-serif;
+
+}	 
+/* -------------------------------------------------------
+ 	3. BANDEAU - ENTETE (inc/inc-bandeau.html)
+ ------------------------------------------------------- */
+#animation
+#entete a.nom-site, 
+#entete a.nom-site:link,  
+#entete a.nom-site:visited
+{
+	display: block;
+	color: white;
+	text-align: center;
+	font-size: 1.50em;
+	font-weight: normal;
+	font-family: Segoe UI, Verdana, 'Bitstream Vera Sans', Tahoma,  "Lucida Grande", "Lucida Sans", Arial, 'Helvetica Neue', Helvetica, Lucida, Geneva, sans-serif;
+}
+#entete a.nom-site:hover
+{
+	color: white; 
+}
+/* ------------------------------------------------------------------
+ 	5. NAVIGATION et MENUS
+ -------------------------------------------------------------------- */
+ 
+ /*  ANNONCE dans #encart */
+ 
+ .annonce
+{
+	background-color: #d8ced0;
+	/* overflow: hidden; */
+	text-align: center;
+}
+/* text : color */
+
+.menu ul li li a, 
+.menu ul li li a:visited 			{ color: #950004;} 
+
+/* background */
+
+
+.menu-item,
+.menu-titre-special, 
+.menu-titre { background-color: #d8ced0; font-size:110%; color: #bd0000;}
+ /* -------------------------------------------------------
+ 	6. ARTICLE
+ ------------------------------------------------------- */
+
+ .texte
+{
+	text-align: justify;
+	line-height: 1.3em;
+	text-transform: inherit;
+	font-family: Segoe UI, Verdana, 'Bitstream Vera Sans', Tahoma,  "Lucida Grande", "Lucida Sans", Arial, 'Helvetica Neue', Helvetica, Lucida, Geneva, sans-serif;
+}
+
+.chapo
+{
+	font-weight: bold;
+	text-align: justify;
+	background-color: #f3f3f3;
+	padding: .5em;
+	margin: 0 0 1em 0;
+}
+ /* -------------------------------------------------------
+ 	7. GENERAL
+ ------------------------------------------------------- */
+#bas { font-size: 85%; }
+#plan { font-size: 90%; }
+
+.date-entete { font-size: 65%; }
+ 
+
+ 
+ 
+ /* -------------------------------------------------------
+ 8. EDITO (sur page sommaire.html)
+------------------------------------------------------- */

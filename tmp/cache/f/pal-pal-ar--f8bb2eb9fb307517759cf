@@ -1,0 +1,35 @@
+a:11:{s:5:"texte";s:713:".colorpicker {
+	border:thin solid #3874b0;
+	background: #fff6f6;
+	text-align:center; height:auto; width: 200px;
+	position: absolute;
+	display: block;
+	z-index: 99999009; /* ne PAS modifier */
+}
+.colorpicker_bar {
+	background-color:#3874b0;
+	color:white;
+	height:16px; font-size: 12px; font-weight:bold; margin: 0; padding: 2px;
+	text-align: left;
+}
+.colorpicker_close {
+	float:right;
+	font-size: 8px;
+	font-weight:bold;
+	margin: 2px;
+	border:thin solid transparent;
+	color:white;
+	-moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+.colorpicker_close:hover {
+	border:thin outset #3874b0;
+	background:#edf3fe;color:black
+}
+.hover {
+	cursor:pointer;
+}
+#colorpicker {
+	display: block;
+}";s:9:"squelette";s:37:"html_672a4cf6b58560277dead7bd3d08cd4c";s:6:"source";s:37:"plugins/auto/palette/palette.css.html";s:11:"process_ins";s:4:"html";s:11:"invalideurs";a:1:{s:5:"cache";s:35:"f/pal-pal-ar--f8bb2eb9fb307517759cf";}s:7:"entetes";a:5:{s:12:"X-Spip-Cache";s:8:"14515200";s:13:"Cache-Control";s:16:"max-age=14515200";s:15:"X-Spip-Statique";s:3:"oui";s:12:"Content-Type";s:29:"text/css; charset=iso-8859-15";s:4:"Vary";s:15:"Accept-Encoding";}s:5:"duree";i:14515200;s:5:"notes";s:0:"";s:8:"contexte";a:6:{s:4:"page";s:11:"palette.css";s:4:"lang";s:2:"ar";s:4:"date";s:19:"2016-10-23 19:24:24";s:12:"date_default";b:1;s:10:"date_redac";s:19:"2016-10-23 19:24:24";s:18:"date_redac_default";b:1;}s:12:"lastmodified";i:1477243464;s:2:"gz";b:0;}

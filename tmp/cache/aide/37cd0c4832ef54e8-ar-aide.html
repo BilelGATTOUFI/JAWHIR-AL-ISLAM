@@ -1,0 +1,1668 @@
+<body>
+<div><h1>تثبيت SPIP</h1>
+<h2>install0/إعداد أذونات الدخول</h2>
+<h3 class="spip">تمهيد: إعداد إمتيازات الدخول</h3>
+
+<p>عندما تقوم بتثبيت SPIP على خادمك، او تستخدم تثبيت مشترك من النظام، قد لا يتمكن SPIP دائماً من إنشاء «مجلدات البيانات» مع الامتيازات الصحيحة. يجب عندها ان تتدخل بواسطة بنامج FTP او SSH، لتحديد «إمتيازات الدخول» يدوياً.</p>
+
+<p>تتعلق هذه العملية بأربعة مجلدات يدلك SPIP علر أماكنها. وتختلف هذه الأماكن باختلاف انواع تثبيت SPIP (استخدام مشترك ام لا) واصداراته. منذ <a href="ar_article3401.html" class='spip_in'><span style='color: darkviolet;'>S</span><span style='color: blue;'>P</span><span style='color: green;'>I</span><span style='color: salmon;'>P</span> <span style='color: green;'>١</span><span style='color: blue;'>.</span><span style='color: darkviolet;'>٩</span></a>، هذه المجلدات هي: <strong>IMG</strong> و<strong>tmp</strong> و<strong>config</strong> و<strong>local</strong>.</p>
+
+<p>وتختلف برامج FTP في وظائفها التي توفر هذه العملية الا ان الطريقة هي عموماً هكذا:</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;قم بتحديد المجلد الذي تريد تغيير «إمتيازاته»؛</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;أعثر في برنامجك على وطيفة إسمها «<i>change</i> او <i>modify</i> او <i>set permission</i>»؛</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;إذا ظهرت هذه الوظيفة في واجهة رسومية، قم بتأشير المربعات المناسبة لامتياز «Write» الخاص بمجموعة «Others» (او «World» او «All users»):</p>
+
+<div align='center'><img src="./?exec=aide_index&amp;img=0:AIDE-ar-install0.gif" alt=" " 
+border="0">
+</div>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;اذا ظهرت هذه الوظيفة في واجهة نصوصية، يصبح الإعداد رقمي ويكون «٧٧٧».</p>
+
+<p>عندما يتم هذا التغيير لكل من الأدلة المذكورة أعلاه يجب إعادة تحميل صفحة إعداد النظام لمتابعة الإعداد آلياً.</p>
+
+<h2>install1/إتصالك بقاعدة SQL</h2>
+<h3 class="spip">الاتصال بخادم SQL</h3>
+
+<p>تقضي هذه الخطوة بإدخال المعلومات الضرورية لاتصال SPIP بخادم SQL.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>عنوان القاعدة:</strong> إعتماداً على خيارات مضيفك، قد يكون هذا العنوان ببساطة «localhost»، او عنوان موقعك («<a href="http://www.mysite.org»" class='spip_url spip_out auto' rel='nofollow external' target="_blank">www.mysite.org»</a> مثلاً).</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>معرّف الاتصال:</strong> غالباً ما يكون المعرّف نفسه الذي تستخدمه لنقل ملفاتك عبر بروتوكول FTP.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>كلمة مرور الاتصال:</strong> غالباً ما تكون كلمة المرور نفسها التي تستخدمها للدخول الى موقعك عبر بروتوكول FTP.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;لا يمكن اختراع هذه الإعدادات: اذا لم تكن تعرفها يكون السبب انك لم تتسلمها من مضيفك.. بالتالي، اذا لم تكن تملك هذه المعلومات بمتناول يدك لا يمكنك المتابعة.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;تتوفر لك هذه المعلومات من قبل <strong>مضيف موقعك</strong>: للحصول عليها، يجب الاتصال به مباشرة (رجاءاً لا تطلبها من فريق تطوير SPIP لأننا لا نعرفها!). هناك بعض المضيفين الذين يوفرون هذه المعلومات في دليل فوري من موقعهم.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;تجدر الملاحظة انه غالباً ما يجب عليك <strong>الطلب</strong> من مضيفك ان يقوم بتفعيل وصولك الى خادم SQL، او إتمام عملية محددة بنفسك للوصول. فالعديد من المضيفين الذي يعلنون عن دعم لقاعدة SQL لا ينفذون تفعيلها تلقائياً لدى فتح الحساب لديهم؛ بالتالي يتحتم عليك تقديم طلب إضافي (بعد فتح حسابك) للوصول الى القاعدة. في هذه الحال، راجع التعليمات التي يوفرها مضيفك لمعرفة كيفية تفعيل الاتصال بقاعدة SQL. (هنا أيضاً لا يستطيع فريق SPIP المساعدة).</p>
+
+<h2>install2/إختيار قاعدة البيانات</h2>
+<h3 class="spip">إختيار قاعدة البيانات</h3>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;يجب عليك تحديد <strong>إسم</strong> قاعدة البيانات التي خصصها لك مضيفك. تحصل على هذه المعلومة من مضيفك: اذا لم تكن تملكها، أطلبها منه او راجع التعليمات التي يقدمها (من غير المفيد طلبها من فريق تطوير SPIP لأننا لا نملكها).</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;غالباً ما تتناسب هذه المعلومة مع <strong>معرّف دخولك</strong> (الذي تستخدمه للاتصال بالموقع عبر بروتوكول FTP).</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;الاحتمال الأول (الاكثر حصولاً): يعرض مضيفك قائمة بالحسابات الموجودة لديه (تكون أحياناً طويلة حسب الإعدادات التي وضعها المضيف). وبين الحسابات المعروضة هناك واحد فقط هو حسابك، فما عليك الا تحديده والتصديق على خيارك للانتقال الى الخطوة التالية.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;الاحتمال الثاني: لا يظهر الا اسم واحد هو اسم حسابك (اي ان مضيفك قد أعدّ تلقائياً نظامه ليعرض حسابك فقط). هذا الاحتمال سهل جداً: قم بتحديد حسابك والتصديق عليه.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;الاحتمال الثالث (وينطبق عادة على الحسابات المهنية او على أجهزة الخدمة التي تملك فيها إمتيازات موسعة): يجب عليك ان <strong>تنشئ</strong> قاعدة البيانات بنفسك. في هذه الحال (وبعد التأكد من ان حسابك غير موجود في القائمة أعلاه)، يمكنك إدخال الإسم الذي تريد في التعليمات حول «إنشاء قاعدة جديدة».</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;الاحتمال الأخير (وهو الفشل): لا يظهر حسابك في القائمة المعروضة ولا تستطيع إنشاءه بنفسك. هذا احتمال نادر: ويعني ان مضيفك قام بإنشاء دخول لك الى خادم قاعدة البيانات لكنه نسي إنشاء حساب. في هذه الحال، يجب عليك الاتصال به مباشرة.</p>
+
+<h2>install5/المعلومات الشخصية</h2>
+<h3 class="spip">المعلومات الشخصية</h3>
+
+<p>هذه الخطوة بسيطة للغاية لكن ينصح بتعبئتها بعناية. والحال، فإنها الخطوة التي تحدد معلومات الاتصال بموقعك والدخول اليه! اذا تسرعت بملئها، قد يتعذر عليك لاحقاً الاتصال...</p>
+
+<p>لاحظ انه حال تثبيت موقعك، سوف تتمكن من تعديل هذه المعلومات.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>هويتك العمومية.</strong> هذه الهوية هي التي ستظهر كتوقيع على مقالاتك.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>بيانات إتصالك:</strong> هذه هي المعلومات التي <strong>تختارها بنفسك</strong> للاتصال بنظام SPIP. وليس من الضروري ان تكون هذه المعلومات هي نفسها تلك التي حصلت عليها من مضيفك للاتصال بالموقع عبر بروتوكول FTP. على العكس، ننصحك بشدة ان لا تستخدم البيانات نفسها للدخول الى SPIP (وهي التي تختارها انت) وللاتصال عبر FTP (وهي التي حصلت عليها من مضيفك).</p>
+
+<h2>ftp_auth/التثبت بواسطة بروتوكول FTP</h2>
+<h3 class="spip">التحقق بواسطة بروتوكول FTP</h3>
+
+<p>تؤثر بعض وظائف SPIP مباشرة على بنية قاعدة البيانات ومحتواها (خاصة: التحديث والنسخ الاحتياطي واسترجاع القاعدة...). ومن أجل هذه 
+الوظائف الحساسة جداً، تم وضع عملية تحقق بواسطة بروتوكول FTP لحصر استخدامها بالمستخدمين الذين يملكون امتياز الدخول الى الموقع 
+بواسطة FTP (على العموم، اذا كان SPIP يتقبل عدة مدراء، فبروتوكول FTP ينحصر بالمسؤول الأساسي عن الموقع).</p>
+
+<p>لتتمكن من استخدام هذه الوظائف، عليك بتنفيذ الخطوان التالية بالتزامن:</p>
+
+<ul><li>إتصل بالنسيج بواسطة برنامج التصفح العادي؛ عندما تقوم بإطلاق العملية يعرض SPIP إسماً على شكل «admin_xxxxx»، ويطلب منك إنشاء عنصر بهذا الاسم في المكان الذي يدلك عليه.</li><li>إتصل بخادم موقعك بواسطة FTP وقم بإنشاء ملف (أو دليل فارغ) في المجلد الذي اشاره اليك SPIP واعطه الإسم «admin_xxxxx»</li><li>بعد إنشاء هذا الملف أو الدليل، عد الى المتصفح وأعد تحميل الصفحة، مما يتمم التحقق بواسطة FTP ويطلق العملية.</li></ul><h2>erreur_mysql/مسألة نماذج؟</h2>
+<h3 class="spip">مسألة صفحات نموذجية</h3>
+
+<p>عندما يواجه SPIP أي خطأ في اتصاله بقاعدة SQL، يعرض على الشاشة الاستفسار الذي فشل إضافة الى رسالة الخطأ التي أرسلتها القاعدة (باللون الأحمر).</p>
+
+<p>وقد تأتي المشكلة:
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;إما من خطأ في تصميم الصفحات النموذجية، إذا كنت تقوم بإدخال التعديلات على موقعك
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;أو من فشل في القاعدة نفسها.</p>
+
+<p>على سبيل المثال، رسالة من النوع <b style='color: red'><br class='manualbr' /><code class='spip_code' dir='ltr'>&gt; Unknown column 'articles.chapi' in 'where clause'</code></b> تدل على أن الحلقة تنادي على معيار إختيار (<code class='spip_code' dir='ltr'>chapi</code>) غير متوقع.</p>
+
+<p>في المقابل، رسالة من النوع <b style='color: red'><br class='manualbr' /><code class='spip_code' dir='ltr'>&gt; Can't open file: 'spip_articles.MYD'</code></b> تدل على مشكلة مهمة في قاعدة SQL نفسها: يجب عليك آنذاك أن تطلب من مضيف موقعك أن يراجع تثبيته و\او يقوم بإصلاح قاعدتك. يمكنك أيضاً محاولة <a href="./?exec=admin_repair" target="_blank">إصلاح القاعدة آلياً</a> اذا كانت هذه القاعدة تسمح لك بذلك.</p>
+
+<h1>المقالات</h1>
+<h2>raccourcis/إختصارات الكتابة</h2>
+
+
+<p><strong>لتسهيل عملية تصميم المستندات، يوفر SPIP عدداً من «الاختصارات» التي تهدف الى:
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;تسهيل التصميم للمستخدمين الذين لا يتقنون HTML؛
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;تسهيل معالجة تصميم الصفحات الآلية.</strong></p>
+
+<p>بالطبع يمكنك دائماً استخدام رموز HTML في مستندات SPIP، الا اننا ننصحك بتفضيل اختصارات SPIP (القليلة)، الاكثر سهولة للتذكر والتي تتيح خاصة للنظام بعض العمليات الآلية.
+ّّّّّّ</p>
+
+<h3 class="spip">إختصارات الكتابة المبسطة في SPIP</h3>
+
+<p>في مرحلة اولى، نقدم هنا اختصارات الكتابة الاكثر شيوعاً وسهولة. اما للمستخدمين الذين يرغبون التحكم بدقة اكبر بتنسيق نصوصهم، فسنقدم نكهات اكثر تعقيداً من هذه الاختصارات.</p>
+
+<p><i>ملاحظة.</i> تلبي الاختصارات البسيطة معظم الحاجات وتسمح بالنشر على النسيج بسهولة كتابة الرسائل الالكترونية.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>إنشاء الفقرات</strong></p>
+
+<p>لإنشاء الفقرات، يمكنك ببساطة ترك سطور فارغة تماماً كما تنشئ فقرات في اي معالج نصوص او في رسائلك الالكترونية (بمعنى آخر «تقفز» سطراً).</p>
+
+<p>لا يكفي ان تضغط على زر الإدخال لإنشاء فقرة جديدة يجب ان تترك سطراً فارغاً (في الحقيقة لا يؤدي الضغط على زر الإدخال حتى الى العودة الى اول السطر).</p>
+
+<p>يمكن ترك عدة سطور فارغة دون التأثير على تصميم الصفحة.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>إنشاء لوائح مرقمة او مبوبة</strong></p>
+
+<p>يمكنك إنشاء لوائح في SPIP بالطريقة نفسها التي تنشئ بها لوائح في رسائلك الالكترونية: ما عليك الا الضغط على زر الإدخال وبدء السطر الجديد بخط صغير («-»).</p>
+
+<p>لاحظ هنا ان مجرد الضغط على زر الإدخال يكفي (بالتالي يمكنك انشاء لوائح في الفقرة نفسها)؛ اما اذا تركت سطراً فارغاً قبل السطر الذي يبدأ بالخط الصغير، فسيظهر سطر فارغ قبل اللائحة.</p>
+
+<p>على سبيل المثال،</p>
+
+<textarea readonly='readonly' cols='40' rows='4' class='spip_cadre' dir='ltr'>- من طال أمَدُه
+- وكَثُر ولَدُه
+- ورقَّ عَدَدُه
+- ذهب جَلَدُه. (إبن الأعرابي)</textarea>
+
+<p>تظهر هكذا:</p>
+
+<blockquote class="spip">
+
+<p>
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;من طال أمَدُه
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;وكَثُر ولَدُه
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;ورقَّ عَدَدُه
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;ذهب جَلَدُه. (إبن الأعرابي)</p>
+
+</blockquote><div align='left'>
+<a href="#listes" class='spip_ancre'>مزيد من المعلومات عن اللوائح</a> 
+</div>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>الأسود والمائل</strong></p>
+
+<p>تحول نصاً ما الى <i>مائل</i> بوضعه ضمن قوسين: «<TT> ... هذا نص {مائل} في... </TT>» . الا اننا ننصح بعدم الإفراط في استخدام المائل لأن أطقم الحروف العربية الموجودة على النسيج لا تدعمه وبالتالي فإنها تميل الى الجهة غير الصحيحة مما يجعل النص قبيحاً وأحياناً غير واضحاً في بعض برامج التصفح.</p>
+
+<p>وتحول نصاً ما الى <strong>أسود</strong> بوضعه ضمن قوسين مزدوجين: «<TT> ... هذا النص {{أسود}} في... </TT>» .</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>عناوين الفقرات</strong></p>
+
+<p>عناوين الفقرات هي عناوين داخل المادة تدل الى الفقرات وبالتالي الى بنية هذه المادة. وهي سهلة جداً في SPIP، فيمكن الحصول عليها بوضع نصها ضمن أقواس ثلاثية: «<TT>{{{عنوان فقرة}}}</tt>» يعطي:</p>
+
+<blockquote class="spip"><h3 class="spip">عنوان فقرة</h3></blockquote>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>خط أفقي</strong></p>
+
+<p>من السهل جداً إدخال خط أفقي (او خط فصل) داخل المادة: فيكفي إدخال خط مكون من أربع خطوط صغيرة («-») على الأقل، هكذا:</p>
+
+<textarea readonly='readonly' cols='40' rows='2' class='spip_cadre' dir='ltr'>----</textarea>
+
+<p>تعطي:</p>
+
+<blockquote class="spip"><hr class="spip" /></blockquote><hr class="spip" />
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>وصلات هايبرتكست</strong></p>
+
+<p>يمكنك بسهولة إنشاء وصلات هايبرتكست باستخدام الرموز التالية:</p>
+
+<textarea readonly='readonly' cols='40' rows='2' class='spip_cadre' dir='ltr'>نظام SPIP هو مبادرة من [مينيريزو-&gt;http://www.minirezo.net/].</textarea>
+
+
+<p>تصبح:</p>
+
+<blockquote class="spip">
+
+<p>نظام SPIP هو مبادرة من <a href="http://www.minirezo.net/" class='spip_out' rel='external' target="_blank">مينيريزو</a>.</p>
+
+</blockquote>
+
+<p>
+(للتذكير: الخط الافقي الذي يتبعه رمز "اكبر من" يظهر على شكل سهم يدل الى ان نص الوصلة - قبل السهم - "يشير نحو" العنوان.)</p>
+
+<p>يمكن للوصلة ان تكون عنواناً مطلقاً (اي يبدأ، كما في مثالنا، بعبارة <code class='spip_code' dir='ltr'>http://</code>) او عنواناً نسباًي (يصل الى صفحة اخرى من الموقع نفسه) او وصلة الى مستند يستخدم احد بروتوكولات انترنت (<code class='spip_code' dir='ltr'>ftp://</code>...) او عنوان بريد الكتروني («<code class='spip_code' dir='ltr'>[-&gt;mailto:minirezo@rezo.net]</code>»)...</p>
+
+<p>تطبيق محدد: يمكنك عرض وصلة تُنقر بالاحرف الكاملة على شكل عنوان URL، 
+دون ادخال اي شيء قبل "السهم".مثلاً:</p>
+
+<textarea readonly='readonly' cols='40' rows='2' class='spip_cadre' dir='ltr'>[-&gt;http://dmoz.org/World/Arabic/arts/literature/novel/]</textarea>
+
+
+<p>تعرض:</p>
+
+<blockquote class="spip">
+
+<p><a href="http://dmoz.org/World/Arabic/arts/literature/novel/" class='spip_url spip_out' rel='external' target="_blank">http://dmoz.org/World/Arabic/arts/l...</a></p>
+
+</blockquote>
+
+<p> لاحظ انه في حال عناوين URL الطويلة، يظهر عرضها مبتوراً (لتفادي افساد الواجهة التخطيطية) لكن وصلة هايبرتكست تبقى سليمة بحيث توجه الى العنوان الصحيح.</p>
+
+<p><a name="liensite"></a>
+من الممكن تحديد لغة الصفحة التي تدل اليها الوصلة حسب ما تعرض برامج التصفح. فيكفي لذلك وضع رمز اللغة داخل هلالين:</p>
+
+<textarea readonly='readonly' cols='40' rows='2' class='spip_cadre' dir='ltr'>[موقع عربي{ar}-&gt;http:///www.address.tld]</textarea>
+
+<p>وينصح بذلك عندما لا تكون الصفحة الهدف بنفس لغة نصك.</p>
+
+<p>واذا اردنا الكثير من المعلومات حول الرابط ولكن دون تكبير المساحة التي يتم نقرها، يمكن عرض بالون حوار بوضع رمز | يتبعه النص المطلوب قبل سهم الرابط:</p>
+
+<textarea readonly='readonly' cols='40' rows='2' class='spip_cadre' dir='ltr'>[أنظر هنا|هذا لارابط سيوضّح كل شيء -&gt;http:///www.adresse.tld]</textarea>
+
+<p>سيعرض «أنظر هنا» ولا يظهر النص الآخر الا عند تمرير مؤشر الفأرة فوق الرابط.
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>وصلات هايبرتكست داخل الموقع</strong></p>
+
+<p>إضافة الى ذلك، فإن نظام وصلات هايبرتكست نفسه يسهّل إنشاء الوصلات داخل موقعك بواسطة  SPIP. والحيلة الوحيدة هنا هي العثور على <strong>رقم</strong> المقال او القسم او الخبر الذي يجب ان تدل اليه الوصلة:
+<img src="./?exec=aide_index&amp;img=0:AIDE-ar-articlenumero.gif" alt="NUMERO"  border="0" align="right"> عندما «تزور» مقالاً او خبراً او قسماً في المجال الخاص، يظهر في العمود الأيمن مربع يعرض الرقم بوضوح.</p>
+
+<p>وهـذا الرقـم هـو الـذي يــجـب ادخـالــه في وصـلــة هايبرتــكـســت:</p>
+
+<ul class="spip"><li> وصلة الى المقال 342 (أربعة إمكانات):</i></li></ul>
+
+<p><TT>
+<br />وصلة الى [المقال->342]
+<br />وصلة الى [المقال->art342]
+<br />وصلة الى [المقال->article 342]
+<br /></tt></p>
+
+<p>تطبيق محدد:<TT>[->art342]</tt> (لم نحدد شيئاً قبل "السهم") يعرض آلياً
+عنوان المقال 342 مع وصلة الى هذا المقال.</p>
+
+<ul class="spip"><li> وصلة الى القسم 12:</i>
+<TT>
+وصلة الى [القسم->rub12]<br />
+وصلة الى [القسم->rubrique 12]
+<br />
+</tt>
+</li></ul><ul class="spip"><li> وصلة الى القسم 12:</i>
+<TT>
+<br />وصلة الى [الخبر->br65]
+<br />وصلة الى [الخبر->breve 65]
+
+<br />وصلة الى [الخبر->br&egrave;ve 65]
+</tt></li></ul><ul class="spip"><li> المؤلفون والمفاتيح والمواقع والصور والمستندات:</i>
+<TT>
+<br />وصلة الى [مؤلف->aut13] او [المؤلف نفسه->auteur13]
+<br />وصلة الى [مفتاح->mot32]
+<br />وصلة الى [موقع مرخص->site1]
+<br />وصلة الى [مستند مرفق->doc17] او [المستند نفسه->document17]
+<br />وصلة الى [صورة->img13] او [الصورة نفسها->image13]
+<br />
+</tt></li></ul>
+
+<p>تطبيق محدد: هنا ايضاً، يمكننا عدم تحديد اي شيْ قبل "السهم" 
+(<tt>[->aut13]</tt>...).
+سيقوم SPIP آلياً بإدراج المعلومات الضرورية. في حال كانت الوصلة عائدة الى صورة او مستند مرفق، واذا ادخلنا عنواناً يدوياً، فإن هذا العنوان هو الذي سيعرض والا فسيتم استخدام اسم الملف.</p>
+
+<p>وفي ما يتعلق باختصارات ذكر اللغة وانشاء بالون حوار المذكورة أعلاه في الوصلات الخارجية، تعمل هنا ايضاً.</p>
+
+<div align='left'><a href='#glossaire'>لمزيد من المعلومات: وصلة الى معجم</a><br class='manualbr' /><a href="#ancres" class='spip_ancre'>مراسي تحمل اسماء</a></div>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>الحواشي</strong></p>
+
+<p> عادة يُستدل الى الحاشية بواسطة رقم مدرج في المادة ومكرر في أسفل الصفحة لتوفير معلومات إضافية.</p>
+
+<p>في SPIP، هذه الوظية (الصعبة جداً اذا اردنا التحكم بها يدوياً في HTML) آلية: فيقوم SPIP بترقيم الحواشي وإدارة وصلات هايبرتكست داخل المستند للقفز مباشرة من رقم الحاشية الى الحاشية نفسها وبالعكس..</p>
+
+<p>تتم الدلالة الى الحاشية بوضعها ضمن معقّفين مزدوجين: «<TT>حاشية[[هذه معلومات اضافية.]] في اسفل الصفحة.</TT>» تظهر هكذا: «حاشية<span class="spip_note_ref">&nbsp;[<a href='#nb1' class='spip_note' rel='footnote' title='هذه معلومات اضافية.' id='nh1'>1</a>]</span> في اسفل الصفحة.»</p>
+
+<div align='left'><a href='#notes'>لمزيد من المعلومات: وصلة الى حواشي غير آلية</a></div>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>ذكر مقتطف (من منتدى)</strong></p>
+
+<p>غالباً ما يفضل، في منتدى نقاش، ذكر مقتطف من المشاركة التي نرد عليها. لجعل عرض تلك المقتطفات اكثر تجانساً، يقدم SPIP الاختصار <tt><quote>...</quote></tt>.</p>
+
+<p>على سبيل المثال:</p>
+
+<textarea readonly='readonly' cols='40' rows='4' class='spip_cadre' dir='ltr'>&lt;quote&gt;نظام SPIP شيق للغاية.&lt;/quote&gt;
+
+انا رأيي من رأيك :-)</textarea>
+
+<p>تعطي:</p>
+
+<blockquote class="spip"><blockquote class="spip">
+
+<p>نظام SPIP شيق للغاية.</p>
+
+</blockquote>
+
+<p>انا رأيي من رأيك :-)</p>
+
+</blockquote><h3 class="spip">وظائف اكثر اكتمالاً</h3>
+
+<p>الاختصارات التالية توفر وظائف اكثر قوة لاستخدام اكثر تخصصاً. اذا كان هذا اول لقاء لك مع اختصارات SPIP، قد يكون من غير المجدي ان تحاول حفظها عن ظهر قلب الآن. يكفي ان تعرف انها موجودة. وعندما تحتاج اليها فعلاً، عد الى هذه الصفحة لأنه بصبح من الاسهل عليك
+حفظ اختصارات تجد لها نفعاً.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>الجداول</strong></p>
+
+<p>لإنشاء جداول بسيطة في SPIP، يكفي إدخال سطور يفصل بين «خاناتها» رمز «|» (خط عمودي)، مع التأكد من ان هذه السطور تبدأ وتنتهي بسطر فارغ. من الضروري ترك سطر فارغ قبل الجدول وبعده.</p>
+
+<p>على سبيل المثال، يتم إنشاء الجدول:</p>
+
+<table class="spip">
+<thead><tr class='row_first'><th id='id5c31_c0'> الإسم </th><th id='id5c31_c1'> الكنية </th><th id='id5c31_c2'> السن </th></tr></thead>
+<tbody>
+<tr class='row_odd odd'>
+<td headers='id5c31_c0'>عفيف</td>
+<td headers='id5c31_c1'>ناصر</td>
+<td headers='id5c31_c2'>23 سنة</td></tr>
+<tr class='row_even even'>
+<td headers='id5c31_c0'>ابو سعيد</td>
+<td headers='id5c31_c1'></td>
+<td headers='id5c31_c2'>غير معروف</td></tr>
+<tr class='row_odd odd'>
+<td headers='id5c31_c0'>جميل</td>
+<td headers='id5c31_c1'>ناعم</td>
+<td headers='id5c31_c2'>46 سنة</td></tr>
+<tr class='row_even even'>
+<td headers='id5c31_c0'>سميرة</td>
+<td headers='id5c31_c1'>حداد</td>
+<td headers='id5c31_c2'>4 أشهر</td></tr>
+</tbody>
+</table>
+
+<p>هكذا:</p>
+
+<p>
+
+| {{الإسم}} | {{الكنية}} | {{السن}} |<br/>
+| عفيف | ناصر | 23 سنة |<br/>
+| ابو سعيد | | غير معروف |<br/>
+| جميل | ناعم | 46 سنة |<br/>
+| سميرة | حداد | 4 أشهر |<br/></p>
+
+<p>لاحظ ان كل مداخل السطر الاول تظهر بالاسود. يعرف SPIP هكذا انه سطر البداية ويعطيه شكلاً مختلفاً عن سائر الاسطر (اي لون خلفي مختلف). ان وجود سطر مثل هذا غير الزامي.</p>
+
+<p>يمكن ايضاً اضافة تعليق وملخص على الجدول. هتان المعلومتان اختياريتان ولكنهما ضروريتان لجعل الجدول اكثر وضوحاً للمعوقين بصرياً لأن الملخص يعطي فكرة اوضح عن محتوى الجدول.<br class='manualbr' />وتظهر هتين المعلومتين بين خطين عموديين مزدوجين في اعلى الجدول هكذا:</p>
+
+<textarea readonly='readonly' cols='40' rows='7' class='spip_cadre' dir='ltr'>||تعليق|ملخص||
+| {{الاسم}} | {{تاريخ الولادة}} | {{المدينة}}|
+| عفيف | ١٩٧٠/٥/١٠ | بيروت |
+| ابوسعيد | ١٩٧٥/٢/١٢ | دمشق |
+| جميل | ١٩٥٧/١/٣١ | بغداد |
+| سميرة | ١٩٤٨/١٢/٢٣ | الخليل |</textarea>
+
+<p>وتظهر هكذا:</p>
+
+<table class="spip" summary="ملخص">
+<caption>تعليق</caption>
+<thead><tr class='row_first'><th id='id69a6_c0'> الاسم </th><th id='id69a6_c1'> تاريخ الولادة </th><th id='id69a6_c2'> المدينة </th></tr></thead>
+<tbody>
+<tr class='row_odd odd'>
+<td headers='id69a6_c0'>عفيف</td>
+<td headers='id69a6_c1'>١٩٧٠/٥/١٠</td>
+<td headers='id69a6_c2'>بيروت</td></tr>
+<tr class='row_even even'>
+<td headers='id69a6_c0'>ابوسعيد</td>
+<td headers='id69a6_c1'>١٩٧٥/٢/١٢</td>
+<td headers='id69a6_c2'>دمشق</td></tr>
+<tr class='row_odd odd'>
+<td headers='id69a6_c0'>جميل</td>
+<td headers='id69a6_c1'>١٩٥٧/١/٣١</td>
+<td headers='id69a6_c2'>بغداد</td></tr>
+<tr class='row_even even'>
+<td headers='id69a6_c0'>سميرة</td>
+<td headers='id69a6_c1'>١٩٤٨/١٢/٢٣</td>
+<td headers='id69a6_c2'>الخليل</td></tr>
+</tbody>
+</table>
+
+<p>يمكن تجاهل اي من المعلومتين ولكن يجب وضع خط عمودي مفرد قبل الملخص: <code class='spip_code' dir='ltr'>|| | ملخص ||</code></p>
+
+<p>يمكن أيضاً دمج خانة بخانة أخرى بخفض محتواها الى <code class='spip_code' dir='ltr'>|&lt;|</code> لدمجها بالخانة التي تسبقها أفقياً او الى <code class='spip_code' dir='ltr'>|^|</code> لدمجها بالخانة التي تسبقها عمودياً.</p>
+
+<textarea readonly='readonly' cols='40' rows='5' class='spip_cadre' dir='ltr'>||جدول مع الدمج| اختصار الدمج||
+| {{عمود ١}} | {{عمود ٢}} | {{عمود ٣}} |
+| سطر ١ | س١غ٢ وس١ع٣ |&lt;|
+| سطر ٢ | س٢ع٢ وس٣ع٢|س٢ع٣|
+| سطر ٣ |^| س٣ع٣ |</textarea>
+
+<p>يظهر هكذا:</p>
+
+<table class="spip" summary="اختصار الدمج">
+<caption>جدول مع الدمج</caption>
+<thead><tr class='row_first'><th id='idb762_c0'> عمود ١ </th><th id='idb762_c1'> عمود ٢ </th><th id='idb762_c2'> عمود ٣ </th></tr></thead>
+<tbody>
+<tr class='row_odd odd'>
+<td headers='idb762_c0'>سطر ١</td>
+<td colspan='2' headers='idb762_c1'>س١غ٢ وس١ع٣</td></tr>
+<tr class='row_even even'>
+<td headers='idb762_c0'>سطر ٢</td>
+<td rowspan='2' headers='idb762_c1'>س٢ع٢ وس٣ع٢</td>
+<td headers='idb762_c2'>س٢ع٣</td></tr>
+<tr class='row_odd odd'>
+<td headers='idb762_c0'>سطر ٣</td>
+<td headers='idb762_c2'>س٣ع٣</td></tr>
+</tbody>
+</table>
+
+<p><a name="listes"></a>
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>ادارة اكثر دقة للوائح المرقمة</strong></p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;تحصل على عودة عادية الى اول السطر بإدخال <tt>_</tt> (وهو <i>underscore</i> بالانكليزية) في اول السطر الجديد، تتبعه مسافة.</p>
+
+<p><i>ملاحظة.</i> في الكتابة التقليدية، العودة الى السطر نادرة جداً (اللهم الا في الشعر). وغالباً ما نحسبها بداية فقرة جديدة كما يظهر في المواد المطبوعة (اي دون مسافة عمودية بين الفقرات) بينما برامج التصفح تدخل مسافة بين الفقرات افتراضياً. وهناك العديد من المستخدمين الذين يحاولون تقليد خاصية الطباعة (اي عدم وجود مسافة عمودية) بإدخال عودة عادية الى اول السطر مما يشكل خطأً قد يلحق الضرر بصيانة الموقع. والحل هو استخدام ورقة انماط (CSS) في الصفحة النموذجية تحدد تصرف الفقرات (اي حسب الظروف، عدم ادخال مسافة عمودية بين الفقرات، فراغ قبل السطر الاول...).</p>
+
+<p> يمكن إنشاء لوائح متداخلة بإدخال نجوم بعد الخط الصغير.</p>
+
+<p>هكذا:</p>
+
+<textarea readonly='readonly' cols='40' rows='8' class='spip_cadre' dir='ltr'>-* لون فرسك:
+-** أشقر؛
+-** كميت؛
+-** أسود؛
+-* لكن قطتي
+-** بيضاء:
+-*** أنقرية
+-*** او فارسية زرقاء.</textarea>
+ 
+
+<p>مما يعطي:</p>
+
+<blockquote class="spip"><ul class="spip"><li> لون فرسك:<ul class="spip"><li> أشقر؛</li><li> كميت؛</li><li> أسود؛</li></ul></li><li> لكن قطتي<ul class="spip"><li> بيضاء:<ul class="spip"><li> أنقرية</li><li> او فارسية زرقاء.</blockquote></li></ul></li></ul></li></ul>
+
+<p>أخيراً، يمكن إنشاء لوائح مرقمة باستخدام <code class='spip_code' dir='ltr'>#</code> بدلاً من النجمةّ:</p>
+
+<textarea readonly='readonly' cols='40' rows='3' class='spip_cadre' dir='ltr'>-# الأول
+-# الثاني
+-# الثالث</textarea>
+
+<p>تعطي:</p>
+
+<blockquote class="spip"><ol class="spip"><li> الأول</li><li> الثاني</li><li> الثالث</blockquote></li></ol>
+
+<p>وهكذا.</p>
+
+<p><a name='glossaire'>
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>وصلات هايبرتكست نحو معجم خارجي</strong></p>
+
+<p>يمكنك أيضاً وبسرعة إنشاء وصلة هايبرتكست الى تفسير اي عبارة موجودة في معجم خارجي. فيكفي، للوصول الى عبارة ما، إدراج إختصار <code class='spip_code' dir='ltr'>[?العبارة]</code> في مادة المقال.</p>
+
+<p>على سبيل المثال، فإن الاختصار التالي:
+<code class='spip_code' dir='ltr'>كتاب الأجنحة المتكسرة هو من أعمال [جبران خليل جبران?] المهمة</code></p>
+
+<p>يظهر هكذا:
+«كتاب الأجنحة المتكسرة هو من أعمال [جبران خليل جبران?] المهمة».
+ويستحسن النقر على هذه الوصلة للتأكد من ان العبارة المدخلة (إسم جنس او إسم علم) لا تحتوي على أخطاء إملائية وانها تتوجه الى الهدف الصحيح.</p>
+
+<p>اما المعجم الخارجي الافتراضي المستخدم هنا، فهو <a href="http://www.wikipedia.org" class='spip_out' rel='external' target="_blank">Wikipedia</a>، الذي يفرض بعض <a href="http://ar.wikipedia.org/wiki/ويكيبيديا:تسمية_المقالات" class='spip_out' rel='external' target="_blank">القواعد على عناوين المقالات</a>. هذه الموسوعة المتعددة اللغات مؤلفة بشكل تعاوني ومفتوحة لكل المساهمات عبر الشبكة. نرجو ان تأخذ شيئاً من وقتك وتتعرف على هذه الموسوعة وتساهم فيها لإغناء هذه الذخيرة المعرفية المشتركة.</p>
+
+<p>يمكن أيضاً اختيار مرجع آخر للفهرس بوضع رمز # يتبعه اسم الفهرس <strong>«ف»</strong> (مثلاً) بعد الكلمة المطلوب البحث عنها. فيقوم SPIP يتطبيق دالة <tt>glossaire_</tt><strong>ف</strong> على الكلمة للحصول على الرابط المطلوب ادراجه. ويجب وضع هذه الدالة في ملف <tt>mes_options.php</tt>. واذا كان الاسم <strong>«ف»</strong> ينتهي بأرقام سيتم سحب هذه الأرقام قبل تطبيق الدالة لتشكل المعامل الثاني في الدالة وهذا الشيء مفيد جداً في حال كان الفهرس المشار اليه يتكون من أبواب مختلفة. نكتب اذن:</p>
+
+<textarea readonly='readonly' cols='40' rows='2' class='spip_cadre' dir='ltr'>[?read#man2]</textarea>
+
+<p>للدلالة على اننا نرجع تفسير كلمة <tt>read</tt> الى الباب ٢ من من الفهرست المسمى <tt>man</tt>.</p>
+
+<p>وفي ما يتعلق باختصارات ذكر اللغة وانشاء بالون حوار المذكورة أعلاه في الوصلات الخارجية، تعمل هنا ايضاً.</p>
+
+<p><a name="ancres"></a>
+<strong>مراسي تحمل اسماء</strong></p>
+
+<p>بمكن تحديد «مراسي HTML» لإنشاء وصلة مباشرة الى نقطة معينة داخل صفحة من الموقع. فيكفي هنا ادخال المختصر:</p>
+
+<textarea readonly='readonly' cols='40' rows='2' class='spip_cadre' dir='ltr'>[&lt;-مباشر]</textarea>
+
+<p>مما ينشئ مرساة اسمها <code class='spip_code' dir='ltr'>مباشر</code>. فعلى سبيل المثال، اذا كنا في المقال 3723، يقود عنوان URL <code class='spip_code' dir='ltr'>http://monsite/article.php3?id_article=3723#مباشر</code> مباشرة الى المكان الذي توجد فيه هذه المرساة في المقال.</p>
+
+<p>تجدر الاشارة الى ان المراسي تتوافق مع <a href="#liensite" class='spip_ancre'>وصلات هايبرتكست داخل الموقع</a>. فمثلاً يقود المختصر «<code class='spip_code' dir='ltr'>[هذه النقطة بالذات-&gt;art123#ذات]</code>» الى المرشاة المسماة «<code class='spip_code' dir='ltr'>ذات</code>» والمحددة في المقال 123.</p>
+
+<p><a name='notes'></a>
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>حواشي غير آلية</strong></p>
+
+<p>في أغلب الأحيان، يعتبر نظام إنتاج الحواشي الآلي المذكور أعلاه كافياً. الا انك تستطيع التحكم بالحواشي بطريقة غير آلية بـ"فرض" خيار الرقم او العبارة الظاهرة لتحقيق الوصلة.</p>
+
+<p>المبدأ هو تحديد خيارك للعبارة المستخدمة ضمن رمزي «&lt;» و«>» في بداية الحاشية:</p>
+
+<textarea readonly='readonly' cols='40' rows='2' class='spip_cadre' dir='ltr'>حاشية «مفروضة» [[&lt;xxx&gt; نص الحاشية.]]</textarea>
+
+<p>هكذا:</p>
+
+<textarea readonly='readonly' cols='40' rows='21' class='spip_cadre' dir='ltr'>يمكنك استخدام حواشي آلية مرقمة [[بوضع نص الحاشية ضمن معقّفين مزدوجين.]]،
+- لكن يمكنك أيضاً فرض ترقيم الحواشي [[&lt;23&gt; بتحديد رقم الحاشية ضمن رمزي «&lt;» و«&lt;».]]،
+- إستخدام حواشي يُرمز اليها بنجوم [[&lt;*&gt; بوضع نجمة ضمن رمزي «&gt;» و«&lt;».]]،
+- إنشاء حواشي دون رموز (او ترقيم) ولكن انتبه الى ان هذه الحواشي لا توفر وصلات بين الحاشية والمكان الذي تدل اليه [[&lt;&gt; بترك رمزي «&gt;» و«&lt;» فارغين.]]،
+- إعطاء إسم (كامل) للحاشية وهو شاءع في المراجع [[&lt;نوا&gt; ابو نواس.]]،
+- إعادة الى حاشية موجودة مسبقاً [[&lt;23&gt;]] بتحديد رقم هذه الحاشية ضمن رمزي «&lt;» و«&gt;» وترك باقي الحاشية فارغاً.</textarea>
+
+<p>تعطي:</p>
+
+<blockquote class="spip">
+
+<p>يمكنك استخدام حواشي آلية مرقمة<span class="spip_note_ref">&nbsp;[<a href='#nb2' class='spip_note' rel='footnote' title='بوضع نص الحاشية ضمن معقّفين مزدوجين.' id='nh2'>2</a>]</span>،
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;لكن يمكنك أيضاً فرض ترقيم الحواشي<span class="spip_note_ref">&nbsp;[<a href='#nb23' class='spip_note' rel='footnote' title='بتحديد رقم الحاشية ضمن رمزي « » و« ».' id='nh23'>23</a>]</span>،
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;إستخدام حواشي يُرمز اليها بنجوم<span class="spip_note_ref">&nbsp;[<a href='#nb_2A' class='spip_note' rel='footnote' title='بوضع نجمة ضمن رمزي «>» و« ».' id='nh_2A'>*</a>]</span>،
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;إنشاء حواشي دون رموز (او ترقيم) ولكن انتبه الى ان هذه الحواشي لا توفر وصلات بين الحاشية والمكان الذي تدل اليه،
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;إعطاء إسم (كامل) للحاشية وهو شاءع في المراجع<span class="spip_note_ref">&nbsp;[<a href='#nb_D9_86_D9_88_D8_A7' class='spip_note' rel='footnote' title='ابو نواس.' id='nh_D9_86_D9_88_D8_A7'>نوا</a>]</span>،
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;إعادة الى حاشية موجودة مسبقاً<span class="spip_note_ref">&nbsp;[<a href='#nb23' class='spip_note' rel='footnote'>23</a>]</span> بتحديد رقم هذه الحاشية ضمن رمزي «&lt;» و«>» وترك باقي الحاشية فارغاً.</p>
+
+</blockquote>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>تعطيل إختصارات SPIP</strong></p>
+
+<p>في بعض الحالات،  يصبح من المفيد إعلام SPIP بأنه لا يجب ان «يعالج» بعض إجزاء المستند 
+باستخدام مرشحات إختصارات الكتابة: فإما انك لا تريد تصحيح الكتابة او تريد عرض 
+رموز برمجية (مثلاً رموز PHP او جافاسكريبت...).</p>
+
+<p>للحصول على ذلك، يجب إدخال «<code class='spip_code' dir='ltr'>&lt;HTML&gt;تحذير، نص غير مطلوب تنسيقه&amp;&lt;/HTML&gt;</code>»، مما يعطي: «تحذير، نص غير مطلوب تنسيقه».</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>عرض الرموز البرمجية</strong></p>
+
+<p>هناك بعض المستخدمين الذين يريدون عرض رموز برمجية في صفحاتهم. ويأتي الاختصار &lt;<TT>&lt;code>...&lt;/code></TT> ليمكنهم من ذلك.</p>
+
+<textarea readonly='readonly' cols='40' rows='3' class='spip_cadre' dir='ltr'>&lt;code&gt;&lt;?php     // هذه أوامرphp
+      echo &quot;مرحباً&quot;;
+?&gt;&lt;/code&gt;</textarea>
+
+<p>نحصل على</p>
+
+<blockquote class="spip"><div style='text-align: left;' class='spip_code' dir='ltr'><code>&lt;?php &nbsp;//PHP هذه أوامر <br />
+echo &quot;مرحباً&quot;;<br />
+?&gt;</code></div>
+</blockquote>
+
+<p>هناك اختصار يتيح عرض مقتطفات من الرموز البرمجية تبلغ عدة اسطر:
+<tt><cadre>...</cadre></tt>. يضع هذا الاختصار الرموز البرمجية داخل "استمارة" (كثيراً ما يستخدم ذلك
+في الصفحة التي بين يديك). اما ميزة هذا الاسلوب، فهي تسهيل النسخ واللصق من صفحتك على النسيج: فيكفي وضع مؤشر الفأرة داخل الفقرة البرمجية واختيار امر "تحديد الكل" للتمكن من نسخ الفقرة مباشرة. اضافة الى ذلك، وفي العديد من برامج التصفح، يتيح هذا الاطار استرجاعاً اميناً للحقول الموجودة في اول السطور. في المقابل لا يدعم هذا الاطار اتجاه الكتابة من اليمين الى اليسار.</p>
+
+<p>وهذا مثال:</p>
+
+<textarea readonly='readonly' cols='40' rows='19' class='spip_cadre' dir='ltr'>class Text {
+ var 
+type = &#039;text&#039;;
+ var 
+text;
+}
+
+ class Field {
+ var 
+type = &#039;field&#039;;
+ var 
+field_name, 
+field_id;
+ var 
+cond_before, 
+cond_after; // جدول عناصر
+ var 
+functions;
+}</textarea>
+
+<p> -------</p>
+
+<div class='notes'><small><div id='nb1'>
+
+<p><span class="spip_note_ref">[<a href='#nh1' class='spip_note' title='حواشي 1' rev='footnote'>1</a>]&nbsp;</span>هذه معلومات اضافية.</p>
+
+</div><div id='nb2'>
+
+<p><span class="spip_note_ref">[<a href='#nh2' class='spip_note' title='حواشي 2' rev='footnote'>2</a>]&nbsp;</span>بوضع نص الحاشية ضمن معقّفين مزدوجين.</p>
+
+</div><div id='nb23'>
+
+<p><span class="spip_note_ref">[<a href='#nh23' class='spip_note' title='حواشي 23' rev='footnote'>23</a>]&nbsp;</span>بتحديد رقم الحاشية ضمن رمزي «&lt;» و«&lt;».</p>
+
+</div><div id='nb_2A'>
+
+<p><span class="spip_note_ref">[<a href='#nh_2A' class='spip_note' title='حواشي _2A' rev='footnote'>*</a>]&nbsp;</span>بوضع نجمة ضمن رمزي «>» و«&lt;».</p>
+
+</div><div id='nb'>
+
+<p>بترك رمزي «>» و«&lt;» فارغين.</p>
+
+</div><div id='nb_D9_86_D9_88_D8_A7'>
+
+<p><span class="spip_note_ref">[<a href='#nh_D9_86_D9_88_D8_A7' class='spip_note' title='حواشي _D9_86_D9_88_D8_A7' rev='footnote'>نوا</a>]&nbsp;</span>ابو نواس.</p>
+
+</div></small></div>
+<h2>arttitre/العنوان، عنوان المدخل، العنوان الفرعي</h2>
+<h3 class="spip">العنوان، العنوان المدخل، العنوان الفرعي</h3>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;العنوان إجباري.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;العنوان المدخل والعنوان الفرعي إختياريان. اذا لست بحاجة اليهما أتركهما فارغين وسيتكيف تصميم الموقع آلياً مع وجودهما او عدمه.</p>
+
+<p>يمكن لمدراء الموقع إلغاء استخدام العنوان المدخل والعنوان الفرعي من صفحة «<A HREF="./?exec=aide_index&amp;aide=confart" 
+TARGET="_top">الإعداد الدقيق</A>».</p>
+
+<h2>artrub/إختيار القسم</h2>
+<h3 class="spip">إختيار القسم</h3>
+
+<p>تعرض القائمة كامل <a HREF="./?exec=aide_index&amp;aide=rubhier" target="_top">هرمية الأقسام</a> (بالترتيب الذي أنشأها فيه مدراء الموقع): قم بتحديد القسم الذي تريد إدخال مقالك فيه.</p>
+
+<p>هناك العديد من المستخدمين المبتدئين الذين يتجاهلون من حيث لا يدرون هذه الوظيفة ويرمون مقالاتهم «أينما توفق» داخل بنية الموقع. لذلك يُنصح المدراء بالتأكد دائماً اذا كان المقال في قسمه الصحيح قبل التصديق عليه.</p>
+
+<h2>artdesc/وصف مقتضب</h2>
+<h3 class="spip">وصف مقتضب</h3>
+
+<p>يستخدم الوصف المقتضب لتحسين تصفح الموقع: فهو يعرض باختصار موضوع المقال، مثلاً في صفحة المحتويات.</p>
+
+<p>هذا الوصف إختياري كما يمكن أن يأخذ أي حجم. إلا أنه صمم في الأساس ليحتوي نصوص قصيرة (جملة أو إثنتيان) تظهر في اي قائمة مقالات (مثل المحتويات او قائمة مقالات مؤلف ما او لدى فرز المقالات حسب المفاتيح او لدى عرض نتائج بحث ما الخ).</p>
+
+<p>يمكن لمدراء الموقع تعطيل عرض الوصف المقتضب من صفحة «<a HREF="./?exec=aide_index&amp;aide=confart" TARGET="_top">الإعداد الدقيق</a>».</p>
+
+<h2>artchap/المقدمة</h2>
+<h3 class="spip">المقدمة</h3>
+
+<p>المقدمة هي النص القصير الذي يأتي في أول المقال وهو إختياري.</p>
+
+<p>يمكن للمدراء، عبر صفحة «<a HREF="./?exec=aide_index&amp;aide=confart" TARGET="_top">الإعداد الدقيق</a>»، تعطيل إستخدام المقدمة تماماً.</p>
+
+<h2>artvirt/إعادة توجيه مقال</h2>
+<h3 class="spip">إعادة توجيه المقالات</h3>
+
+<p>هذه الوظيفة تتيح إنشاء «مقال إفتراضي»: وهو مقال يخزّن عنوانه وتاريخه ومؤلفيه في موقعك، لكنه يوجه الى موقع آخر.</p>
+
+<p>وبالتالي فتسمح هذه الوظيفة لموقع SPIP عندك بتبويب مقالات لم يتم إنشاؤها من داخل SPIP (إذا أردت مثلاً، أن تدمج في موقع SPIP الحالي صفحات تم إنشاؤها قبل تثبيت SPIP).</p>
+
+<p>للدلالة على أن مقالك هو «مقال إفتراضي»، ما عليك إلا إدخال عنوان (URL) المقال المستهدف في المربع المناسب (اذا كان المرجع من خارج موقعك) او إدخال اختصار SPIP الى هذا المقال او القسم او الخبر الخ. في موقعك (art123 او br15 او doc28...).</p>
+
+<p>لإزالة إعادة التوجيه، يكفي «تفريغ» مربع إعادة التوجيه (أي حذف عنوان المقال المستهدف).</p>
+
+<h2>arttexte/المادة</h2>
+<h3 class="spip">مادة المقال</h3>
+
+<p>ببساطة، إنه نص المقال.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;الا ان هناك مسألة قد تتسبب ببعض المشاكل: طول المادة. أحياناً عندما تكون المادة طويلة جداً (حسب تجربتنا أكبر من 32 كيلوبايت)، يتم بترها او حتى حذفها كلياً خلال نقلها الى SPIP . هذه المشكلة ليست بسبب SPIP، بل المسبب هو برنامج التصفح الذي تستخدمه. اذا وجدت ان مادتك طويلة جداً لمتصفح معين، ننصحك باستخدام متصفح آخر.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;تتقبل مادة المقال بسهولة كبيرة <a HREF="./?exec=aide_index&amp;aide=raccourcis" TARGET='_top'>إختصارات الكتابة</a> التي يقدمها SPIP.</p>
+
+<h2>artdate/التاريخ</h2>
+<h3 class="spip">تاريخ النشر</h3>
+
+<p>عموماً، يوافق تاريخ المقال تاريخ ظهوره في الموقع.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;ويتم تحديد هذا التاريخ آلياً ليوافق التاريخ الذي قام فيه أحد المدراء بالتصديق على المقال (والتاريخ نفسه الذي يظهر فيه المقال في الموقع العمومي).</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;إلا انه حتى بعد التصديق على المقال، يمكن للمدير تغيير هذا التاريخ.</p>
+
+<h2>artdate_redac/تاريخ النشر السابق</h2>
+<h3 class="spip">تاريخ النشر السابق</h3>
+
+<p>تمت إضافة هذه الوظيفة لحالات خاصة جداً، حيث يُستخدم SPIP لإدارة مقالات أرشيف وحيث يجب أن تكون تواريخ هذه المقالات مختلفة عن تاريخ النشر الحالي.</p>
+
+<p>والمطلوب هنا إمكان الدلالة الى ان مستند معين تم نشره في وقت سابق وقد يكون مقال من صحيفة أو كتاب الخ. او سيتم نشره في المستقبل (ظهور المقال في العدد القادم).</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;إفتراضياً، هذا التاريخ غير ظاهر لأن الخيار «إخفاء تاريخ النشر السابق» يكون نشطاً في صفحة إنشاء مقال جديد.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;إذا كنت تريد تحديد تاريخ من هذا النوع، يجب عليك تحديد خيار «إظهار تاريخ النشر السابق» واستخدام القائمة المنسدلة لتحديد هذا التاريخ.</p>
+
+<p>على عكس «تاريخ نشر» المقال، لا يتم تحديد هذا التاريخ آلياً لدى التصديق على المقال. لذلك يمكن تغييره في أي وقت.</p>
+
+<p>يمكن لمدراء الموقع تعطيل استخدام تاريخ النشر السابق من صفحة «<a HREF="./?exec=aide_index&amp;aide=confart" TARGET="_top">الإعداد الدقيق</a>»</p>
+
+<h2>artauteurs/المؤلفون</h2>
+<h3 class="spip">المؤلفون</h3>
+
+<p>عندما يقوم أحد المدراء أو المحررين بكتابة مقال، يعتبر آلياً أنه مؤلف المقال. في الكثير من الحالات يجب أن يتم تغيير المؤلف (مثلاً، عندما تتم إضافة مقال آت من طرف ثالث او يضاف مقال ليس من المفترض توقيعه او عندما يقوم عدة محررين بالعمل على المقال نفسه...)</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>إضافة مؤلف</strong></p>
+
+<p>تتيح قائمة منسدلة، تحتوي كل مؤلفي الموقع، إختيار أو إضافة مؤلف للمقال.</p>
+
+<p>اذا كان هناك أكثر من 50 مؤلفاً يساهمون في الموقع، يصبح من المتعذر عرضهم في قائمة منسدلة (يؤدي ذلك الى ابطاء العرض كثيراً)؛ في هذه الحال، تستبدل القائمة المنسدلة بمربع بحث حيث تقوم بإدخال إسم المؤلف الذي تريد إضافته ثم تنقر على «بحث» . إذا نتج عن البحث أكثر من مؤلف واحد، يتيح لك النظام إختيار المؤلف الذي تريد.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>حذف مؤلف</strong></p>
+
+<p>تظهر الى جانب كل مؤلف وصلة «حذف المؤلف» التي تتيح ببساطة حذف المؤلف.</p>
+
+<p>يتم حذف المؤلف بصفته مؤلفاً لهذا المقال فقط. فبالطبع يبقى موجوداً في قائمة المؤلفين المساهمين في الموقع.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>إستبدال مؤلف بآخر</strong></p>
+
+<p>يمكن إتمام ذلك بخطوتين: فيكفي إضافة مؤلف جديد ثم حذف المؤلف السابق (أنظر أعلاه).</p>
+
+<p>تجدر الإشارة أخيراً الى ان المدراء يتمتعون بسلطات أوسع للتحكم بقائمة المؤلفين من تلك التي يتمتع بها المحررون. وبخاصة، لا يستطيع المحررون حذف أنفسهم من المقال. فإذا أراد احد المحررين ان ينشر مقالاً دون توقيع، يجب عليه ان يطلب من أحد المدراء تنفيذ عملية الحذف.</p>
+
+<h2>logoart/شعار المقال</h2>
+<h3 class="spip">شعار المقال</h3>
+
+<p>يتيح SPIP تخصيص شعار لكل مقال. بهذه الطريقة يصبح من الممكن عرض زر رسومي يلعب دور الوصلة الى المقال في الموقع العام.</p>
+
+<p>ومن الممكن لكل مقال:
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;عدم تخصيص اي شعار؛
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;تخصيص رسم بسيط؛
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;تخصيص شعار متحرك يدعم «الحوم» (اي شعار يتغير حين يمر مؤشر الفأرة فوقه).</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>تنسيق الرسوم</strong></p>
+
+<p>عندما تقوم بإنشاء رسومك (بواسطة تطبيقك الاعتيادي)، يجب حفظها بأحد التنسيقات التالية:
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;تنسيق GIF (يمكن لملف GIF ان يكون «متحركاً»)؛
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;تنسيق JPEG؛
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;تنسيق PNG (لا ننصح باستخدامه لأن عدد من برامج التصفح لا يدعمه بشكل سليم).</p>
+
+<p><strong>لتفادي أخطاء تشغيلية مهمة، يرفض SPIP الرسوم او الصور التي يزيد حجمها على 256 كيلوبايت.</strong> نصيحة: لأن «الأزرار» تشكل عناصر من الواجهة الرسومية، يجب عليك التأكد من ان <strong>حجم ملفاتها</strong> (بالكيلوبايت) ليس كبيراً (عموماً، يستحسن ان لا يزيد على 10 كيلوبايت) اذا اردت لموقعك ان يتمتع بتصفح سلس.</p>
+
+<p>بشكل خاص، تأكد من ان أسماء ملفاتك تشمل <strong>لاحقة</strong> تدل الى تنسيقها: <strong>.gif</strong> او <strong>.jpg</strong> او <strong>.png</strong>. اما إسم الملف فليس مهماً ويمكنك اختياره بحرية بشرط ان <strong>لا تنسى اللاحقة</strong>.</p>
+
+<p>اذا قمت بإنشاء زر يدعم «الحوم»، يجب إنشاء ملفين مختلفين (الأول لوضع الزر «العادي» والثاني يظهر لدى مرور مؤشر الفأرة فوق الزر): من الضروري اذاً ان يتعادل حجما الملفين (بالنقاط).</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>شعار بسيط</strong> (بدون حوم)</p>
+
+<p><img src="./?exec=aide_index&amp;img=0:AIDE-ar-logoart-1.gif" alt=" "  border="0" align="right"> لإضافة زر، يقدم النظام مربعاً الى أيمن المقال تحت عنوان «شعار المقال».</p>
+
+<p>إعتماداً على نوع برنامج التصفح لديك، قم بالنقر على زر «إستعراض» او «Browse» او «Select» او «ملف» ... مما يفتح مربع حوار يتيح تحديد ملف الصورة الذي سيلعب دور شعار المقال.</p>
+
+<p>بعد تحديد الملف، أنقر على زر «تحميل» فيظهر الشعار. ويتبع هذا الشعار زر «حذف» يتيح ببساطة حذف هذا الشعار.</p>
+
+<p>اذا كنت لا تريد استخدام شعار للحوم لا تحتاج الى خطوات إضافية.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>إستبدال الشعار</strong></p>
+
+<p><img src="./?exec=aide_index&amp;img=0:AIDE-ar-logoart-2.gif" alt=" "  border="0" align="left">يمكنك استبدال الشعار بملف آخر. ويتم ذلك بخطوتين:
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;الخطوة الأولى هي «حذف» الشعار: فيظهر المربع السابق الذي يحتوي على زر «تحميل»؛
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;قم بتحميل الملف الجديد حسب الخطوات المذكورة أعلاه.</p>
+
+<p>بسبب طريقة عمل يرامج التصفح، فإن الصورة التي تظهر عندها ليست الصورة الصحيحة، فهي الصورة السابقة (التي لا تزال في «الذاكرة المخبأة» لبرنامج التصفح). أنقر على هذه الصورة (بالزر الأيمن للفأرة، او مع الضغط على مفتاح «التحكم» اذا كنت تستخدم ماكنتوش) لعرض قائمة منبثقة: إختر أمر «إعادة إنعاش الصورة» فتظهر النسخة الحديثة من الشعار.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>شعار الحوم</strong></p>
+
+<p><img src="./?exec=aide_index&amp;img=0:AIDE-ar-logoart-3.gif" alt=" "  border="0" align="right">بعد تثبيت الملف الأول، لا يكتفي المربع بعرض الشعار الذي قمت بإدخاله، بل يضيف مربعاً آخر إسمه «شعار الحوم». ويتيح هذا المربع تحديد الملف الثاني الذي سيظهر لدى حوم مؤشر الفأرة.</p>
+
+<p><strong>بعد تثبيت الملفين، اذا قمت بحذف الملف الأول (اي ملف الوضع «العادي»)، يختفي مربع شعار الحوم. والحال، فإن غياب الشعار الأول يلغي الحاجة لشعار الحوم!</strong></p>
+
+<p>عملية تثبيت الشعار لا تتطلب اي تدخل في «مادة» المقال. لدى العرض في الموقع العام، تتم إدارة رموز الأقسام بشكل آلي كلياً. وسيتم إنتاج أوامر HTML بالاعتماد على حجم الشعار وتدخل أوامر جافاسكريبت تلقائياً لإدارة الحوم.</p>
+
+<h2>artstatut/وضعية المقال</h2>
+<h3 class="spip">وضع المقال</h3>
+
+<p>يناسب <strong>وضع</strong> المقال حالته التحريرية. ويمكن للمقال ان يكون:
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;قيد التحرير
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;معروض للتقييم
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;منشور
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;الى المهملات
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;مرفوض</p>
+
+<p>تسمح هذه الأوضاع التي لا يحق الا للمدراء تغييرها، بإدارة سلسة للموقع.</p>
+
+<p><strong>ملاحظة</strong> هناك رمز على شكل مريع ملون يدل الى وضع المقال.</p>
+
+<p><IMG SRC="../prive/images/puce-blanche.gif"> <strong>قيد التحرير</strong></p>
+
+<p>لدى إنشائه، يعتبر المقال قيد التحرير طبعاً: فمؤلفوه هم في مرحلة تحريره او تعديله...</p>
+
+<p>عندما يكون قيد التحرير، يظهر المقال لمؤلفيه ومدراء الموقع فقط. فمحررو الموقع الآخرون لا يتمتعون بإمكان الوصول اليه.</p>
+
+<p><IMG SRC="../prive/images/puce-orange.gif"> <strong>معروض للتقييم</strong></p>
+
+<p>عندما يقرر المؤلف ان مقاله أصبح جاهزاً، «يعرضه» على المشاركين الآخرين ليتمكنوا من مناقشته جماعياً قبل التصديق عليه (اي نشره) او رفضه.</p>
+
+<p>عندما يكون المقال «معروض للتقييم»، يظهر في صفحة «للمتابعة» لدى كل المستخدمين في المجال الخاص الذين يُطلب منهم المشاركة في مناقشته من خلال منتدى النقاش الداخلي الموجود في أسفل المقال.</p>
+
+<p>مقال كهذا يظهر عندها لكل المحررين. من جهة ثانية لا يمكن تعديله الا من قبل مؤلفه او أحد مدراء الموقع.</p>
+
+<p><IMG SRC="../prive/images/puce-verte.gif"> <strong>منشور</strong></p>
+
+<p>بعد مناقشته من قبل المحررين (في مرحلة عرضه عليهم)، يمكن، «التصديق على» المقال اي نشره في الموقع العام من قبل أحد المدراء. عندها يصبح متاحاً لزوار الموقع العام.</p>
+
+<p><i>عندما يكون مقال ما منشوراً لا يحق الا للمدراء تعديله. لا يعود من الممكن لمؤلفه ادخال التعديلات عليه اذا لم يكن يتمتع بصفة المدير وبالتالي، عليه الطلب من احد المدراء إدخال التعديلات.</i></p>
+
+<p><IMG SRC="../prive/images/puce-rouge.gif"> <strong>مرفوض</strong></p>
+
+<p>يمكن لأي مقال «معروض» لا يتماشى مع سياسة تحرير الموقع ان «يُرفض» اذا رفض المدراء نشره.</p>
+
+<p>يصبح المقال «المرفوض» ظاهراً لمؤلفه وللمدراء فقط.</p>
+
+<p>الا انه لا يعود من الممكن لمؤلف المقال «المرفوض» ان يدخل التعديلات عليه مما يمنعه من إعادة عرضه للنشر. في حال دعت الحاجة الى تعديل مقال ما، يُنصخ بإعادته الى وضع «قيد التحرير» بدلاً من «رفضه» لتمكين مؤلفه من تعديله وعرضه مرة أخرى.</p>
+
+<p><IMG SRC="../prive/images/puce-poubelle.gif"> <strong>الى المهملات</strong></p>
+
+<p>لا يحق الا للمدراء إرسال مقال ما «الى المهملات».</p>
+
+<p>عندما يُرسل مقال ما «الى المهملات» يختفي من المجال الخاص حتى في صفحات المدراء. لذلك يجب توخي الحذر لأن هذا الخيار «جذزي»: فالمقال يختفي كلياً.</p>
+
+<p>في الواقع، لا يزال المقال مخزناً في قاعدة البيانات لكنه يصبح من الصعب جداً الوصول اليه بواسطة الأدوات التي يوفرها SPIP.</p>
+
+<p>بالتالي، فإن هذا الخيار لا يتوجه الا للمقالات التي تم إنشاؤها خطأً ولا يكون مصيرها الا الحذف. لذلك يُنصح باختيار وضع «مرفوض» بدلاً من «الى المهملات» لأنه أخف حدة.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;أخيراً، تجدر الإشارة الى انه يمكن للمدراء في آي وقت تغيير وضع اي مقال. فيمكن مثلاً لمقال منشور ان يعود الى وضع «قيد التحرير». الا انه بعد نشر مقال ما في الموقع العام، يستحسن عدم الاكثار في تغيير وضعه لأن الموقع سيصبح مليئاً «بالثقوب» من جراء المقالات التي تظهر وتختفي مما يدفع الزائر الى النفور منه.</p>
+
+<h2>artprop/إقتراح مقال</h2>
+<h3 class="spip">إقتراح مقال</h3>
+
+<p>عندما يكون المقال قيد التحرير (أنظر باب «<A HREF="./?exec=aide_index&amp;aide=artstatut" 
+target="_top">وضع المقال</A>»)، يعرض زراً «يطلب نشر هذا المقال».</p>
+
+<p><strong>وحده مؤلف المقال يحق له القيام بهذه العملية.</strong></p>
+
+<p>ويعني ذلك ان المقال «معروض للتقييم»، اي معروض على جميع المحررين المدعوين الى التعليق عليه بينما ينتظر الإذن للتصديق عليه (للنشر) او رفضه من قبل المدراء.</p>
+
+<p>تحذير: حال عرض مقال للتقييم، لا يعود من الممكن للمؤلف الرجوع عن قراره وإعادة المقال الى وضع «قيد التحرير» . بالتالي، فيجب تنفيذ عملية «طلب نشر هذا المقال» بعد ان يتأكد المؤلف من ان مادته كاملة ونهائية. وحدهم المدراء يمكنهم إعادة المقال الى وضع «قيد التحرير» .</p>
+
+<h1>الأقسام</h1>
+<h2>rubhier/تنظيم الأقسام الهرمي</h2>
+<h3 class="spip">بنية الأقسام الهرمية</h3>
+
+<p>تشكل بنية الأقسام الهيكل العظمي للموقع. وهذه البنية هي التي ستحدد واجهة الموقع وطريقة تصفحه والعلاقات بين المقالات والأخبار...</p>
+
+<p>في SPIP، تتميز هذه البنية بكونها <strong>هرمية</strong>: فيمكن لقسم ما ان يحتوي أقسام فرعية تحتوي بدورها أقسام فرعية أخرى وهكذا.</p>
+
+<CENTER><img src="./?exec=aide_index&amp;img=0:AIDE-ar-rubhier-1.gif" alt=""  border="0"></CENTER>
+
+<p>في المثال أعلاه، نرى بوضوح ان القسم 222 تابع للقسم 22 التابع بدوره للقسم 2 الذي ليس تابعاً لأي قسم فوقه (في هذه الحال، نقول ان القسم 2 موجود في <strong>أصل الموقع</strong>).</p>
+
+<p>نعني بالبنية الهرمية ان اي قسم لا ينتسب الا الى قسم آخر واحد فقط (اي لا ينتسب الى عدة أقسام) وانه لا يمكن لأي قسم ان ينتسب الى احد أقسامه الفرعية (مما يعني ان SPIP لا يسمح بالبنى الدائرية). وتم اختيار هذه البنية التقليدية للأقسام لأنها سهلة الاستخدام الى حد بعيد.</p>
+
+<p><strong>لا يحق الا للمدراء إنشاء الأقسام او تعديلها او حذفها.</strong></p>
+
+<h2>rubrub/إختيار القسم</h2>
+<h3 class="spip">إختيار القسم</h3>
+
+<p>هذه القائمة المنسدلة بسيطة جداً: تعرض القائمة الهرمية الكاملة لأقسام الموقع (بالترتيب الذي أنشأها به مدراء الموقع)، ما عليك الا تحديد القسم الذي تريد إدخال قسمك الفرعي فيه.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>نقل قسم</strong></p>
+
+<CENTER><img src="./?exec=aide_index&amp;img=0:AIDE-ar-rubrub.gif"  border="0"></CENTER>
+
+<p>يمكنك من خلال هذه القائمة المنسدلة نقل هذا القسم الفرعي من القسم الذي يحتويه الى قسم آخر يصبح منتسباً اليه. في هذه الحال، تجدر الملاحظة ان كل الأقسام الفرعية الموجودة داخل القسم الذي تنقله ستنتقل معه داخل هرمية الموقع. بالطريقة نفسها، فإن المقالات الموجودة في هذا القسم وأقسامه الفرعية ستنتقل مع القسم المنقول.</p>
+
+<h2>rublogo/شعار القسم</h2>
+<h3 class="spip">شعار القسم</h3>
+
+<p><A HREF="./?exec=aide_index&amp;aide=logoart" TARGET="_top"><img src="./?exec=aide_index&amp;img=0:AIDE-ar-logoart-2.gif" alt=" "  border="0" align="right"></A>
+يمكنك تخصيص شعار لكل قسم في موقعك. يمكن لهذا الشعار ان يكون منفرداً (صورة ثابتة) او متحركاً للتحكم بحوم مؤشر الفأرة.</p>
+
+<p>يتم تثبيت شعارات الأقسام بالطريقة نفسها التي تثبت فيها &lt;A 
+HREF="./?exec=aide_index&amp;aide=logoart" TARGET="_top">شعارات المقالات</A>.</p>
+
+<p><strong>ملاحظة</strong> تتصرف شعارات الأقسام بشكل دوري: في حال عدم وجود شعار لقسم معين، يحاول SPIP إستبداله بشعار القسم الذي يحتويه.</p>
+
+<CENTER><IMG SRC="./?exec=aide_index&amp;img=0:AIDE-ar-rubhier-1.gif" BORDER=0 ></CENTER>
+
+<p>في الشكل الهرمي أعلاه وفي حال عدم وجود شعار للقسم 221، يستخدم SPIP (للموقع العام فقط) شعار القسم 22 اذا وجد والا فشعار القسم 2 اذا وجد. وفي حال غياب شعار القسم 2 يستخدم SPIP شعار أصل الموقع.</p>
+
+<p>لاحظ كذلك انه اذا قام مسؤول الموقع ببرمجة معينة، يمكن ان يصبح شعار قسم معين شعاراً بديلاً للمقالات التي يحتويها هذا القسم.</p>
+
+<h1>الأخبار</h1>
+<h2>breves/الأخبار</h2>
+<h3 class="spip">الأخبار</h3>
+
+<p>تشكل الأخبار طريقة بسيطة وسريعة لنشر المعلومات في SPIP. فعلى عكس المقالات، تتكون الأخبار من كمية صغيرة من المعلومات: عنوان ومادة ووصلة هايبرتكست. بالتالي، فإن نظام الأخبار مثالي لمتابعة القضايا العامة ونشرات الأخبار وغير ذلك.</p>
+
+<h2>brevesrub/إختيار القسم</h2>
+<h3 class="spip">مكان الأخبار في بنية الموقع</h3>
+
+<p>لتسهيل استخدامها (وتفادي التكرار بين الأخبار والمقالات)، يقتصر دمج الأخبار في هرمية الأقسام على الحد الأدنى: فالأخبار تعود الى الأقسام الموجودة في أصل الموقع فقط.</p>
+
+<CENTER><img src="./?exec=aide_index&amp;img=0:AIDE-ar-rubhier-1.gif" alt="Sections"  border="0"></CENTER>
+
+<p>في مثالنا هنا، يمكننا وضع أخبار في القسمين 1 و2 وليس في أقسامهما الفرعية (على عكس المقالات التي يمكن وضعها في اي مكان). لذلك يتم تصميم صفحة الأخبار بالاعتماد على هذه الأقسام الرئيسية مباشرة وبالتالي فإن القائمة المنسدلة التي تستخدم لتحديد مكان الأخبار قصيرة جداً.</p>
+
+<h2>breveslien/وصلة هايبرتكست</h2>
+<h3 class="spip">وصلات هايبرتكست في الأخبار</h3>
+
+<p>لتسهيل استخدام الأخبار كجزء من نشرة إخبارية في الموقع، يمكن تخصيص وصلة هايبرتكست لكل خبر. وما عليك الا تحديد إسم الموقع المبوّب او المقال الذي تدل اليه هذه الوصلة وعنوانه.</p>
+
+<p>بالطبع، ان هذه المعلومات إختيارية.</p>
+
+<p><strong>ملاحظة:</strong> لا يمنع نظام الوصلات هذا إدخال وصلات أخرى داخل مادة الخبر. الا ان وصلة هايبرتكست الأساسية تتيح لمصمم الموقع تطبيق معالجة رسومية معينة على الخبر.</p>
+
+<h2>brevesstatut/وضعية الخبر</h2>
+<h3 class="spip">وضع الأخبار</h3>
+
+<p>ان إدارة الخبر أسهل من إدارة المقال. فالخبر ليس له مؤلف وبالتالي فإن وضعه يمكن ان يكون  «مقترح» او «مصدّق» او «مرفوض» ولا يحق الا للمدراء تغيير وضعه.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>خبر مقترح</strong></p>
+
+<p>تظهر الأخبار «المقترحة» في صفحة «المتابعة»: يمكن لكل المحررين الاطلاع عليها ويتوافر للمدراء زران يتيحان لهم اما التصديق او الرفض.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>خبر مصدّق</strong></p>
+
+<p>الأخبار «المصدّقة» هي التي تظهر في الموقع العمومي. وبالتالي، فلا يحق الا للمدراء تحريرها.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>خبر مرفوض</strong></p>
+
+<p>لا يتم نشر خبر «مرفوض» في الموقع العمومي ولا يحق الا للمدراءالوصول اليه في المجال الخاص.</p>
+
+<h2>breveslogo/شعار الخبر</h2>
+<h3 class="spip">شعار الخبر</h3>
+
+<p><img src="./?exec=aide_index&amp;img=0:AIDE-ar-logoart-2.gif" alt=" "  border="0" align="right">
+يمكنك تثبيت شعار لكل خبر في موقعك. ويمكن لهذا الشعار ان يكون منفرداً (صورة ثابتة) او متحركاً للتحكم بحوم مؤشر الفأرة.</p>
+
+<p>يتم تثبيت شعارات الأخبار بالطريقة نفسها التي يتم فيها تثبيت <A HREF="./?exec=aide_index&amp;aide=logoart" TARGET="_top">شعارات المقالات</A>.</p>
+
+<h1>صور ومستندات</h1>
+<h2>ins_img/إدراج صور</h2>
+<h3 class="spip">إدراج صور في المادة</h3>
+
+<p>يتيح SPIP إمكان تعزيز المقالات والأخبار بالصور. ويتم ذلك من خلال عدد من الخطوات: يجب أولاً إرسال الصور الى الموقع ثم إدزاجها داخل المادة.</p>
+
+<hr class="spip" />
+
+<p>&nbsp;</p>
+
+<p>عندما تنشئ صورك (بواسطة اي تطبيق لمعالجة الصور)، يجب حفظها بأحد التنسيقات التالية:
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;تنسيق GIF (لاحقة <strong>.gif</strong>)
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;تنسيق JPEG (لاحقة <strong>.jpg</strong>)
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;تنسيق PNG (لاحقة <strong>.png</strong>)</p>
+
+<p>خاصة يجب أن تتأكد من أن أسماء ملفات الصور تنتهي بلاحقة تدل على تنسيقها: .gif او .jpg  او .png. اذا قمت بتثبيت ملف لا يشمل إسمه إحدى هذه اللاحقات، لن يتمكن النظام من استخدام الصورة.</p>
+
+<hr class="spip" />
+
+<p>الخطوة الأولى: <strong>نقل الصور الى جهاز الخدمة</strong></p>
+
+<p><img src="./?exec=aide_index&amp;img=0:AIDE-ar-ins_img1.gif" alt=" "  border="0" align="right"> قبل إدراج الصور في المادة، يجب بالطبع نقل هذه الصور من جهازك الى جهاز خدمة موقعك. ويتم ذلك في SPIP من خلال واجهة المستخدم في المجال الخاص.</p>
+
+<p>عندما تقوم «بتعديل» مقال مـا او خبر مـا، يعــرض العمــود الأيـمـن إستمــارة إسمـها: «إضـافـة صـورة». وتـكـون علـى شكل مربـع نـص  يـرافـقـه زر إسمـه (حســب نـوع المتـصـفــح) «Browse» او «Select» او «File» او «استــعراض» او غير ذلـك ...</p>
+
+<p>عندما تنقر هذا الزر، يفتح مربع حوار ويتيح لك استعراض محتوى القرص الثابت وتحديد الملف المطلوب.</p>
+
+<p>بعد ذلك، قم بنقر الزر «تحميل».</p>
+
+<p>اذا نـجحت الـعمـلـيـة، تظهـر الصــورة في العمــود الأيـمـن بـرفـقـة بـعـض الإعــدادات...</p>
+
+<hr class="spip" />
+
+<p>الخطوة الثانية: <strong>المعلومات المتعلقة بالصورة</strong></p>
+
+<p><img src="./?exec=aide_index&amp;img=0:AIDE-ar-ins_img2.gif" alt=" "  border="0" align="right">لدى نقل صورتك الى جهاز الخدمة، يظهر مربع في الجهة اليمنى من الشاشة يحتوي كل المعلومات المتعلقة بالصورة (بعض هذه المعلومات سيكون مخفياً، أنقر المثلث الصغير «لبسط » مربع المعلومات).</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>عرض مصغّر</strong>. يعرض المربع معاينة من صورتك. اذا كانت الصورة كبيرة (عرضها أكبر من 200 نقطة)، سيتم عرض نسخة مصغرة منها.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>إختصارات SPIP</strong>. أنظر أدناه: يذكرك SPIP «بالاختصارات» الثلاثة التي تتيح لك إدراج هذه الصورة داخل المادة. لاحظ ان كل صورة مرقمة هكذا:
+«IMG1»، «IMG2» ... تستخدم هذه الاختصارات في الخطوة الثالثة.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>حجم الصورة</strong>. تحت الصورة يظهر عرضها وارتفاعها (بالنقاط).</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>إسم الصورة ووصفها</strong>. اذا أردت، يمكنك إدخال إسم او عنوان ووصف لكل صورة . توضيح عنها مثلاً، او حقوق ملكية المصور...</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>حذف هذه الصورة</strong>. من الواضح ان زر «حذف هذه الصورة» يتيح حذف ملف الصورة، اذا ايقنت انك اخطأت بالصورة او انك لا تريد استخدامها في المادة. من المستحسن حذف الصور غي المستخدمة لتفادي إثقال الخادم بملفات عديمة الفائدة.</p>
+
+<p>يمكنك تكرار هذه العملية لكل الصور التي تريد ادراجها في المادة (يمكن للمقال او الخبر ان يحتوي على اي عدد من الصور).</p>
+
+<hr class="spip" />
+
+<p>الخطوة الثالثة: <strong>إدراج الصورة في المادة</strong></p>
+
+<p>في هذه المرحلة تكون ملفات الصور مخزنة في جهاز الخدمة، الا انك تحتاج الى تحديد المكان في المادة حيث يجب ان توضع. لا داعي هنا لكتابة اي 
+اوامر HTML، فنظام SPIP يوقر لك «إختصار» يتيح ادخال الصورة بسهولة.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>اذا كانت الصور بدون تعليق</strong></p>
+
+<p>عند كل صورة، أنظر الى الاختصارات الثلاثة:
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;لليمين &lt;img1|right&gt;
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;للوسط &lt;img1|center&gt;</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;لليسار &lt;img1|left&gt;</p>
+
+<p>قم بنسخ أحد هذه الاختصارات (الرقم الظاهر يتناسب مع رقم الصورة، انه اذاً مختلف لكل ملف صورة)، وإلصاقه في المربع الذي يحمل الإسم «المادة» في المكان الذي تريد للصورة ان تظهر. ويقوم «left» بفرض محاذاة يسرى على الصورة و«right» يفرض محاذاة يمنى و«center» يوسّط الصورة.</p>
+
+<p>عندما تعرض صفحة المقال، سيقوم SPIP باستبدال الاختصارات بعلامات HTML المناسبة وحساب أبعاد الصور آلياً.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>صور لها عنران ووصف</strong></p>
+
+<p>اذا أدخلت إسم للصورة وو وصف، سيتم استبدال &lt;img...&gt; بالعلامات التالية:
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;لليمين &lt;doc1|right&gt;
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;للوسط &lt;doc1|center&gt;
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;لليسار &lt;doc1|left&gt;</p>
+
+<p>تستخدم هذه الاختصارات بالطريقة نفسها المذكورة أعلاه، الا انه عندما تقوم بإدخال «مختصر» من هذا النوع، لا يكتفي SPIP بإدراج الصورة بل يضيف الإسم والوصف اللذين زدخلتهما سابقاً. هكذا تظهر صورتك برفقة الوصف او إشعار الملكية او رسم المصور الخ.</p>
+
+<h2>ins_doc/إرفاق مستندات</h2>
+<h3 class="spip">إرفاق مستندات وسائط متعددة</h3>
+
+<p>تتيح واجهة SPIP إمكان دمج ملفات وسائط متعددة في الموقع (صوت، فيديو، نصوص،...).</p>
+
+<p>يستطيع المحررون أن يرفقوا مقالاتهم بمستندات متنوعة. ويمكن وضع هذه المستندات في نهاية مادة المقال (مثل ربط مستندات في رسالة بريد الكتروني مثلاً) او داخل المادة على شكل مصغّر معاينة.</p>
+
+<p>كذلك يستطيع مدراء الموقع ان يدخلوا مستندات مباشرة في الأقسام.</p>
+
+<p>على انه تجدر ملاحظة الفرق بين هذين الاستخدامين: ففي المقالات، تكون المستندات «مرفقة» وعديمة الفائدة بدون المقالات المرتبطة بها (في الموقع العمومي، يمكنك ان تجد هذه الملفات في صفحات المقالات)، اما اذا كانت هذه المستندات مثبتة مباشرة في الأقسام فتتحول الى عناصر من الموقع مثل المقالات او الأخبار ولا تعود تشكل تتمة معلومات للمادة.</p>
+
+<hr class="spip" />
+
+<p>الخطوة الأولى: <strong>نقل المستندات الى جهاز الخدمة</strong></p>
+
+<p><img src="./?exec=aide_index&amp;img=0:AIDE-ar-ins_doc1.gif" alt=" "  border="0" align="right">يتم تثبيت الملفات في جهاز الخدمة من خلال مربع «إضافة مستند» للمقالات ومربع «نشر مستند في هذا القسم» للأقسام.</p>
+
+<p>تجدر الملاحظة الى انه في ما يتعلق بالمقالات، يظهر هذا المربع في موقعين مختلفين: في أسفل صفحة كل مقال وفي العمود الأيمن (تحت مربع إضافة الصور) في صفحة تعديل المقال. ويوفر هذان المربعان الوظيفة نفسها ويمكنك استخدام اي منهما حسب متطلباتك. اما في ما يتعلق بالأقسام، فيتم تثبيت المستندات في صفحة القسم المطلوب نفسها.</p>
+
+<p>قبل تثبيت الملفات، يجب إنشاؤها في جهازك. ويذكرك مربع تحميل المستندات بتنسيقات الملفات التي يدعمها النظام. <strong>يجب ان تتأكد من اعطاء أسماء للملفات تحتوي اللاحقة المناسبة (على سبيل المثال،</strong> «xxxxxx.mp3» <strong>لملفات MP3 الموسيقية.)</strong></p>
+
+<p>اما مربع تحميل المستندات فيشبه مربع تحميل الصور: ويقوم زر «File» او «Browse» او «استعراض» (حسب المتصفح) بفتح مربع حوار يتيح تحديد الملف المطلوب من القرص الثابت. بعد تحديد الملف أنقر على «تحميل» لنقل الملف الى جهاز الخدمة.<strong> تحذير: قد تستغرق هذه العملية وقتاً طويلاً اذا كان حجم الملف كبيراً. تجدر الملاحظة ايضاً ان جهاز الخدمة قد يرفض الملفات الكبيرة اذا كانت اعداداته محددة هكذا؛ في هذه الحال يمكنك القفز فوق هذه المشكلة <A HREF="./?exec=aide_index&amp;aide=ins_upload" 
+TARGET="_top">بتثبيت الملفات عبر بروتوكول FTP</A>.</strong></p>
+
+<hr class="spip" />
+
+<p>الخطوة الثانية: <strong>المعلومات والمصغر</strong></p>
+
+<p><img src="./?exec=aide_index&amp;img=0:AIDE-ar-ins_doc2.gif" alt=" "  border="0" align="right">بعد نقل الملف الى جهاز
+الخدمة، يظهر مربع معلومات حيث يمكن تنفيذ عدة عمليات.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>مصغر المعاينة</strong></p>
+
+<p>هذا المفهوم مهم جداً: فعلى عكس الصور التي يمكن إدراجها في مادة المقال، لا تظهر المستندات مباشرة. فيتم عرض مصغر معاينة يتيح للزائر نقره اذا اراد المستند الذي يدل اليه.</p>
+
+<p>ويتيح الجزء الأعلى من مربع المعلومات إختيار مصغر المعاينة بحيث يمكنك قبول المصغر الافتراضي او تثبيت شعار شخصي.</p>
+
+<p>ويقوم النظام آلياً بتثبيت المصغر الافتراضي بالاعتماد على تنسيق المستند. ومن حسنات قبول المصغر الافتراضي، تجانس شعارات مستندات من النوع نفسه في كامل الموقع.</p>
+
+<p>اذا اردت يمكنك تثبيت شعار شخصي للمستند (من المفضل ان يكون صغيراً وبتنسيق GIF او JPG او PNG) يظهر بدلاً من المصغر الافتراضي. وعند تثبيت الشعار الشخصي تظهر وصلة «حذف المصغر الشخصي» تتيح العودة الى المصغر الافتراضي.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;اما في صفحة تعديل المقال فتشبه «الاختصارات» التي تتيح إدخال مستندات تلك التي تتيح إدخال الصور.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;ويتيح الجزء الأسفل من مربع المعلومات إدخال عنوان ووصف للمستند. ولا لزوم هنا لإدخال تنسيق ملف الوسائط المتعددة او حجمه فالنظام يوفر هذه المعلومات آلياً.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;أخيراً، يقوم زر «حذف هذا المستند» بحذف الملفات الغير ضرورية. تجدر الاشارة الى انه من الضروري حذف المستندات غير المرغرب بها لئلا تظهر في الموقع العمومي.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>في ما يتعلق بالمستندات المثبتة في الأقسام</strong>، فيمكنك تغيير تاريخ نشرها (حسب مبدأ تعديل المقالات والأخبارنفسه). عند إدخال هذه الإعدادات، تصبح مستندات الأقسام متاحة مباشرة في الموقع العمومي (فلا لزوم للتصديق عليها كما هو الحال بالنسبة للمقالات والأخبار).</p>
+
+<hr class="spip" />
+
+<p>الخطوة الثالثة: <strong>إدراج المستندات في مادة المقالات</strong></p>
+
+<p>في ما يتعلق بالمستندات المرتبطة بالمقالات، فيكفي تثبيتها وإدخال المعلومات المناسبة (الخطوتان الاولى والثانية أعلاه). وعندما تنشر المقال، ستظهر هذه المستندات في أسفل المادة على شكل قائمة <strong>بالمستندات المرفقة</strong>.</p>
+
+<p>الا انك قد تقرر إدراج مصغرات عرض في المادة نفسها. ستحصل عندها على صور يمكن نقرها داخل المقال.</p>
+
+<p>والعملية هنا هي نفسها مثل عملية إدراج الصور. والفرق الوحيد هو ان المصغرات تكون عناصر يمكن نقرها. قم بإدراج مصغر &lt;imgxx|yy&gt; اذا كنت تريد عرض المصغر وحده او &lt;docxx|yy&gt; اذا كنت تريد ارفاقه بعنوانه ووصفه.</p>
+
+<p><strong>تجدر الاشارة</strong> الى ان المستندات التي تدرجها داخل المادة لن تعود تظهر في <strong>أسفل المادة</strong>. فبالنسبة للمقالات هناك موقعان تظهر فيهما المستندات. داخل المادة (مصغر يمكن نقره) او في نهاية المقال تحت عبارة «المستندات المرفقة» .</p>
+
+<hr class="spip" />
+
+<p>حالة خاصة: <strong>مستندات الصوت والفيديو</strong></p>
+
+<p>هناك بعد ملفات الوسائط المتعددة التي يفترض بها ان تعرض مباشرة في الصفحة (مثلاً مشهد فيديو مدرج مباشرة في المقال).</p>
+
+<p>للتمكن من إدراج هذا النوع من المستندات في المادة على شكل مشهد متحرك وليس على شكل مصغر، يجب إدخال أبعاد المستند: فيكون العرض والارتفاع اكبر من الصفر إجبارياً (في ما يتعلق بملفات الصوت، تختار العرض الذي تريد تحديده لمؤشر تشغيل الصوت وتحدد الارتفاع بقيمة منخفضة مثل 25 نقطة).</p>
+
+<p><strong>تجدر الاشارة</strong> الى ان المربعات التي تتيح إدخال الأبعاد لا تظهر الا لتنسيقات معينة من الملفات التي يدعمها SPIP (تحديداً: avi وquicktime وflash وreal).</p>
+
+<p>بعد إدخال هذه الأبعاد، سيظهر مختصر SPIP إضافي على شكل &lt;embxx|yy&gt; (للتذكير، يأتي من «<strong>emb</strong>ed»).</p>
+
+<p>اذا كنت خبيراً في هذا النوع من دمج المستندات، ستعرف انه يمكنك تحسين هذا الاختصار بإعدادات إضافية مثل:</p>
+
+<textarea readonly='readonly' cols='40' rows='2' class='spip_cadre' dir='ltr'>&lt;emb54|center|autostart=true|quality=hight&gt;</textarea><h2>ins_upload/تثبيت الملفات عبر بروتوكول FTP او SSH</h2>
+<h3 class="spip">تثبيت الملفات عبر بروتوكول FTP  او SCP</h3>
+
+<p>هناك بعض الخدام الذين لا يسمحون بتحميل الملفات عبر واجهة النسيج (من خلال المتصفح) او يحددون حجمها. وحتى عندما يكون ذلك ممكناً، قد يكون من الصعب إرسال ملفات كبيرة الحجم بهذه الطريقة. يتيح SPIP تخطي هذه العواقب بتثبيت الملفات المستخدمة للصور والمستندات بواسطة بروتوكول FTP او SCP.</p>
+
+<p>بالطبع، تنحصر هذه العملية بالمستخدمين الذين يملكون امتيازات الاتصال بأقراص خادم HTTP.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>المجلد المتلقي</strong></p>
+
+<p>يعتمد موقع المجلد الذي سيتقبل الملفات على وضعيتك في موقع SPIP وعلى إصداره المثبت. فقبل <a href="ar_article3401.html" class='spip_in'><span style='color: darkviolet;'>S</span><span style='color: blue;'>P</span><span style='color: green;'>I</span><span style='color: salmon;'>P</span> <span style='color: green;'>١</span><span style='color: blue;'>.</span><span style='color: darkviolet;'>٩</span></a>، كان هذا المجلد <code class='spip_code' dir='ltr'>upload</code> الموجود داخل مجلد <code class='spip_code' dir='ltr'>ecrire</code> ولم يكن SPIP يعرض محتواه الا للمدراء الاساسيين في الموقع. ومنذ <a href="ar_article3401.html" class='spip_in'><span style='color: darkviolet;'>S</span><span style='color: blue;'>P</span><span style='color: green;'>I</span><span style='color: salmon;'>P</span> <span style='color: green;'>١</span><span style='color: blue;'>.</span><span style='color: darkviolet;'>٩</span></a>، اصبح المجلد المتلقي مجلداً فرعياً من <code class='spip_code' dir='ltr'>tmp</code> ولا يزال اسمه <code class='spip_code' dir='ltr'>upload</code> ولا يعرض SPIP كامل محتواه الا للمدراء الاساسيين. ولكن إضافة الى ذلك، يمكن لهذا المجلد ان يتقبل عدداً من المجلات الفرعية يساوي عدد المدراء المحدودين وتتم تسمية كل مجلد فرعي بمعرّف المدير المحدود المناسب له. وهكذا لا يعرض SPIP للمدير المحدود الا محتوى المجلد الفرعي المناسب له.</p>
+
+<p>بعد نقل الملفات بواسطة FTP او SCP، يجب التأكد من انها متاحة للقراءة لخادم HTTP (الملفات نفسها والمجلدات التي تحتويها).</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>قائمة الملفات المنسدلة</strong></p>
+
+<p>بعد إتمام هذه العملية، تظهر آلياً قائمة منسدلة تحت مربع تحميل الملفات وتعرض الملفات التي يحتويها المجلد. نذكر ان SPIP لن يعرض الا الملفات التي لا تشكل اي خطر، يمكن تخطي هذا المانع بإضافة لاحقة مسموح بها (مثلاً اعادة تسمية <code class='spip_code' dir='ltr'>x.php</code> ليصبح <code class='spip_code' dir='ltr'>x.txt</code>) مما يتيح تحميل الملف دون السماح له بالتنفيذ في الموقع. يمكن استخدام استمارة وصف المستند لتوضيح ما كان اسمه الاصلي.</p>
+
+<p>ومن هذه القائمة يكفي ان تحدد الملف المطلوب وتؤكد طلبك.</p>
+
+<p>اذا نجحت العملية، تذكر ان تحذف الملف الذي حددته مجلدك (لأن النظام قام بإنشاء نسخة عنه في مكان آخر وبالتالي لا يعود الملف الأصلي ضرورياً) لتجنب عرقلة القائمة المنسدلة وملء القرص الثابت بملفات غير ضرورية.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>كل الملفات دفعة واحدة</strong></p>
+
+<p>اذا قمت بتثبيت عدة ملفات دفعة واحدة في المجلد المتلقي، تظهر وظيفة جديدة على الواجهة: يمكنك تثبيت كل هذه الملفات في عملية واحدة مما يشكل طريقة سريعة لإنشاء المحافظ.</p>
+
+<h3 class="spip">مجموعات الصور والمستندات</h3>
+
+<p>يمكن اضافة مجموعة من الصور والمستندات في دفعة واحدة بسهولة وذلك بتحميل ملف مضغوط بتنسيق <i>zip</i> يحتوي على هذه الصور والمستندات.</p>
+
+<p>سيقترح SPIP عندها اضافة الملف المضغوط كما هو الى المقال او فلشه وارفاق الصور التي بداخله بالمقال او الاثنين معاً. في حال الفلش، سيتم تطبيق نفس قواعد الاستبعاد المذكورة سابقاً والمتعلقة بالملفات الخطرة. ويمكن أيضاً ان نختار نسخ اسم كل ملف آلياً واعطائه إسم الى المستند الناتج الذي تم ارفاقه.</p>
+
+<h1>المفاتيح</h1>
+<h2>mots/مفهوم المفاتيح</h2>
+<h3 class="spip">المفاتيح</h3>
+
+<p>ان احد اهم حد في SPIP هو تنظيمه الهرمي: لا يمكن لأي مقال ان ينتسب الى اكثر من قسم واحد مما قد يتسبب احياناً بمشاكل فرز وفهرسة.</p>
+
+<p>لذلك توفر المفاتيح وسيلة فعالة لتصفح الموقع عرضياً. فبتخصيص مفتاح او اكثر لمقال معين، يمكننا إنشاء وصلات من هذا المقال الى مقالات اخرى تتطرق الى الموضوع نفسه ولكنها موجودة في أقسام أخرى.</p>
+
+<p>ولا تقدم المفاتيح فوائد تذكر الا اذا تم ربطها بعدة مقالات للتمكن من وصل هذه المقالات ببعضها.</p>
+
+<p><strong>المدراء وحدهم يمكنهم إنشاء المفاتيح وتعديلها.</strong></p>
+
+<p>في كثير من الأحيان، يمكن الاستغناء عن المفاتيح اذا كانت بنية الأقسام مبنية بشكل فعال: فمن الطبيعي حينذاك ان تدخل المقالات التي تتطرق الى الموضوع نفسه في القسم نفسه وبالتالي تصبح إضافة مفاتيح تدل الى موضوع كل مقال عديمة الجدوى. عندها يمكن للمدراء تعطيل استخدام المفاتيح كلياً في صفحة &lt;A 
+HREF="./?exec=aide_index&amp;aide=confart" TARGET="_top">الإعداد الدقيق</A>.</p>
+
+<h2>artmots/المفاتيح</h2>
+<h3 class="spip">المفاتيح</h3>
+
+<p>لإغناء التجول في الموقع، يمكن تخصيص <A HREF="./?exec=aide_index&amp;aide=mots" 
+TARGET="_top">مفاتيح</A> للمقالات والأخبار والمواقع المبوبة. بهذه الطريقة لا يكتفي زائر الموقع بتصفح الأقسام قسم بعد الآخر بل يمكنه الذهاب من مقال يتحدث عن موضوع معين (يدل اليه المفتاح) الى مقال آخر مرتبط بالمفتاح نفسه.</p>
+
+<p>من الممكن إنشاء العدد المطلوب من المفاتيح لكل مقال او خبر او موقع مبوب.</p>
+
+<p>وتقوم قائمة منسدلة بعرض كل مفاتيح الموقع وهي سهلة الاستخدام للغاية. <strong>ملاحظة: اذا تخطى عدد المفاتيح الخمسين مفتاحاً، تُستبدل القائمة المنسدلة بمربع بحث، ويكفي إدخال المفتاح المطلوب والنقر على «بحث».</strong></p>
+
+<p><strong>ملاحظة</strong> لا يحق الا للمدراء إنشاء مفاتيح من داخل الصفحة المخصصة لإدارة هذه المفاتيح (الزر «المفاتيح» في شريط الأدوات أعلى الشاشة).</p>
+
+<p>يمكن لمدراء الموقع تعطيل استخدام المفاتيح من صفحة «&lt;A 
+HREF="./?exec=aide_index&amp;aide=confart" TARGET="_top">الإعداد الدقيق</A>».</p>
+
+<h2>motsgroupes/مجموعات المفاتيح</h2>
+<h3 class="spip">مجموعات المفاتيح</h3>
+
+<p>عندما تستخدم الكثير من المفاتيح، يصبح من الصعب جداً إدارتها بفعالية. لذلك يمكنك إنشاء مجموعات تحتوي هذه المفاتيح. هكذا تصبح واجهة النظام أوضح (على سبيل المثال قد تحتوي مجموعة إسمها «البلدان» على «ناميبيا» و«البرازيل» بينما تحتوي مجموعة إسمها «قضايا» على «البطالة» و«الشعر» و«الحيوان»).</p>
+
+<h1>المواقع المبوبة</h1>
+<h2>reference/تبويب موقع</h2>
+<h3 class="spip">المواقع المبوبة</h3>
+
+<p>يقدم SPIP نظام إدارة كامل للوائح الوصلات الى مواقع أخرى. هذا النظام متكامل ويقدم خاصة:
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;امكان تجميع هذه اللوائح في أقسام (الأقسام نفسها التي تحتوي مقالات او أقسام خاصة بالوصلات تماماً مثل دليل وصلات)؛
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;تخصيص شعار لكل موقع مبوب؛
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;تخصيص مفاتيح لكل موقع مبوب؛
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;إضافة وصف خاص لكل موقع مبوب.</p>
+
+<p>إضافة الى ذلك يمكنك جلب آخر ما تم نشره في هذه المواقع اذا هي سمحت بذلك (راجع «&lt;a 
+href="./?exec=aide_index&amp;aide=rubsyn" target="_top">المواقع المرخصة</a>»).</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>تبويب موقع جديد</strong></p>
+
+<p>يتيح زر بعنوان «تبويب موقع» موجود في صفحة كل قسم إمكان إضافة موقع جديد.</p>
+
+<p>تعتمد الطريقة التقليدية على إدخال إسم الموقع وعنوانه ثم إدخال وصف عنه. من الممكن أيضاً اختيار القسم الذي سيحتوي هذا الموقع.</p>
+
+<p>ويتيح مربع في أسفل الصفحة إدارة الترخيص لمحتوى هذا الموقع. لمزيد من التفاصيل حول ذلك راجع &lt;a 
+href="./?aide_index&amp;aide=rubsyn" target="_top">المواقع المرخصة</a>. اذا كنت تريد التبويب فقط، يكفي تحديد خيار «عدم ترخيص».</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>التبويب السريع</strong></p>
+
+<p>في صفحة تبويب موقع جديد يظهر مربع في أعلى الصفحة يتيح تبويباً سريعاً لأي موقع دون الحاجة لإدخال إسم او وصف. لذلك يكفي إدخال عنران (URL) الصفحة التي تريد تبويبها. وقدر المستطاع، سيحاول SPIP الذهاب الى هذا العنوان وجلب إسم الصفحة ووصفها آلياً. يمكنك تغيير هذه المعلومات لاحقاً.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>من يمكنه اقتراح مواقع للتبويب؟</strong></p>
+
+<p>في صفحة «الإعداد الدقيق» يمكن للمدراء حصر إقتراح المواقع للتبويب بالمدراء أنفسهم او توسيعه الى المحررين او حتى الى زوار الموقع العمومي (في هذه الحال تظهر إستمارة في الموقع العمومي تتيح للزوار فرصة إقتراح مواقع).</p>
+
+<p>في كل الأحوال، لا يحق الا للمدراء التصديق على هذه الاقتراحات. عندما يتم اقتراح موقع معين، يمكن لكل المشاركين في المجال الخاص ان يناقشوا هذا الاقتراح في منتدى مرتبط بكل موقع.</p>
+
+<h2>rubsyn/المواقع المرخصة</h2>
+<h3 class="spip">المواقع المرخصة</h3>
+
+<p>يمكن للمواقع المطورة بواسطة نظام نشر آلي (مثل SPIP او phpNuke) إنشاء ملف يحتوي بشكل دائم قائمة بأحدث ما نُشر في الموقع. عموماً، هناك تنسيق قياسي لهذا النوع من الملفات يُعرف بإسم الملف الخلفي «backend».</p>
+
+<p>يمكن تحليل هذا الملف آلياً وبسهولة للقيام باستمرار بجلب قائمة بآخر الأخبار في الموقع. هكذا، وبفضل SPIP تعرض في موقعك قائمة بآخر المقالات المنشورة في المواقع المرخصة.</p>
+
+<p>لكل  &lt;a 
+href="./?exec=aide_index&amp;aide=reference" target="_top">موقع مرخص</a> في أقسام موقعك، يمكنك جلب قائمة بأحدث المقالات المنشورة في هذا الموقع. هذا بالطبع اذا كان الموقع المذكور يوفر ملف خلفي backend.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>كيف تعثر على الملف الخلفي «backend.php»؟</strong></p>
+
+<p>في اي موقع يديره SPIP او phpNuke، يتم العثور على الملف الخلفي بسهولة: فهو الملف الموجود في أصل الموقع والذي يحمل إسم «backend.php3» (او «backend.php» او «spip.php?page=backend»). على سبيل المثال، ففي موقع uZine (على العنوان <code class='spip_code' dir='ltr'>http://www.minirezo.net</code>)، يوجد الملف على العنوان:</p>
+
+<LI> <code class='spip_code' dir='ltr'>http://www.minirezo.net/backend.php</code>
+
+<p>ومن الأمثلة الأخرى للملفات الخلفية:</p>
+
+<LI> <code class='spip_code' dir='ltr'>http://www.davduf.net/backend.php</code></LI><LI> <code class='spip_code' dir='ltr'>http://www.vacarme.eu.org/backend.php</code></LI>
+<LI> <code class='spip_code' dir='ltr'>http://www.vakooler.com/backend.php</code></LI>
+
+<p>تجدر الملاحظة ان موقع <a href="http://rezo.net/backend" TARGET="autre" target="_blank">L&#8217;autre portail</A> يوفر ملفات خلفية للمواقع التي يبوّبها حتى لو لم تكن هذه المواقع تملك ملفات خلفية خاصة بها. ستجد في هذه الصفحة حوالي ثلاثين ملفاً خلفياً للمواقع المبوبة في L&#8217;autre portail.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>إضافة موقع مرخص الى موقعك</strong></p>
+
+<p>عندما تقوم بتبويب موقع ما في أحد أقسامك، إضافة الى تحديد إسمه وعنوانه ووصفه، يمكنك اختيار ترخيصه (وبالتالي فإن موقع مرخص هو اولاً موقع مبوّب لكن نطلب ايضاً من SPIP جلب قائمة بآخر منشوراته).</p>
+
+<p>لإتمام ذلك، قم بتحديد خيار «ترخيص» وإدخال عنوان (URL) الملف الخلفي (backend) الخاص به. بعد النقر على إدخال، تظهر رسالة تعلمك بنجاح الترخيص او فشله.</p>
+
+<p>اذا فشل الترخيص:
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;تأكد من انك أدخلت العنوان الصحيح للموقع.
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;تأكد من ان الموقع الذي تريد ترخيصه يمكن الوصول اليه على النسيج.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>التبويب السريع</strong></p>
+
+<p>تناسب وظيفة التبويب السريع (اي إدخال عنوان الموقع فقط لتمكين SPIP من جلب المعلومات الضرورية عنه آلياً) المواقع المرخصة. والحال، فبدلاً من إدخال عنوان الصفحة الأساسية خلال عملية التبويب، يمكنك إدخال عنوان الملف الخلفي (backend) العائد لهذا الموقع: ويقوم SPIP آلياً بجلب كمية كبيرة من المعلومات وتنفيذ عملية الترخيص مباشرة.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>المقالات المرخصة</strong></p>
+
+<p>عندما ينجح الترخيص، يعرض SPIP قائمة بآخر المقالات التي ينشرها الموقع المرخّص. راجع صفحة التعليمات المخصصة &lt;a 
+href="./?exec=aide_index&amp;aide=artsyn" target="_top">لإدارة هذه الوصلات</a>.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>الملف الخلفي لموقعك</strong></p>
+
+<p>ينشئ SPIP آلياً ملف خلفي لموقعك. ولكن لكي يصبح هذا الملف عملياً لا تنسى إدخال إسم موقعك وعنوانه في صفحة &lt;A 
+href="./?exec=aide_index&amp;aide=confnom" TARGET="_top">الإعداد الدقيق</a>.</p>
+
+<h2>artsyn/المقالات المرخصة</h2>
+<h3 class="spip">المقالات المرخصة</h3>
+
+<p>عندما تطلب &lt;A 
+HREF="./?exec=aide_index&amp;aide=rubsyn" TARGET="_top">ترخيص موقع</A> معين، يعرض SPIP قائمة بآخر المقالات المنشورة في هذا الموقع، تحت عنوان «المقالات المرخصة المسحوبة من هذا الموقع».</p>
+
+<p>ويعرض SPIP لكل مقال:
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;عنوانه (يكفي النقر على هذا العنوان للوصول الى المقال في موقعه الأصلي)؛
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;مؤلفه اذا وجد؛
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;وصفه اذا وجد.</p>
+
+<p>لا يمكن تغيير هذه المعلومات المسحوبة آلياً من الموقع المرخص.</p>
+
+<p>إضافة الى ذلك، ولكل مقال، ييتح لك زر بعنوان «صد هذه الوصلة» إمكان منع عرضه في موقعك (اما لأن المقال لا يناسبك او ان هناك خطأ يعطل هذه الوصلة...). يمكنك إسترجاع عرض هذا المقال في موقعك في اي وقت.</p>
+
+<p>من الممكن كذلك ان تقرر صد اية وصلة مستقبلية ناتجة عن هذا الموقع مسبقاً بحيث لا تُعرض المقالات المسحوبة الا بعد ان تصدّق كل منها «يدوياً».</p>
+
+<h2>confhttpproxy/إستخدام وكيل</h2>
+<h3 class="spip">إستخدام جهاز وكيل</h3>
+
+<p>اذا كان موقعك وراء جدار ناري، قد تجد نفسك مضطراً لإعداد جهاز وكيل (HTTP proxy) يتكفل بجلب المواقع المرخصة عبر شبكة انترنت.</p>
+
+<p>يجب ان يسمح هذا الوكيل بخروج طلباتك من غير تحقّق.</p>
+
+<p>في صفحة إعداد موقعك (في قسم «وظائف SPIP»)، قم بإدخال معلومات الوكيل على الشكل التالي:</p>
+
+<p><code dir="ltr" class='spip_code' dir='ltr'>http://proxyname:port/</code></p>
+
+<p>حيث يكون <i>proxyname</i> إسم جهاز الخدمة الذي يلعب دور الوكيل و<i>port</i> رقم منفذ TCP (غالباً ما يكون 3128 او 8080 او حتى 80) الذي سيتكفل بطلباتك.</p>
+
+<p>تحذير: هذا الإعداد شامل: سيجلب SPIP كل المواقع المرخصة عبر هذا الوكيل. منذ <a href="ar_article3401.html" class='spip_in'><span style='color: darkviolet;'>S</span><span style='color: blue;'>P</span><span style='color: green;'>I</span><span style='color: salmon;'>P</span> <span style='color: green;'>١</span><span style='color: blue;'>.</span><span style='color: darkviolet;'>٩</span></a>، يمكن توضيح ان يعض المضيفين لا يجب ان يستخدموا هذا الوكيل. ولكن للإصدارات السابقة او اذا احتجت الى اعدادات أكثر دقة، يجب الاتصال بمسؤول شبكتك.</p>
+
+<h1>المراسلة الداخلية</h1>
+<h2>messut/<img src='../prive/images/m_envoi_rtl.gif' border=0> الرسائل بين المستخدمين</h2>
+<h3 class="spip">الرسائل بين المستخدمين</h3>
+
+<p>يسهّل SPIP تبادل الرسائل بين مستخدمي الموقع دون الحاجة للجوء الى البريد الالكتروني.</p>
+
+<p>عندما «يبعث» أحد المستخدمين برسالة الى عدة مستخدمين آخرين، تتحول هذه الرسالة الى منتدى نقاش خاص. هكذا، حال بعث رسالة، يمكن للنقاش ان يبدأ على شكل منتدى موجود تحت الرسالة. في SPIP، يمكن ايضاً اعتبار الرسالة نوعاً من المنتدى الخاص (بمعنى آخر، ليس من الضروري تبادل عدد كبير من الرسائل لفتح حلقة نقاش اذ يكفي«بقاء» المستخدم داخل الرسالة نفسها هو والمتكلم معه «ليتناقشان» بفضل المنتدى الخاص المرتبط بالرسالة).</p>
+
+<p><strong>ملاحظة:</strong> الرسائل بين المستخدمين والمنتديات المرتبطة بها خاصة. ويعني ذلك ان SPIP لا يوفر اي واجهة للمدراء لمشاهدة هذه الرسائل. ولكن تجدر الملاحظة ان هذه السرية نسبية جداً: فيمكن لأي مدير مزود بالأدوات اللازمة للدخول مباشرة الى قاعدة البيانات ان يطلع على هذه الرسائل.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>إنشاء رسالة\نقاش</strong></p>
+
+<p>ان أبسط طريقة لبعث رسالة هي النقر على الرمز الأخضر (حرف «M» يتبعه مثلث صغير) الذي يظهر الى جانب إسم المرسل اليه مما يفتح رسالة جديدة في الحال.</p>
+
+<p>اما الطريقة الثانية، فهي استخدام زر «رسالة جديدة» الذي يظهر في كل صفحة من صفحات المجال الخاص. يؤدي ذلك الى فتح رسالة لا تحتوي على مرسل اليه. بالطبع قبل بعث الرسالة يجب تحديد مرسل اليه.</p>
+
+<p>اما واجهة تحرير الرسالة فبسيطة للغاية.</p>
+
+<p>الا ان الخطأ الشائع الوحيد الذي يجب تفاديه هو نسيان «بعث» الرسالة: طالما تتمتع الرسالة بوضع «قيد التحرير»، لا يحق الا لمؤلفها الوصول اليها. يجب إرسالها لتمكين المرسل اليه من الاطلاع عليها (تحذير: حال بعث الرسالة، يصبح من المتعذر تعديلها).</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>إضافة\حذف مرسل اليه</strong></p>
+
+<p>في اي وقت، يمكن إضافة مرسل اليه: اما خلال تحرير الرسالة او بعد بعثها (لإضافة مشارك جديد في النقاش مثلاً).</p>
+
+<p>بالطريقة نفسها، يمكنك حذف مرسل اليه في اي وقت. على كل حال هناك زر عنوانه «إيقاف المشاركة في هذا النقاش» يسمح لأي مشارك بحذف نفسه من النقاش.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>ضرب موعد</strong></p>
+
+<p>يمكن لأي رسالة ان تتحول الى موعد: ويعني ذلك انها ترتبط بتاريخ يظهر في روزنامة SPIP.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>هل يمكن الكتابة لأي مستخدم في الموقع؟</strong></p>
+
+<p>هناك بعض المحررين الذين لا يمكن الاتصال بهم (لا يظهرون في قائمة «إضافة مشارك» ولا يرافق إسمهم رمز المراسلة):
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;المحررون قد يقررون فردياً عدم استخدام نظام المراسلة الداخلية؛
+<br /><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;لا يمكن الاتصال بالمحررين الذين لم يدخلوا الى المجال الخاص لأكثر من 15 يوماً (من الأفضل لهؤلاء المستخدمين الذين يتصلون نادراً جداً بالمجال الخاص ان يستخدموا البريد الالكتروني العادي).</p>
+
+<h2>messpense/<img src='../prive/images/m_envoi_bleu_rtl.gif' border=0> المذكرات</h2>
+<h3 class="spip">المذكرات</h3>
+
+<p>تأتي المذكرة (او «المفكرة») على شكل رسالة: لكنها لا تتطلب مرسل اليه. ولا يمكن الا لمؤلفها الوصول اليها.</p>
+
+<p>يتضح من إسمها ان المذكرة تهدف الى تسجيل معلومات ينوي المستخدم الحفاظ عليها.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>إدراج مذكرة في الروزنامة</strong></p>
+
+<p>ان أكثر الاستخدامات عملية للمذكرة هو إعطاؤها تاريخاً. بهذه الطريقة، تتكفل المذكرة بتذكير صاحبها حتى يأتي التاريخ المسجل فيها (ولمدة 24 ساعة بعد هذا التاريخ) وتظهر في روزنامة SPIP.</p>
+
+<p><strong>ملاحظة:</strong> كما في حال الرسائل بين المستخدمين، نلفت انتباهك الى السرية النسبية للمذكرات. ومع ان SPIP لا يوفر اي ادوات للمدراء لكي يطلعون على المذكرات، الا ان ادوات أخرى للدخول المباشر الى قاعدة البيانات تتمكن من تنفيذ ذلك.</p>
+
+<h2>messcalen/الروزنامة</h2>
+<h3 class="spip">الروزنامة</h3>
+
+<p>تقدم روزنامة SPIP نوعين من المعلومات:</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>المعلومات العامة لكامل الموقع؛</strong> هذه المعلومات هي المقالات والأخبار المنشورة - هكذا تتيح الروزنامة امكان العثور على المقالات حسب تاريخ نشرها؛</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>المعلومات الخاصة؛</strong> وهي الرسائل بين المستخدمين والمذكرات المزودة بتواريخ مواعيد. وهكذا تلعب الروزنامة دور المفكرة اليومية.</p>
+
+<p>تجدر الملاحظة ان كل يوم في المذكرة يحتوي على رمز أزرق صغير: يتيح هذا الرمز إنشاء مذكرة ترتبط مباشرة بهذا اليوم (يمكن ضبط وقت الموعد بدقة أكبر بفضل واجهة تحرير المذكرة).</p>
+
+<h2>messconf/تخصيص المراسلة</h2>
+<h3 class="spip">تخصيص المراسلة</h3>
+
+<p>يمكن لكل مستخدم تخصيص إعداد المراسلة الداخلية لجعلها تناسبه شخصياً.</p>
+
+<p><strong>ملاحظة:</strong> يمكن لمدراء الموقع ان يقرروا عدم استخدام نظام المراسلة او قائمة المشاركين المتصلين. في كل الأحوال، اذا تم تعطيل اي خيار بشكل عام في كل الموقع (من قبل احد المدراء)، لا يمكن للمحررين الوصول الى هذا الخيار.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>عدم استخدام المراسلة الداخلية</strong></p>
+
+<p>اذا كانت المراسلة الداخلية متوافرة للموقع ككل (وهو قرار محصور بالمدراء)، يمكن لكل مستخدم أخذ القرار فردياً بعدم استخدامها. (بمعنى آخر، لا يريد تبادل الرسائل مع المستخدمين الآخرين من خلال هذا النظام).</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>عدم استخدام قائمة المستخدمين المتصلين</strong></p>
+
+<p>عندما تتوافر هذه الوظيفة (بقرار من المدراء)، وفي ما هو يستخدم المراسلة الداخلية، يمكن للمحرر أخذ قرار فردي بعدم الظهور في قائمة المستخدمين المتصلين.</p>
+
+<p>هذه الوظيفة تعرض باستمرار قائمة بالمستخدمين المتصلين بالمجال الخاص في الوقت الحقيقي مما يسهّل على المستخدمين المشاركة في النقاشات السريعة. وقد يجد بعض المستخدمين ان هذه الوظيفة متطفلة و\او قد لا يريدون لأحد ان  «يزعجهم» لدى اتصالهم بالمجال الخاص. فما عليهم هنا الا تعطيل هذه الوظيفة فيتوقفون عن الظهور في قائمة المحررين المتصلين وتختفي هذه القائمة من واجهتهم.</p>
+
+<p><strong>ملاحظة:</strong> عندما يقرر احد المدراء عدم الظهور في قائمة المحررين المتصلين، تبقى القائمة ظاهرة في واجهته: فهو  «يرى» الآخرين لكن الآخرين لا  «يرونه».</p>
+
+<h1>متابعة المنتديات</h1>
+<h2>suiviforum/متابعة المنتديات</h2>
+<h3 class="spip">متابعة المنتديات</h3>
+
+<p>تشكل صفحة متابعة المنتديات عنصراً مهماً من عناصر الموقع، هذا اذا سمحت باستخدام المنتديات العامة (في هذا الخصوص راجع التعليمات حول &lt;A 
+HREF="./?exec=aide_index&amp;aide=confforums" TARGET="_top">المنتديات العامة</A>). ففي هذه الصفحة بالذات تتم مراقبة المنتديات.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>عرض المشاركات</strong></p>
+
+<p>لا تُعرض المشاركات هنا حسب تنظيمها الهرمي (اي حسب موضوعها) بل الواحدة تلو الأخرى بترتيب زمني عكسي (الأحدث أولاً). من جهة أخرى، تشمل كل مشاركة إسم المقال الذي تعيد اليه.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>حذف مشاركة</strong></p>
+
+<p>أهم وظيفة هنا هي التمكن من حذف المشاركات. <strong>تحذير:</strong> لا يمكن التراجع عن هذه العملية. الا ان المشاركات المحذوفة لا تُحذف من قاعدة البيانات: إنها تظهر في الصفحة محاطة بإطار أحمر وعليها تاريخ وصولها وعنوان IP العائد لمرسلها.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;اذا كنت قد أعددت المنتديات العامة مع خيار المراقبة <strong>الاستباقية</strong>، تظهر المشاركات التي تنتظر التصديق 
+في إطار أصفر وتعرض زرين: <i>حذف 
+هذه المشاركة</i> و<i>التصديق على هذه المشاركة</i>.</p>
+
+<h1>إعداد الموقع</h1>
+<h2>confnom/إسم موقعك وعنوانه</h2>
+<h3 class="spip">إسم موقعك وعنوانه</h3>
+
+<p>يستخدم إسم موقعك وعنوانه (URL)، بشكل خاص، لإنتاج الملف الخلفي «backend» الذي يتيح ترخيص موقعك (اي ان يعرض موقع ثان آخر عشرة مقالات تم نشرها في موقعك).</p>
+
+<p>يجب ان يكون عنوان موقعك هو نفسه عنوان الدليل  الأساسي فيه وليس عنوان ملف HTML الافتراضي الموجود فيه. بالتالي يجب ان ينتهي هذا العنوان بالحرف «/». فإذا كان عنوان صفحتك الأساسية:</p>
+
+<p><code class='spip_code' dir='ltr'>http://www.mysite.net/index.html</code></p>
+
+<p>يجب كتابة عنوان موقعك بالشكل التالي:</p>
+
+<p><code class='spip_code' dir='ltr'>http://www.mysite.net/</code></p>
+
+<h2>confart/محتوى المقالات</h2>
+<h3 class="spip">محتوى المقالات</h3>
+
+<p>تتكون المقالات من عدد من العناصر: العنوان والعنوان المدخل والعنوان الفرعي والوصف والمقدمة والملحق... الا ان ثمة مواقع لا تحتاج الى كل هذه العناصر: اما لأن المحررين لا يستخدمونها او لأن تصميم الموقع العام لا يشملها.</p>
+
+<p>فمن اجل تخفيف العبء عن واجهة إدارة الموقع و\او منع المحررين من استخدام بعض العناصر التي لا يريد مصمم الموقع إدخالها، تتيح صفحة «الإعداد الدقيق» تعطيل استخدام هذه العناصر.</p>
+
+<p><strong>ملاحظة</strong> من المهم استيعاب الفرق بين خيار &lt;A 
+HREF="./?exec=aide_index&amp;aide=intersimple" target="_top">الواجهة المبسطة\الواجهة الكاملة</A> الذي لا يؤثر الا على واجهة كل مستخدم وخيارات «الإعداد الدقيق» التي تؤثر على جميع المستخدمين. فإذا قمت بتعطيل إستخدام العنوان الفرعي، لا يمكن لأي محرر او مدير استخدام العنوان الفرعي في مقالاته.</p>
+
+<p>ستتكيف واجهتهم مع وجود هذه العناصر او غيابها. اذا قمت بتعطيل استخدام المفاتيح سيختفي زر المفاتيح من شريط الأزرار في أعلى الواجهة.</p>
+
+<h2>confdates/المقالات المؤجلة</h2>
+<h3 class="spip">نشر المقالات المؤجلة</h3>
+
+<p>يستطيع المدراء تغيير &lt;A 
+HREF="./?exec=aide_index&amp;aide=artdate" TARGET="_top">تاريخ نشر</A> مقال ما (عندما يكون هذا المقال في وضع «منشور»).</p>
+
+<p>كيف يجب على SPIP ان يتصرف اذا حددنا للمقال تاريخ النشر في المستقبل؟ هل يجب على النظام نشر كل المقالات مهما كان تاريخ نشرها (وبالتالي الحصول على أشياء غريبة مثل مقال منشور وتاريخه «الأول من حزيران 2003» بينما نحن لا نزال في الثالث من أيار)، ام عليه ان ينتظر التاريخ الحقيقي (وهو هنا الأول من حزيران) قبل نشر المقال في الموقع العام؟</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;تكمن الفائدة الأساسية لهذه العملية في التمكن من توزيع نشر عدد من المقالات مسبقاً. عملياً، لنفترض ان مسؤول الموقع غاب في إجازة لمدة شهر. فإذا كان قد جهّز عدد من المقالات قبل ذهابه، يمكنه وضعهم في المجال الخاص في وضع «منشور» ولكن مع تحديد تواريخ نشر موزعة على الشهر بكامله. بهذه الطريقة، وبدلاً من نشر <i>رزمة</i> كبيرة من المقالات دفعة واحدة ثم لا شيء خلال شهر كامل، سيقوم النظام بنشر مقالات «جديدة» بانتظام طوال الشهر ورغم غياب المسؤول.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;اذا اردت مثلاً تصميم موقع يتعاطى الخيال العلمي مثل أخبار من المريخ، يستحسن تعطيل وظيفة المقالات المؤجلة الا اذا اراد الموقع ان ينتظر حتى عام 2030 مثلاً لنشر مقالاته. كذلك الأمر في ما يتعلق بمنشورة شهرية اذا ارادت نشر عدد نيسان في العشرين من شهر آذار.</p>
+
+<h2>confforums/تشغيل المنتديات</h2>
+<h3 class="spip">إدارة المنتديات العامة</h3>
+
+<p>تختلف طريقة إدارة المنتديات العامة مع اختلاف مسؤولي المواقع خاصة بالاعتماد على الحاجات الفعلية للموقع. فهناك مسؤولون لا يريدون منتديات وآخرون يريدون منديات حرة يشارك فيها اي كان وآخرون يفضلون مراقبة المنتديات استباقياً بحيث لا ينشرون المشاركات الا بعد تصديقها من قبل مدير.</p>
+
+<p>يتيح SPIP تشغيل المنتديات العامة (تُدار منتديات إدارة الموقع الداخلية دائماً كمنتديات مفتوحة لكل المحررين وتتم مراقبتها بشكل بعدي، اي بعد ظهورها).</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>تعطيل المنتديات العامة</strong></p>
+
+<p>عندما يتم تعطيل المنتديات، تختفي واجهة إرسال المشاركات ويتوقف عرض المشاركات القديمة (لا يتم حذفها من قاعدة البيانات لكن يُلغى عرضها). ويقوم هذا الخيار بتوقيف تشغيل المنتديات حتى لو تم اعتماد عرض المنتديات في تصميم الصفحات النموذجية للموقع.يمكنك اعتماد هذا الخيار دائماً (الموقع لا يوفر ابداً منتديات نقاش) او مؤقتاً (مثل تعليق نشاط المنتديات لمنع احد مرسلي الاعلانات غير المرغوبة او للذهاب في رحلة استجمام... او حتى لنقل الموقع الى خادم آخر).</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>منتديات مراقبة بعدياً</strong></p>
+
+<p>اذا كانت المنتديات مراقبة بعدياً، تظهر المشاركات في الموقع حال إرسالها من الزوار. بعدها يمكنك استخدام صفحة متابعة المنتديات التي يوفرها SPIP لمراقبة هذه المشاركات بالصرامة المطلوبة.</p>
+
+<p><strong>المراقبة البعدية هي الوضعية الافتراضية للمنتديات في SPIP </strong>.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>منتديات مراقبة إستباقياً</strong></p>
+
+<p>في المنتديات المراقبة إستباقياً، يتم تخزين مشاركات الزوار لكنها لا تُعرض في الموقع. وعلى المدراء استخدام صفحة متابعة المنتديات التي يوفرها SPIP للتصديق على (او رفض) كل مشاركة.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>منتديات بالاشتراك</strong></p>
+
+<p>عندما تكون المنتديات متاحة بالاشتراك، يجب على الزوار الراغبين في المساهمة الاشتراك اولاً بإرسال عنوانهم الالكتروني. بعد ذلك يحصلون على بيانات تعريفهم عبر البريد الالكتروني. اما بالنسبة للمحررين الذي يتمتعون مسبقاً بحق الدخول الى المجال الخاص فتكون بيانات تعريفهم هي نفسها البيانات التي يستخدمونها للاتصال بالمجال الخاص.</p>
+
+<p>تعتبر هذه الوضعية حلاً وسطاً بين الحافز على المسؤولية (على المساهمين توفير عناوين بريد الكتروني صالحة) وغياب المراقبة الاستباقية (بمجرد تسجيلهم، يتمكن الزوار من إدخال مشاركاتهم مباشرة).</p>
+
+<p>علاوة على ذلك، تتيح هذه الوضعية إقصاء المشاركين الذين يسيئون استخدام المنتديات (لائحة سوداء). والحال، عندما تحذف (من خلال صفحة متابعة المنتديات) مشاركة دخلت بفضل وضعية «بالاشتراك»، يمكنك الوصول الى «ملف» صاحب المشاركة (وهذا الملف صغير جداً). وهكذا يمكنك ببساطة إرسال هذا المستخدم الى «سلة المهملات»: وبذلك لا يعود معرّفه يعمل اذا حاول الدخول الى المنتدى مرة أخرى ولا يعود يستطيع الحصول على معرّف آخر يتماشى مع العنوان الالكتروني نفسه.</p>
+
+<p><span style='color: red;'>تحذير: تتطلب وضعية «منتدى بالاشتراك» ان يدعم مضيف الموقع وظيفة إرسال البريد الآلية. اذا لم تكن الحال كذلك عليك بتغيير المضيف (;</span></p>
+
+<h2>confbreves/نظام الأخبار</h2>
+<h3 class="spip">تفعيل\تعطيل نظام الأخبار</h3>
+
+<p>هناك بعض المواقع التي لا تستخدم الأخبار، وهي مقالات قصيرة من دون مؤلف. قد يعود ذلك الى ان مصمم الموقع لم يشمل الأخبار في تصميمه للموقع العام.</p>
+
+<p>في هذه الحال، يمكن ببساطة تعطيلها، هكذا لا يمكن للمحررين إنتاج الأخبار وواجهة النظام تتحرر من عبء إضافي.</p>
+
+<h2>confmessagerie/المراسلة الداخلية</h2>
+<h3 class="spip">المراسلة الداخلية</h3>
+
+<p>يوفر SPIP نظام مراسلة داخلية (هناك أبواب من هذا الدليل تتطرق الى <a href="./?exec=aide_index&amp;aide=messut" target="_top">المراسلة بين المستخدمين</a> و<a href="./?exec=aide_index&amp;aide=messpense" target="_top">المذكرات</a> و<a href="./?exec=aide_index&amp;aide=messcalen" target="_top">الروزنامة</a>).</p>
+
+<p>يمكنك اختيار استخدام النظام بكامله او أجزاء منه.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>تفعيل\تعطيل المراسلة الداخلية</strong></p>
+
+<p>من أسباب عدم استخدام المراسلة الداخلية الحجم الذي تحتله هذه المراسلة في قاعدة البيانات: فيتم حفظ الرسائل (كمشاركات المنتديات المرتبطة بالمقالات مثلاً) في قاعدة البيانات وبالتالي تحتل هذه الرسائل مساحات على القرص الثابت عند مضيف الموقع. إضافة الى ذلك تتسبب وظائف المراسلة الداخلية بزيادة العبء على الجهاز الذي يحتوي على الموقع (مثل استفسار قاعدة البيانات المتكرر مثلاً): فإذا كان هذا الجهاز بطيئاً (و\او لا يتمتع بالقوة الكافية) قد تقرر تخفيف العبء عنه وتعطيل المراسلة.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>تفعيل\تعطيل قائمة المحررين المتصلين</strong></p>
+
+<p>اذا قمت بتفعيل هذه الوظيفة، ستظهر قائمة المحررين المتصلين بمجال الموقع الخاص بشكل دائم. ومن ميزات هذه القائمة تسهيل تبادل الرسائل الفورية بين المستخدمين.</p>
+
+<p>تتسبب هذه الوظيفة بزيادة رستفسارات قاعدة البيانات، فالأفضل تعطيل هذه الوظيفة على الاجهزة الضعيفة او البطيئة. وتجدر الإشارة الى ان بعض المستخدمين قد يجدون ان هذه الوظيفة تطفلية بعض الشيء.</p>
+
+<p><strong>تجدر الملاحظة</strong> انه عندما تقوم بتفعيل الوظائف المذكروة أعلاه في كامل الموقع، يبقى من الممكن لكل مستخدم <a href="./?exec=aide_index&amp;aide=messconf" target="_top">تعطيل هذه الوظائف لنفسه</a>. هكذا فإذا وجد أحد المستخدمين ان وظائف المراسلة الداخلية تطفلية او غير ضرورية، يمكنه تعطيلها لنفسه.</p>
+
+<h2>confstat/إحصاءات الزيارات</h2>
+<h3 class="spip">إحصاءات الزيارات</h3>
+
+<p>يحتوي SPIP على نظام بسيط يتيح تعداد عدد الزيارات للموقع ولكل مقال. ويتيح كذلك معرفة اي مواقع اخرى وجهت الزوار الى موقعك ومقالاتك.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>عدد الزيارات</strong></p>
+
+<p>يتعرّف SPIP يومياً على «الزوار المنفردين» للموقع حسب عنوان IP الذي يحملونه. هذا النظام سريع وموثوق نسبياً (يوفر تقديرات دقيقة نسبياً عن عدد زوار الموقع وليس فقط عن عدد «الصفحات المشاهَدة»)؛ فالزائر الذي يعود عدة مرات الى الصفحة نفسها يحتسب على انه «زائر فريد او وحيد»).</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>الزيارات المباشرة او مواقع المصدر</strong></p>
+
+<p>نعني «بالزيارة المباشرة» الدخول الى الموقع او الى صفحة اي مقال مباشرة من موقع آخر يعرض وصلة هايبرتكست الى موقعك (ويسمى الموقع الآخر «موقع المصدر»).</p>
+
+<p>ويعرض SPIP لكامل الموقع او لكل مقال، قائمة بـ«مواقع المصدر» الأساسية (اي الصفحات التي تعرض وصلة هايبرتكست الى موقعك)، يرافقها عدد «الزيارات المباشرة» (اي عدد الزوار الذي نقروا هذه الوصلة ليصلوا الى موقعك).</p>
+
+<hr class="spip" />
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>نظام موثوق «نسبياً»</strong></p>
+
+<p>يتطلب نظام كامل لتحليل الزيارات الكثير من القوة والذاكرة، لذلك يأتي نظام تحليل SPIP بسيطاً ليكون سريعاً وصغيراً الى ابعد حد في جهاز الخدمة. إضافة الى ذلك يعتمد تعداد «الزوار المنفردين» على عنوان IP للزوار يومياً ولا يشكل ذلك اكثر الوسائل دقة. الا اننا نعتقد انه يوفر معلومات موثوقة «نسبياً».</p>
+
+<p>اذا كنت تحتاج الى معلومات أكثر دقة عن زيارات موقعك، يمكنك استخدام نظام تحليل إحصائي متخصص.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>حسابات يومية</strong></p>
+
+<p>يقوم نظام متابعة الزيارات المدمج في SPIP بحساب عدد الزوار ومواقع المصدر يومياً (وليس في الوقت الحقيقي). بالتالي، قد تبدو بعض المعلومات غير متّسقة أحياناً لأنها لا تشمل الزيارات المسجلة في اليوم الحالي. وفي حال الشك، فإن الصفحة المخصصة لعرض الإحصاءات هي الأكثر وثوقاً وتفصيلاً. وباتباع هذا المنطق، لا تتوافر صفحة إحصاءات مقال ما الا بعد اليوم الأول الذي نُشر فيه هذا المقال (فالأرقام لا تكون معروفة قبل ذلك لأن SPIP لم يحللها بعد).</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>تفعيل\تعطيل الإحصاءات ومواقع المصدر</strong></p>
+
+<p>من المفترض الا يحتل تعداد الزوار المنفردين مساحات واسعة والا يتطلب قوة حسابية كبيرة. لذلك ليس من المفيد جداً تعطيل هذا النظام الا اذا كان جهاز الخدمة بطيئاً للغاية.</p>
+
+<p>من جهة اخرى، يتطلب النظام الذي يقوم بتعداد مواقع المصدر والزيارات المباشرة قوة حسابية أكبر. بالتالي فإنه معطل إفتراضياً. وينصح تفعيله فقط  في أجهزة الخدمة التي ليس لديها مشاكل قوة حسابية (فأجهزة الخدمة التي بالكاد تتمكن من حساب المقالات الكبيرة لا يمكنها بالتأكيد تحمل العبء الإضافي الناتج عن حساب مواقع المصدر).</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>ملاحظة</strong>: اذا زادت الزيارات الى موقعك، سوف يزداد الوقت والمساحة الضروريين لمتابعة الزيارات ومواقع المصدر. فكلما زاد عدد الزيارات كلما زادت الحاجة التقنية لتنفيذ هذه المهمات.</p>
+
+<h2>confmails/البريد الإلكتروني الآلي</h2>
+<h3 class="spip">إرسال البريد الآلي</h3>
+
+<p>من الطبيعي ان لا يمضي المدراء والمحررون كل وقتهم في المجال الخاص للموقع. ولتسهيل العمل الجماعي ومتابعة نشاط الموقع، يمكن للنظام الإبلاغ بواسطة البريد الالكتروني عن اي جديد يحصل في الموقع...</p>
+
+<p><span style='color: red;'>تحذير: بعض مضيفي المواقع يعطلون وظيفة إرسال البريد الآلي. اذا كان ذلك ينطبق عليك لا يمكنك تفعيل الخيارات التالية.</span></p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>متابعة مشاركات المنتديات العامة</strong></p>
+
+<p>للسماح للمؤلفين بمتابعة النقاش المتعلق بمقالاتهم، يتيح هذا الخيار الإرسال الآلي لكل مشاركة تدخل على المقال الى المؤلف.</p>
+
+<p>اذا تم تفعيل هذا الخيار سيحصل مؤلف (او مؤلفو) المقال عبر البريد الالكتروني على نص اي مشاركة دخلت على مقالهم إضافة الى تذكير بعنوان المقال في الموقع. ويمكنه (او يمكنهم) بالتالي، بنقرة واحدة الذهاب الى صفحة المقال لإدخال رد على المشاركة اذا رغب (او رغبوا).</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>متابعة أنشطة التحرير</strong></p>
+
+<p>عندما يتم عرض مقال ما للتقييم او التصديق، يستطيع SPIP الإبلاغ عنه بواسطة البريد الكتروني. هكذا يكون المشتركون في الموقع على علم مباشرة بالتطورات المهمة.</p>
+
+<p>اذا كان الموقع جماعياً (عدة محررين)، ننصح بإنشاء قائمة بريدية من المحررين (SPIP لا يوفر وظيفة القائمة البريدية) حيث يمكنك بعث الرسائل.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>إعلان عن آخر الأخبار</strong></p>
+
+<p>تسمح هذه الوظيفة بإنتاج رسائل إلكترونية من نوع «آخر الأخبار»: اذا قمت بتفعيلها وتحديد الفترة التي تفصل بين الإعلانات، يتم إرسال بريد الكتروني بآخر المقالات والأخبار المنشورة في أوقات منتظمة الى العنوان المحدد.</p>
+
+<p>هذه الوظيفة سهلة للغاية: اذا قمت بتفعيلها بتحديد فترة سبعة أيام مثلاً، يقوم SPIP مرة كل سبعة أيام بإرسال قائمة بالمقالات والأخبار التي تم نشرها خلال هذه المدة وذلك الى العنوان الذي حددته.</p>
+
+<p>ويقوم زر «إرسال الآن» بإرسال هذه القائمة فوراً (ويبدأ آلياً فترة سبعة أيام جديدة قبل إرسال البريد التالي).</p>
+
+<p>يمكنك إرسال هذا البريد الى عنوان المسؤول الأساسي عن الموقع (ويتكفل هو بتوزيعه) كما يمكنك، اذا كنت تفضل الإدارة الآلية الكاملة للمواقع، إرسال البريد الى قائمة المشتركين لديك (نذكّر ان SPIP لا يوفر وظيفة القوائم البريدية).</p>
+
+<h2>confmoteur/محرك البحث المدمج</h2>
+<h3 class="spip">تفعيل\تعطيل محرك البحث</h3>
+
+<p>يوفر SPIP محركاً للبحث. عندما يتم تفعيله، يقوم نظام لفهرسة المقالات بتحليل محتوى كل المقالات. ومع ان هذه العملية تؤدي لاحقاً الى عمليات بحث سريعة للغاية الا انها تتطلب مقداراً كبيراً من الجهد من قبل جهاز الخدمة. وفي حال كان هذا الجهاز ضعيفاً، ستظهر بعض المشاكل.</p>
+
+<p>لهذا السبب يمكنك تفعيل نظام الفهرسة او تعطيله.</p>
+
+<p>يذكر ان البيانات الناتجة عن محرك البحث المدمج في SPIP تتسبب بزيادة حجم قاعدة البيانات المخزنة على القرص الثابت بمقدار <strong>ثلاثة أضعاف</strong>. من جهة أخرى، تتسبب الفهرسة بانخفاض ملحوظ في أداء الأجهزة البطيئة وقد يصل الأمر الى حصول بعض أخطاء التنفيذ (في الحالات القصوى).</p>
+
+<p>بشكل عام، اذا كان الموقع كبيراً جداً، ننصح بعدم استخدام محرك البحث المدمج في SPIP واختيار منتجات متخصصة مثل <A HREF='http://www.htdig.org/' target="_blank">ht://Dig</A>.</p>
+
+<p>تجدر الملاحظة كذلك الى ان محرك البحث لا يفهرس كل الصفحات دفعة واحدة. اذا قمت بتفعيله بينما يحتوي موقعك على عدد كبير من المقالات، يجب الانتظار حتى يسجل الموقع عدداً من الزيارات يعادل (تقريباً) عدد المواد المطلوب فهرستها ليتمكن من تحديث محرك البحث.</p>
+
+<h1>إعداد الواجهة الشخصية</h1>
+<h2>intersimple/واجهة مبسطة / كاملة</h2>
+<h3 class="spip">واجهة مبسّطة \ واجهة كاملة</h3>
+
+<p>يمكن لكل مستخدم لـSPIP تغيير الواجهة الخاصة به (دون ان يؤثر ذلك على واجهة المستخدمين الآخرين على عكس صفحة «&lt;A A 
+HREF="./?exec=aide_index&amp;aide=confart" TARGET="_top">الإعداد الدقيق</A>»).</p>
+
+<p>هناك عدة وظائف يوفرها SPIP لكنها لا تستخدم الا نادراً (او ابداً) من بعض المحررين. بالتالي، فاختيار «الواجهة المبسّطة» يسمح بتخفيف الواجهة وتبسيط فهمها. في هذه الوضعية، لا يتم عرض الا العناصر الضرورية جداً لإدارة الموقع. فعلى سبيل المثال، هناك عدد قليل جداً من المستخدمين يحتاج الى «&lt;A 
+HREF="./?exec=aide_index&amp;aide=artdate_redac" TARGET="_top">تاريخ النشر السابق</A>» الذي يختفي في وضعية «الواجهة المبسّطة».</p>
+
+<p><strong>ملاحظة</strong>: تظهر الفوارق بين وضعيتي العرض بوضوح أكبر لدى مدراء الموقع الذين تتوافر لهم وظائف اكثر من تلك المتوافرة للمحررين.</p>
+
+<p>لتفعيل هذه التغييرات يجب قبول استخدام الكعكات.</p>
+
+<h2>cookie/كعكة الإدارة</h2>
+<h3 class="spip">كعكة الإدارة</h3>
+
+<p>يمكن لمدراء الموقع تفعيل كعكة (cookie) تقوم بعرض وظائف إضافية خلال زيارة الموقع العمومي.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>إعادة تحديث هذه الصفحة</strong></p>
+
+<p>سوف يظهر زر عنوانه «إعادة تحديث هذه الصفحة» في كل صفحات الموقع العمومي. فبما ان SPIP يحتوي على نظام <strong>ذاكرة مخبأة</strong>، قد لا تظهر التعديلات الداخلة على الصفحات حالاً في الموقع العمومي. (فالصفحات المعروضة في الموقع العمومي لا تأتي مباشرة من قاعدة البيانات: يتم تحديثها في فترات منتظمة ثم حفظها في الذاكرة المخبأة).</p>
+
+<p>بإعادة تحديث الصفحة، يفرض المدير عرضها حسب العناصر الموجودة في قاعدة البيانات دون الحاجة الى انتظار التحديث المقبل للذاكرة المخبأة.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>تعديل...</strong></p>
+
+<p>تحتوي صفحات المقالات والأخبار والأقسام على زر بعنوان «تعديل هذا المقال» (او «تعديل هذا القسم»...). هذا الزر ينقلك مباشرة من الموقع العمومي الى الصفحة في المجال الخاص المناسبة لهذا المقال (او القسم...). ويسهّل هذا الزر تصحيح الأخطاء التي تظهر في الموقع العمومي او تحديث اي من عناصر الموقع.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>عدد الزيارات</strong></p>
+
+<p>اذا تم تفعيل نظام الإحصاءات المدمج في SPIP، تضاف المعلومات التالية على صفحات المقالات: عدد الزيارات (تقدير) وعدد <strong>مواقع المصدر</strong> المختلفة.</p>
+
+<p>اما مواقع المصدر، فهي وصلات الى مقالات معينة تأتي من خارج موقعك (يعني عندما يعرض موقع آخر وصلة مباشرة الى مقال في موقعك او عندما يتم تمرير عنوان هذا المقال في بريد الكتروني).</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>بيانات الاتصال</strong></p>
+
+<p>تتيح كعكة الإدارة أيضاً لـSPIP التعرف على برنامج التصفح الذي تستخدمه عندما تتصل ثانية في المجال الخاص: فما عليك عندها الا إدخال كلمة المرور لتتمكن من دخول المجال الخاص.</p>
+
+<p><strong>ملاحظة:</strong> اذا كان الاتصال يعتمد على الكعكة - وهذه هي الحال الأكثر شيوعاً - يتم وضع الكعكة في المجال الخاص حال دخولك اليه.</p>
+
+<h2>deconnect/خروج</h2>
+<h3 class="spip">الخروج</h3>
+
+<p>يمكنك النقر على زر «خروج» لإلغاء بيانات تعريفك في المجال الخاص. عندما تنقر عليه «تضيع» معلومات المعرّف الذي استخدمته للدخول الى المجال الخاص؛ واذا قررت العودة الى المجال الخاص سيطلب منك SPIP إعادة إدخال هذه المعلومات او الذهاب الى الموقع العمومي.</p>
+
+<p>ان الميزة الأساسية لهذه الوظيفة منع شخص آخر يستخدم جهازك من الدخول الى المجال الخاص باستغلال بيانات تعريفك.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>اذا كنت الشخص الوحيد الذي يستخدم الجهاز</strong></p>
+
+<p>في هذه الحال، يبدو الخروج بهذه الطريقة عديم الجدوى. ينصح بالطبع الخروج دائماً هكذا لكن لا تحصل مشكلة اذا خرجت بطريقة أخرى.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>تدخل الى المجال الخاص بواسطة جهاز متعدد المستخدمين</strong></p>
+
+<p>في هذه الحال، ننصحك بشدة ان تخرج عبر هذه الوظيفة دائماً عندما تنتهي من عملك في المجال الخاص. هكذا سوف يتم منع اي شخص آخر يستخدم الجهاز نفسه من الدخول.</p>
+
+<p><img src="squelettes-dist/puce_rtl.gif" width="8" height="11" class="puce" alt="-" />&nbsp;<strong>استخدام اكثر من معرّف واحد للموقع نفسه</strong></p>
+
+<p>هناك بعض المستخدمين الذي يحتاجون للوصول الى المجال الخاص بواسطة أكثر من معرّف واحد. في هذه الحال، استخدم وظيفة الخروج للخروج من المجال الخاص وإعادة الدخول تحت إسم تعريف آخر.</p>
+
+<h1>استخدامات متطورة</h1>
+<h2>artmodif/مقالات قيد التعديل</h2>
+<h3 class="spip">مقالات قيد التحرير</h3>
+
+<p>عندما يقوم أحد المحررين بتحرير مقال ما، يتم إبلاغ المشاركين الآخرين في الموقع عندما يذهبون الى صفحة هذا المقال ويتم نصحهم بعدم التدخل في المقال طالما هو قيد التحرير.</p>
+
+<p>والحال، اذا فتح محرران المقال نفسه في وقت واحد لتحريره، قد تلغي تعديلات أحدهما تعديلات الآخر.</p>
+
+<p>إذا رأيت تنبيه «تحذير، فلان عمل على هذا المقال منذ كذا دقيقة»، يستحسن عدم تعديل المقال في هذه اللحظة. ويفضل العودة الى المقال في وقت لاحق لتعديله وذلك بعد ان يكون المحرر الآخر قد انتهى من تعديلاته قام بتسجيلها.</p>
+
+<p>في المقابل، عندما تقوم أنت بتعديل مقال ما، يتم إبلاغ المشاركين الآخرين في الموقع الذين يزورون صفحة المقال بعملك عليه. وطالما تعمل على المقال ولمدة <strong>ساعة</strong> بعد انتهائك، ينصح المحررون الآخرون بعدم التدخل في المقال. عندما تقرر ان العمل على المقال قد انتهى، وانه يمكن للآخرين التعامل معه، يمكنك «فك حجز» المقال فيختفي التحذير ويمكن الآخرين إدخال تعديلاتهم.</p>
+
+<h2>suivimodif/متابعة التعديلات</h2>
+<h3 class="spip">متابعة التعديلات</h3>
+
+<p><strong>قائمة تعديل المقالات</strong></p>
+
+<p>تتيح متبعة تعديلات المقالات معاينة التعديلات التي دخلت على المقالات خلال تاريخ تحريرها.</p>
+
+<p>ولا تعرض هذه القائمة الا المقالات المنشورة وتلك المعروضة للتقييم. وبالنقر على عنوان احد المقالات في القائمة، تظهر صفحة تعرض الفوارق بين آخر تعديل للمقال والتعديل السابق له.</p>
+
+<p><strong>عرض التعديلات</strong></p>
+
+<p>يمكن مقارنة النسخة الحالية من المقال بنخة سابقة بالنقر على رابط «مقارنة» المناسب.<br class='manualbr' />يمكن أيضاً تغيير النسخة المعروضة بالنقر على تاريخ النسخة المطلوب رؤيتها.</p>
+
+<p>ويتيح نظام بسيط للترميز بالألوان مشاهدة التغييرات التي دخلت على المقال:</p>
+
+<ul class="spip"><li> مقاطع النص الملونة <span style="background: #d0ffc0;"
+  title="نص مضاف">بالأخضر</span> هي النصوص المضافة.</li><li> مقاطع النص الملونة <span style="background: #e8e8ff;"
+  title="نص منقول">بالأزرق</span> هي النصوص المنقولة الى موقع آخر.</li><li> مقاطع النص الملونة <span style="background: #ffd0c0;color: #802020;text-decoration: line-through"
+  title="نص محذوف">بالأحمر ومشطوبة</span> هي النصوص المحذوفة.</li></ul><h2>corrortho/تدقيق الإملاء</h2>
+<h3 class="spip">تدقيق الإملاء</h3>
+
+<p>يقوم مدقق الإملاء بإرسال النص الى جهاز خدمة من تقدمة بعض أعضاء مجموعة مستخدمي SPIP لمقارنة الكلمات بمعجم. ويرسل جهاز الخدمة قائمة بالكلمات التي لم يتمكن من التعرف عليها.</p>
+
+<p>تظهر حينها نافذة جديدة تحتوي على مادة المقال وإطار الى يسارها.</p>
+
+<p>في المادة تظهر الكلمات التي لم يتم التعرف عليها باللون الأحمر (اذا أضفنا كلمات الى المعجم الخاص المحلي يتم وضع خط أخضر تحتها).</p>
+
+<p>ويعرض الإطار الأيسر قائمة بكل الكلمات غير المعروفة في النص. وعند تحت إحداها تظهر قائمة بافتراحات التصحيح ويمكن أيضاً إضافة هذه الكلمة الى المعجم المحلي.</p>
+
+<p>يكفي عندها في صفحة المقال الأساسية النقر على «تعديل المقال» ثم تعديل الكلمات التي عرضها المدقق.</p>
+
+<h2>previsu/العرض المسبق</h2>
+<h3 class="spip">العرض المسبق</h3>
+
+<p>عندما يصبح مقال ما معروضاً للتقييم، يمكن للمدراء و\او المحررين (حسب إعداد الموقع) معاينته مسبقاً في تصميم صفحات الموقع.</p>
+
+<p>تتيح هذه الوظيفة التأكد من ان المقال يدخل في تصميم الصفحة دون أخطاء. ويعمل العرض المسبق بالطريقة نفسها مع الأقسام والأخبار وغيرها.</p>
+
+<h2>latex/المعادلات الرياضية</h2>
+<h3 class="spip">المعادلات الرياضية</h3>
+
+<p>يتيح SPIP إدراج معادلات رياضية بفضل كتابة <a href="http://fr.wikipedia.org/wiki/LaTeX" target="_blank" target="_blank">LaTeX</a> التي تتحول آلياً الى صورة مدرجة في النص.</p>
+
+<p>يجب وضع النص الذي يحتوي على المعادلات الرياضية داخل علامتي <tt><b>&lt;math&gt;</b></tt> et
+<tt><b>&lt;/math&gt;</b></tt>. ويتم وضع رموز LaTeX داخل رمزي الدولار «$».</p>
+
+<p>فالنص:</p>
+
+<blockquote class="spip"><div style='text-align: left;' class='spip_code' dir='ltr'><code>&lt;math&gt;المعادلة $a = \sqrt{b^{2} + c^{2}}$ هي إعادة كتابة لمعادلة فيثاغوراس: $a^{2} = b^{2} +<br />
+c^{2}$&lt;/math&gt;</code></div> 
+</blockquote>
+
+<p>يظهر هكذا:</p>
+
+<blockquote class="spip">
+
+<p>
+المعادلة <img src="http://www.spip.net/AIDE/local-cache-TeX-2116f89d10912f6a1d7450bdedb515e3.png" style="vertical-align:middle;" width="85" height="38" alt="a = \sqrt{b^{2} + c^{2}}" title="a = \sqrt{b^{2} + c^{2}}" /> هي إعادة كتابة لمعادلة فيثاغوراس: <img src="http://www.spip.net/AIDE/local-cache-TeX-b5be338b1b71604c69ec54c361247c66.png" style="vertical-align:middle;" width="78" height="35" alt="a^{2} = b^{2} +
+c^{2}" title="a^{2} = b^{2} +
+c^{2}" /></p>
+
+</blockquote>
+
+<p>هناك <a href="http://www.spip.net/fr_article3016.html" target="_blank" target="_blank">مقال</a> (لم يترجم بعد) يعرض هذه الوظيفة بالتفصيل.</p>
+
+<h2>confurl/أنواع عناوين URL</h2>
+<h3 class="spip">اختيار مجموعة عناوين URL</h3>
+
+<p>يوفر SPIP، من خلال الجدل المعروض في صفحة الإعداد، إمكان اختيار <strong>مجموعة عناوين URL</strong> التي يرغبها المستخدم. <strong>يجب إزالة متغير <code class='spip_code' dir='ltr'>$type_urls</code> من ملف <code class='spip_code' dir='ltr'>mes_options.php</code> لكي يظهر هذا الجدول.</strong></p>
+
+<p>لكي يتم اعتماد خيار العناوين، غالباً ما يكون من الضروري استخدام <strong>ملف htaccess</strong>:<br class='manualbr' />يمكن ان تستوحي من ملف <strong>htaccess.txt</strong> الذي يأتي مع SPIP كمثال لهذا النوع من الملفات والذي يعمل لدى معظم مضيفي المواقع مع أنواع عناوين URL التي يحتويها.</p>
+
+<p>لتفعيل هذا الملف، يجب تخزينه في أصل الموقع باسم <code class='spip_code' dir='ltr'>.htaccess</code>. وينصح بفتح اولاً للتأكد من الإعدادات الموجودة فيه (<strong>تحذير</strong>: اي تعديل لملف <code class='spip_code' dir='ltr'>.htaccess</code> قد يؤثر بشكل كبير على عمل الموقع.)</p>
+
+<p>يجب بعد ذلك اختبار صلاحية العناوين بتحميل صفحة «<strong>عرض مباشر</strong>» لأي مقال او مؤلف او خبر او قسم الخ.</p>
+
+<p>لمزيد من المعلومات حول «استخدام عناوين URL الشخصية» يمكن الذهاب الى <a href="http://www.spip.net/ar_article2401.html" target="_blank" title="العناوين الشخصية - توثيق النظام" target="_blank">هذا المقال</a></p>
+
+<h1>SPIP برنامج حر</h1>
+<h2>licence/ الترخيص وشروط الاستخدام</h2>
+
+
+<p><font face="Verdana,Arial,Sans,sans-serif" size="4" color="#970038"><b>الترخيص وشروط الاستخدام</b></font></p>
+
+<p><font face="Verdana,Arial,Sans,sans-serif" size="3"><b>SPIP، نظام النشر على شبكة انترنت</b></font></p>
+
+<p><strong>Copyright © 2001-2008, Arnaud Martin, Antoine Pitrou, Philippe Rivière et Emmanuel Saint-James.</strong></p>
+
+<p>هذا البرنامج حر؛ يمكنك اعادة توزيعه و/او تعديله بموجب مواد ترخيص GNU العام (GPL) كما نشرته مؤسسة البرامج الحرة (Free Software Foundation)؛ الاصدار 2 من الترخيص او (حسب رغبتك) اي اصدار لاحق.</p>
+
+<p>تم توزيع هذا البرنامج على امل ان يكون مفيداً ولكن <strong>دون اية ضمانة</strong>؛ حتى دون الضمانة الضمنية <strong>للتسويق</strong> او <strong>التكييف لغرض معين</strong>. لمزيد من التفاصيل، انظر ترخيص GNU العام.</p>
+
+<p>يجب ارفاق هذا البرنامج بنسخة من ترخيص GNU العام. وفي حال عدم وجود هذه النسخة الرجاء الكتابة الى مؤسسة البرامج الحرة على العنوان: Free Software Foundation Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</p>
+
+<p><strong>يمكن تحميل هذا البرنامج من <a href="http://www.spip.net/" class='spip_url spip_out' rel='external' target="_blank">http://www.spip.net/</a>. ستجد ايضاً، في هذا الموقع، دليل استخدام كامل ومعلومات اضافية.</strong></p>
+
+<p>وفقاً للقانون الفرنسي، يخضع SPIP لأحكام قانون الملكية الفكرية. وتشكل نواة SPIP عملاً جماعياً لمؤلفيه المذكورين اعلاه (المادة L 113-1 من قانون الملكية الفكرية). اما مجمل مشروع SPIP فيشكل عملاً جماعياً وفقاً للمواد L 113-2 وL 113-5 من قانون الملكية الفكرية. ويضع المؤلفون هذا العمل في تصرف الجميع وفقاً للحقوق والواجبات التي ينص عليها ترخيص GNU العام.</p>
+
+<hr class="spip" />
+
+<p><strong>رموز الواجهة هي من تصميم <a href="http://diala.rezo.net/" class='spip_out' rel='external' target="_blank">ديالا اشقر</a> و<a href="http://jimmac.musichall.cz/" class='spip_out' rel='external' target="_blank">يعقوب «Jimmac» ستينر</a>.</strong></p>
+
+<hr class="spip" />
+
+<p><strong>ترجمات الواجهة هي ثمرة الجهد المبذول من قبل فريق من المترجمين <a href="http://www.spip.net/rubrique4.html" class='spip_out' rel='external' target="_blank">المجتمعين في موقع SPIP</a>.</strong></p>
+
+<hr class="spip" />
+
+<p>ترخيص GNU العام:
+<br />&mdash;&nbsp;<a href="../COPYING.txt" class='spip_out'>نسخة نص</a>
+<br />&mdash;&nbsp;<a href="http://www.gnu.org/copyleft/gpl.html" class='spip_out' rel='external' target="_blank">نسخة HTML</a>.</p>
+
+</div></body>

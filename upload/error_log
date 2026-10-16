@@ -1,0 +1,15 @@
+[24-Jun-2020 15:59:31 Europe/Paris] PHP Warning:  imagecreatefrompng(): 'files/UmraStatistics.png' is not a valid PNG file in /home/mestaoui/public_html/upload/UploadHandler.php on line 561
+[24-Jun-2020 15:59:31 Europe/Paris] PHP Warning:  imagesx() expects parameter 1 to be resource, boolean given in /home/mestaoui/public_html/upload/UploadHandler.php on line 721
+[24-Jun-2020 15:59:31 Europe/Paris] PHP Warning:  imagesy() expects parameter 1 to be resource, boolean given in /home/mestaoui/public_html/upload/UploadHandler.php on line 722
+[24-Jun-2020 15:59:31 Europe/Paris] PHP Warning:  Division by zero in /home/mestaoui/public_html/upload/UploadHandler.php on line 730
+[24-Jun-2020 15:59:31 Europe/Paris] PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /home/mestaoui/public_html/upload/UploadHandler.php on line 747
+[24-Jun-2020 15:59:31 Europe/Paris] PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, boolean given in /home/mestaoui/public_html/upload/UploadHandler.php on line 764
+[24-Jun-2020 15:59:31 Europe/Paris] PHP Warning:  imagecolortransparent() expects parameter 1 to be resource, boolean given in /home/mestaoui/public_html/upload/UploadHandler.php on line 764
+[24-Jun-2020 15:59:31 Europe/Paris] PHP Warning:  imagealphablending() expects parameter 1 to be resource, boolean given in /home/mestaoui/public_html/upload/UploadHandler.php on line 766
+[24-Jun-2020 15:59:31 Europe/Paris] PHP Warning:  imagesavealpha() expects parameter 1 to be resource, boolean given in /home/mestaoui/public_html/upload/UploadHandler.php on line 767
+[24-Jun-2020 15:59:31 Europe/Paris] PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in /home/mestaoui/public_html/upload/UploadHandler.php on line 781
+[24-Jun-2020 15:59:31 Europe/Paris] PHP Warning:  imagecreatefrompng(): 'files/UmraStatistics.png' is not a valid PNG file in /home/mestaoui/public_html/upload/UploadHandler.php on line 561
+[24-Jun-2020 15:59:31 Europe/Paris] PHP Warning:  imagesx() expects parameter 1 to be resource, boolean given in /home/mestaoui/public_html/upload/UploadHandler.php on line 721
+[24-Jun-2020 15:59:31 Europe/Paris] PHP Warning:  imagesy() expects parameter 1 to be resource, boolean given in /home/mestaoui/public_html/upload/UploadHandler.php on line 722
+[24-Jun-2020 15:59:31 Europe/Paris] PHP Warning:  Division by zero in /home/mestaoui/public_html/upload/UploadHandler.php on line 730
+[24-Jun-2020 15:59:31 Europe/Paris] PHP Warning:  imagecopyresampled() expects parameter 2 to be resource, boolean given in /home/mestaoui/public_html/upload/UploadHandler.php on line 781

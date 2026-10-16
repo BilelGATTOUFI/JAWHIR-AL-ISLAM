@@ -1,0 +1,64 @@
+<!-- titre=<:multiflex:multiflex_layouts:> -->
+
+<!-- autoriser=webmestre -->
+<!-- refus=<:cfg:refus_configuration_webmestre:> -->
+
+<!-- descriptif=Configuration de la structure du squelette Multiflex -->
+<!-- onglet=multiflex_general -->
+
+<!-- logo=img/multiflex3-128.png -->
+<!-- icone=img/multiflex3-24.png -->
+
+
+<!-- liens*=multiflex:multiflex_general-->
+<!-- liens*=multiflex:multiflex_couleurs-->
+<!-- liens*=multiflex:multiflex_layouts-->
+<!-- liens*=multiflex:multiflex_navigation-->
+
+<!-- nom=multiflex -->
+<!-- casier=layouts -->
+
+#CACHE{0}
+
+
+
+<form method="post" action="#SELF">
+<div>
+<div>[(#ENV{_cfg_}|form_hidden)]</div>
+
+<br />
+
+<fieldset class="cadre"><legend><:multiflex:positionnements_generaux:></legend>
+	<label for="mfx_header"><:multiflex:apparence_header:></label>
+	<select name="general_header" id="mfx_header" class="forml">
+		<option value="header1"[ selected="(#ENV{general_header}|=={header1}|?{selected})"]><:multiflex:header1:></option>
+		<option value="header2"[ selected="(#ENV{general_header}|=={header2}|?{selected})"]><:multiflex:header2:></option>
+		<option value="header3"[ selected="(#ENV{general_header}|=={header3}|?{selected})"]><:multiflex:header3:></option>
+		<option value="header4"[ selected="(#ENV{general_header}|=={header4}|?{selected})"]><:multiflex:header4:></option>
+		<option value="header5"[ selected="(#ENV{general_header}|=={header5}|?{selected})"]><:multiflex:header5:></option>
+		<option value="header6"[ selected="(#ENV{general_header}|=={header6}|?{selected})"]><:multiflex:header6:></option>
+		<option value="header7"[ selected="(#ENV{general_header}|=={header7}|?{selected})"]><:multiflex:header7:></option>
+	</select><br />
+	<label for="mfx_layout"><:multiflex:apparence_layout:></label>
+	<select name="general_layout" id="mfx_layout" class="forml">
+		<option value="layout1"[ selected="(#ENV{general_layout}|=={layout1}|?{selected})"]><:multiflex:layout1:></option>
+		<option value="layout2"[ selected="(#ENV{general_layout}|=={layout2}|?{selected})"]><:multiflex:layout2:></option>
+		<option value="layout3"[ selected="(#ENV{general_layout}|=={layout3}|?{selected})"]><:multiflex:layout3:></option>
+		<option value="layout4"[ selected="(#ENV{general_layout}|=={layout4}|?{selected})"]><:multiflex:layout4:></option>
+		<option value="layout5"[ selected="(#ENV{general_layout}|=={layout5}|?{selected})"]><:multiflex:layout5:></option>
+	</select><br />
+</fieldset>
+
+
+
+
+
+<div>
+<input type="submit" name="_cfg_ok" value="<:oK:>" class="fondo" />
+<input type="reset" value="<:reset:>" class="fondo" />
+<input type="submit" name="_cfg_delete" value="<:supprimer:>" class="fondo" />
+</div>
+</div>
+</form>
+
+

@@ -1,0 +1,47 @@
+﻿	<br class="nettoyeur" />
+	<div class="edito">
+		<h3 class="edito-titre"><:articles_recents:></h3>
+	</div>
+
+    <BOUCLE_articles_exclus(ARTICLES) {lang} {titre_mot IN Editorial, exclu_sommaire}  {doublons}></BOUCLE_articles_exclus>
+    <B_article_langue>
+    #ANCRE_PAGINATION
+    <BOUCLE_article_langue(ARTICLES) {lang} {par date} {inverse} {pagination 10} {doublons} >
+	  <br class="nettoyeur" />
+	  [<div class="logo-liste-art">
+		(#LOGO_ARTICLE_RUBRIQUE|#URL_ARTICLE||image_reduire{150,0})
+	  </div>]
+	  [<div class="#EDIT{surtitre} surtitre">(#SURTITRE)</div>]
+      <h3><a href="#URL_ARTICLE" class="#EDIT{titre} titre-article">[(#TITRE|supprimer_numero)]</a></h3>
+      [<div class="#EDIT{soustitre} sous-titre">(#SOUSTITRE)</div>]
+      <div class="detail">
+		[<span class="date">(#DATE|nom_jour)] [(#DATE|affdate)</span>] 
+		[<span class="auteurs"><:par_auteur:> (#LESAUTEURS)</span>]				
+      </div><!-- detail -->
+
+      <div class="texte">
+	[<div class="extrait">(#DESCRIPTIF|image_reduire{552,0}|?{
+		[<div class="#EDIT{descriptif}">(#DESCRIPTIF|image_reduire{552,0})</div>]
+		,
+      	[(#CHAPO|?{
+      	[<div class="#EDIT{chapo}">(#CHAPO|image_reduire{552,0})</div>]
+      		,
+      	[<div class="#EDIT{texte}">(#TEXTE|couper{300})</div>]
+		})]
+	})	<div class="suite"><a href="#URL_ARTICLE" title="...<:suite:> : [(#TITRE|supprimer_numero|attribut_html)]" ><:suite:></a></div>
+	</div><!-- fin extrait -->]
+      </div><!-- fin texte -->
+      <br class="nettoyeur" />
+    </BOUCLE_article_langue>
+
+    [<div class="pagination">
+      <div class="ligne1">
+        <div dir="#LANG_DIR">#TOTAL_BOUCLE/#GRAND_TOTAL <:articles:></div>
+      </div>
+      <div class="ligne2">
+        (#PAGINATION{page_precedent_suivant})
+      </div>
+    </div>]
+
+    </B_article_langue>
+    <//B_article_langue>

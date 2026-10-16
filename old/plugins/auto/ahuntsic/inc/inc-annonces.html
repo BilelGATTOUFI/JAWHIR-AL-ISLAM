@@ -1,0 +1,132 @@
+    <B_annonces_site>
+    <!-- Annonces Logo du site ou Nom du site-->
+    <div class="menu">
+    <h2 class="structure"><:info_annonces_generales:></h2>
+      <ul>
+        <li>
+          <ul><BOUCLE_annonces_site(SITES) {par num nom_site} {titre_mot=Annonce}>
+            <li class="annonce">
+            [(#LOGO_SITE||?{
+				<a href="[(#ID_SYNDIC|generer_url_entite{site,'','',#CONNECT})]"[ class="(#EXPOSE)"][ title="(#NOM_SITE|attribut_html)"] style="text-align:center;">
+
+				[(#LOGO_SITE
+					||image_reduire{150,0}
+					|inserer_attribut{alt,[(#NOM_SITE|attribut_html)]}
+					|inserer_attribut{title,[(#NOM_SITE|attribut_html)]}
+				)]
+				</a>
+
+			,
+
+                <p>
+                [<big style="text-align:center;"><a href="[(#ID_SYNDIC|generer_url_entite{site,'','',#CONNECT})]"[ title="(#DESCRIPTIF|attribut_html)"] style="text-align:center;">(#NOM_SITE)</a></big>]
+                <br />
+                </p>
+
+			})]
+          	</li>
+            </BOUCLE_annonces_site>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- menu -->
+    </B_annonces_site>
+
+    <B_annonces_art_img>
+    <!-- Annonces -->
+    <div class="menu">
+    <h2 class="structure"><:info_annonces_generales:></h2>
+      <ul>
+        <li>
+          <ul><BOUCLE_annonces_art_img(ARTICLES) {lang} {par date} {inverse} {doublons}><B_logo_art_doc>
+            <li class="annonce">
+
+              <BOUCLE_logo_art_doc(DOCUMENTS){id_article}{titre=Annonce} >
+                [<a href="#URL_ARTICLE"[ title="(#DESCRIPTIF|attribut_html)"]>(#FICHIER|image_reduire{150,0}|inserer_attribut{alt,[(#TITRE|couper{80}|attribut_html)]})</a>]
+              </BOUCLE_logo_art_doc>
+          	</li>
+            </B_logo_art_doc></BOUCLE_annonces_art_img>
+            <BOUCLE_annonces_rub_img(RUBRIQUES) {lang} {par date} {inverse} {doublons}><B_logo_rub_doc>
+          	<li class="annonce">
+              <BOUCLE_logo_rub_doc(DOCUMENTS){id_rubrique}{titre=Annonce} >
+
+                [<a href="#URL_RUBRIQUE"[ title="(#DESCRIPTIF|attribut_html)"]>(#FICHIER|image_reduire{150,0}|inserer_attribut{alt,[(#TITRE|couper{80}|attribut_html)]})</a>]
+              </BOUCLE_logo_rub_doc>
+          	</li>
+            </B_logo_rub_doc></BOUCLE_annonces_rub_img>            
+          </ul>
+        </li>
+      </ul>
+    </div><!-- menu -->
+    </B_annonces_art_img>
+
+
+    <B_annonces_rub>
+    <!-- Annonces -->
+    <div class="menu">
+    <h2 class="structure"><:info_annonces_generales:></h2>
+      <ul>
+        <li>
+          <ul><BOUCLE_annonces_rub(RUBRIQUES) {lang} {par date} {inverse} {titre_mot=Annonce}>
+
+            <li class="annonce">
+            [(#LOGO_RUBRIQUE||?{
+				<a href="#URL_RUBRIQUE"[ title="(#DESCRIPTIF|attribut_html)"] style="text-align:center;">
+				[(#LOGO_RUBRIQUE
+					||image_reduire{150,0}
+					|inserer_attribut{alt,[(#TITRE|attribut_html)]}
+					|inserer_attribut{title,[(#TITRE|attribut_html)]}
+				)]
+				</a>
+
+			,
+
+                <p>
+                [<big style="text-align:center;"><a href="#URL_RUBRIQUE"[ title="(#DESCRIPTIF|attribut_html)"] style="text-align:center;">(#TITRE)</a></big>]
+                </p>
+
+			})]
+          	</li>
+            </BOUCLE_annonces_rub>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- menu -->
+    </B_annonces_rub>
+
+    <B_annonces_art>
+    <!-- Annonces Logo de l'article ou Titres -->
+    <div class="menu">
+    <h2 class="structure"><:info_annonces_generales:></h2>
+      <ul>
+        <li>
+          <ul><BOUCLE_annonces_art(ARTICLES) {lang} {par date} {inverse} {titre_mot=Annonce}>
+            <li class="annonce">
+            [(#LOGO_ARTICLE||?{
+				<a href="#URL_ARTICLE"[ title="(#DESCRIPTIF|attribut_html)"] style="text-align:center;">
+
+				[(#LOGO_ARTICLE
+					||image_reduire{150,0}
+					|inserer_attribut{alt,[(#TITRE|attribut_html)]}
+					|inserer_attribut{title,[(#TITRE|attribut_html)]}
+				)]
+				</a>
+
+			,
+
+                <p>
+                [<small style="text-transform:uppercase">(#SURTITRE)</small>]
+                [<big style="text-align:center;"><a href="#URL_ARTICLE"[ title="(#DESCRIPTIF|attribut_html)"] style="text-align:center;">(#TITRE)</a></big>]
+                [<span>(#SOUSTITRE)</span>]
+                <br />
+                </p>
+
+			})]
+          	</li>
+            </BOUCLE_annonces_art>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- menu -->
+    </B_annonces_art>
+

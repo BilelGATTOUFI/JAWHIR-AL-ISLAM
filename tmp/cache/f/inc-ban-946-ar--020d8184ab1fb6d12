@@ -1,0 +1,7 @@
+a:11:{s:5:"texte";s:309:"<!-- L'entete du site -->
+<div id="entete" class="pas_surlignable">
+	<a href="http://www.mestaoui.com" title="&#1575;&#1604;&#1589;&#1601;&#1581;&#1577; &#1575;&#1604;&#1571;&#1587;&#1575;&#1587;&#1610;&#1577; : hacked by adminet" class="nom-site"><span>hacked by adminet</span></a>
+
+
+  
+</div><!-- entete -->";s:9:"squelette";s:37:"html_f3a84e44584a15dcd7e7871fea6c0704";s:6:"source";s:42:"plugins/auto/ahuntsic/inc/inc-bandeau.html";s:11:"process_ins";s:4:"html";s:11:"invalideurs";a:1:{s:5:"cache";s:35:"f/inc-ban-946-ar--020d8184ab1fb6d12";}s:7:"entetes";a:1:{s:12:"X-Spip-Cache";i:86400;}s:5:"duree";i:0;s:5:"notes";s:0:"";s:8:"contexte";a:6:{s:10:"id_article";s:3:"946";s:4:"lang";s:2:"ar";s:4:"date";s:19:"2016-10-23 19:26:17";s:12:"date_default";b:1;s:10:"date_redac";s:19:"2016-10-23 19:26:17";s:18:"date_redac_default";b:1;}s:12:"lastmodified";i:1477243577;s:2:"gz";b:0;}

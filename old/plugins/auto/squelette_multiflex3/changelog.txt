@@ -1,0 +1,58 @@
+V0.2.8 (10 12 2008)
+- correction generer_url_site => generer_url_entite{site} pour SPIP 2
+
+V0.2.7 (11 10 2008)
+- correction des langues : on affiche une seule fois chaque langue disponible !
+- correction css des espacements titre, sur/soustitre et intertitres
+- correction css du formulaire forum
+
+V0.2.6 (30 07 2008)
+- feu de joie avec les drapeaux, remplacés par les codes de langue iso
+
+V0.2.5 (23 06 2008)
+- corrections coquilles sur hierarchie et affichage des sites des rubriques
+
+V0.2.4 (4 06 2008)
+- permettre de desactiver le relief du theme graphique
+
+v0.2.3 (16 04 2008)
+- correction coquille sur une valeur par défaut dans les couleurs
+
+v0.2.2 (05 04 2008)
+- selection de couleur cfg avec une pipette (utilise la lib farbalistic)
+
+v0.2.1 (14 03 2008)
+- correction css portfolio et images
+- all right reserved traduit en francais
+- correction bug si thickbox avec le portfolio
+
+v0.2.0 (13 03 2008)
+- des noisettes en {ajax}
+- des portoflio utilisant {!vu}
+- des puces spip qui sont d'aplomb et non encadrées
+- une page de liens (Nicolas Dubail) appelable par spip.php?page=liens
+- lien vers doc multiflex dans pied de page
+
+v0.1.12 (3 03 2008)
+- INTRODUCTION|couper{X} -> #INTRODUCTION{X}
+
+v0.1.11 (1 03 2008)
+- correction d'un tit bug sur le textarea CFG de multiflex gerenal si un mettait & ou &lt; 
+
+v0.1.10 (24 02 2008)
+- utilisation de la nouvelle option de cfg <!-- head --> (cfg >= 1.3.7)
+
+v0.1.9
+- nouvelle syntaxe des onglets CFG (cfg >= 1.3.6)
+
+v0.1.8
+- correction typo sur raccourcis {{{titre}}}
+- corrections sur les fonds CFG pour utiliser la nouvelle syntaxe (dont celle des liens)
+
+v0.1.7
+- mise à jour de l'url du créateur de multiflex http://1234.info/
+
+v0.1.6
+- du texte plus petit pour une lecture plus agréable
+- des couper plus long sur les intros articles de la page d'accueil
+

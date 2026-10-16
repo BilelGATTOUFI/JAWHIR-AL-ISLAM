@@ -1,0 +1,40 @@
+
+#entete
+{
+	background-image: url(img/globe.jpg);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	text-align: center;
+}
+
+body {
+	background-image: url(img/body_bg.jpg);
+	background-repeat: repeat;
+	background-attachment: fixed;
+}
+#entete
+{
+	background-image: url(img/globe.jpg);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	text-align: right;
+}
+
+#entete a.nom-site, 
+#entete a.nom-site:link,  
+#entete a.nom-site:visited
+{
+	background-image: url(img/mestaoui.jpg);
+	background-repeat: no-repeat;
+	background-position: right top;
+	
+}
+.menu ul li a, 
+.menu ul li b,
+.edito h3,
+.signatures td 
+{	
+	background: #99070b ;
+	background-repeat: no-repeat;
+	background-position: top left;
+}

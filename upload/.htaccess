@@ -1,0 +1,4 @@
+#Header set X-Frame-Options DENY
+Options +FollowSymlinks
+DirectoryIndex index.php
+RewriteEngine On

@@ -1,0 +1,46 @@
+a:11:{s:5:"texte";s:3044:"
+<div id="bas">
+	<a href="http://www.mestaoui.com" title="Accueil du site">Accueil du site</a> | 
+	<a href="_%D8%A7%D9%84%D8%A3%D8%B3%D8%AA%D8%A7%D8%B0-%D9%85%D8%AD%D9%85%D8%AF-%D8%B5%D9%84%D8%A7%D8%AD_" title="Contact">Contact</a> | <a href="http://www.mestaoui.tn/spip.php?page=plan" title="Plan du site">Plan du site</a> | 
+ 
+	<a href="http://www.mestaoui.tn/spip.php?page=statistiques" title="Statistiques du site">Statistiques</a> | 
+	<span style="white-space: nowrap;">visites : <?php echo recuperer_fond( 'inc/inc-affvisit', array('lang' => 'fr'), array("compil"=>array('squelettes/inc/inc-bas.html','html_cb09c6a37d265a18e77853d453ac5cad','',7,$GLOBALS['spip_lang'])), _request("connect"));
+?></span>
+
+	<p>
+		<a href="http://www.mestaoui.tn/spip.php?page=backend" rel="nofollow" title="Syndication : fran&#231;ais"><img src="squelettes-dist/feed.png" alt="Suivre la vie du site" style="position:relative;bottom:-0.3em;" width="16" height="16" class="format_png" /><span style="text-transform: uppercase;">&nbsp;fr&nbsp;</span></a>
+
+
+		<a href="http://www.mestaoui.tn/spip.php?page=backend&amp;id_rubrique=3" rel="nofollow" title="Syndiquer cette rubrique"><img src="squelettes-dist/feed.png" alt="Suivre la vie du site" style="position:relative;bottom:-0.3em;" width="16" height="16" class="format_png" /><span>&nbsp;Bibliothèque&nbsp;</span></a>
+
+
+
+		<a href="http://www.mestaoui.tn/spip.php?page=backend&amp;id_rubrique=4" rel="nofollow" title="Syndiquer cette rubrique"><img src="squelettes-dist/feed.png" alt="Suivre la vie du site" style="position:relative;bottom:-0.3em;" width="16" height="16" class="format_png" /><span>&nbsp;L’Islam</span></a>
+
+	<big>&nbsp;
+		<b><a href="http://fr.wikipedia.org/wiki/Really_Simple_Syndication">?</a></b>
+	</big>
+	<center>
+		<iframe src="http://www.facebook.com/plugins/like.php?href=http://www.mestaoui.com/Les-Tres-beaux-attributs-de-Dieu&amp;layout=button_count&amp;show_faces=true&amp;width=450&amp;action=recommend&amp;font=segoe+ui&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe> 
+		<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="Tariqa_Madaniyya" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+		</center>
+	
+	</p>
+	
+	<p>
+ <center><div id="socialtags"></div>
+
+</center>
+	</p>
+
+<?php echo recuperer_fond( 'inc/inc-bas_cc', array('lang' => 'fr'), array("compil"=>array('squelettes/inc/inc-bas.html','html_cb09c6a37d265a18e77853d453ac5cad','',38,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+
+</div><!-- fin bas -->
+
+<?php echo recuperer_fond( 'inc/inc-bas_menu-lang', array('lang' => 'fr'), array("compil"=>array('squelettes/inc/inc-bas.html','html_cb09c6a37d265a18e77853d453ac5cad','',42,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+
+	<!-- SPIP-CRON --><div style="background-image: url('http://www.mestaoui.tn/spip.php?action=cron');"></div>
+
+";s:9:"squelette";s:37:"html_cb09c6a37d265a18e77853d453ac5cad";s:6:"source";s:27:"squelettes/inc/inc-bas.html";s:11:"process_ins";s:3:"php";s:11:"invalideurs";a:1:{s:5:"cache";s:35:"f/inc-bas-820-4-3-fr--31510eb1d52c9";}s:7:"entetes";a:1:{s:12:"X-Spip-Cache";i:86400;}s:5:"duree";i:0;s:5:"notes";s:0:"";s:8:"contexte";a:8:{s:10:"id_article";s:3:"820";s:11:"id_rubrique";s:1:"4";s:10:"id_secteur";s:1:"3";s:4:"lang";s:2:"fr";s:4:"date";s:19:"2016-10-23 19:09:37";s:12:"date_default";b:1;s:10:"date_redac";s:19:"2016-10-23 19:09:37";s:18:"date_redac_default";b:1;}s:12:"lastmodified";i:1477242577;s:2:"gz";b:0;}

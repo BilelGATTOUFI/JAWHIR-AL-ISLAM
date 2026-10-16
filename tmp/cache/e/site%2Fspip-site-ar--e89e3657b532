@@ -1,0 +1,74 @@
+a:11:{s:5:"texte";s:3077:"<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ar" lang="ar" dir="rtl">
+<head>
+  <title>[hacked by adminet] : &#1593;&#1604;&#1609; &#1575;&#1604;&#1606;&#1587;&#1610;&#1580;</title>
+  <?php echo recuperer_fond( 'inc/inc-meta', array('lang' => 'ar'), array("compil"=>array('plugins/auto/ahuntsic/site.html','html_fdb51dbd03dd915b11fa671d8601f0cc','',6,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+  <?php echo recuperer_fond( 'styles', array('lang' => 'ar'), array("compil"=>array('plugins/auto/ahuntsic/site.html','html_fdb51dbd03dd915b11fa671d8601f0cc','',7,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+</head>
+<body dir="rtl" class="ar site">
+<div id="page" class="site">
+
+<!-- *****************************************************************
+  Bandeau, titre du site et menu langue
+  Header and main menu (top and right) 
+    ************************************************************* -->
+  
+<?php echo recuperer_fond( 'inc/inc-bandeau', array('lang' => 'ar'), array("compil"=>array('plugins/auto/ahuntsic/site.html','html_fdb51dbd03dd915b11fa671d8601f0cc','',17,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+
+<!-- *****************************************************************
+  Contenu principal (centre)
+  Main content (center) 
+    ************************************************************* -->
+    
+  <div id="bloc-contenu">
+  
+  
+    <!-- si aucun site, afficher derniers articles de tous les sites -->
+    
+  
+  </div><!-- bloc-contenu -->
+  
+<!-- *****************************************************************
+  Menus contextuels (droite)
+  Contextual menus (right) 
+    ************************************************************* -->
+  <div id="encart">
+  <?php echo recuperer_fond( 'inc/inc-annonces', array('lang' => 'ar'), array("compil"=>array('plugins/auto/ahuntsic/site.html','html_fdb51dbd03dd915b11fa671d8601f0cc','',96,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+
+    
+
+    
+    <!-- Les sites references non syndiques -->
+    <div class="menu">
+  		<a name='pagination_sites' id='pagination_sites'></a>
+     <ul>
+        <li><b>&#1575;&#1604;&#1605;&#1608;&#1575;&#1602;&#1593; &#1575;&#1604;&#1605;&#1576;&#1608;&#1576;&#1577;</b>
+           <ul>
+            
+             <li class="menu-item">
+               <a href="@تفسير-القرطبي@">تفسير القرطبي</a>
+             </li>
+             
+           </ul>
+        </li>
+       </ul>
+       
+    </div><!-- menu -->
+    
+
+  </div><!-- encart -->
+<?php echo recuperer_fond( 'inc/inc-menu', array('lang' => 'ar'), array("compil"=>array('plugins/auto/ahuntsic/site.html','html_fdb51dbd03dd915b11fa671d8601f0cc','',137,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+<?php echo recuperer_fond( 'inc/inc-bas', array('lang' => 'ar'), array("compil"=>array('plugins/auto/ahuntsic/site.html','html_fdb51dbd03dd915b11fa671d8601f0cc','',138,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+</div><!-- page -->
+
+</body>
+</html>
+
+ ";s:9:"squelette";s:37:"html_fdb51dbd03dd915b11fa671d8601f0cc";s:6:"source";s:31:"plugins/auto/ahuntsic/site.html";s:11:"process_ins";s:3:"php";s:11:"invalideurs";a:1:{s:5:"cache";s:35:"e/site%2Fspip-site-ar--e89e3657b532";}s:7:"entetes";a:1:{s:12:"X-Spip-Cache";i:86400;}s:5:"duree";i:0;s:5:"notes";s:0:"";s:8:"contexte";a:6:{s:4:"page";s:4:"site";s:4:"lang";s:2:"ar";s:4:"date";s:19:"2016-10-23 19:53:49";s:12:"date_default";b:1;s:10:"date_redac";s:19:"2016-10-23 19:53:49";s:18:"date_redac_default";b:1;}s:12:"lastmodified";i:1477245229;s:2:"gz";b:0;}

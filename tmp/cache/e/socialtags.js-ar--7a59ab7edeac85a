@@ -1,0 +1,62 @@
+a:11:{s:5:"texte";s:2422:"// socialtags.js
+
+// 'ajouter un bookmark' ne marche que sous IE
+// les tuyaux trouves pour FF
+//	window.sidebar.addPanel(t,u,'');
+//	cf https://bugzilla.mozilla.org/show_bug.cgi?id=214530
+// ou Opera sont creves
+;var socialtags_addfavorite = function(u,t){
+	if(document.all)window.external.AddFavorite(u,t);
+};
+
+(function($) {
+	var socialtags_init = function() {
+		var selector = $('#socialtags');
+		if (!selector.length) return;
+		var socialtags = [
+{ a: 'delicious', n: 'Del.icio.us', i: 'plugins/auto/socialtags/images/delicious.png', u: 'http://delicious.com/save?url=%u&title=%t&notes=%d', u_site: 'http://www.mestaoui.com'},
+{ a: 'facebook', n: 'Facebook', i: 'plugins/auto/socialtags/images/facebook.png', u: 'http://www.facebook.com/sharer/sharer.php?u=%u&t=%t', u_site: 'http://www.mestaoui.com'},
+{ a: 'google', n: 'Google bookmarks', i: 'plugins/auto/socialtags/images/google.png', u: 'http://www.google.com/bookmarks/mark?op=edit&bkmk=%u&title=%t', u_site: 'http://www.mestaoui.com'},
+{ a: 'netvibes', n: 'Netvibes', i: 'plugins/auto/socialtags/images/netvibes.png', u: 'http://www.netvibes.com/subscribe.php?url=%u', u_site: 'http://www.mestaoui.com'},
+{ a: 'twitter', n: 'Twitter', i: 'plugins/auto/socialtags/images/twitter.png', u: 'http://twitter.com/share?text=%t&url=%u', u_site: 'http://www.mestaoui.com'}
+];
+		var title = $('title').text() ||'';
+		var description = ($('meta[name=description]').attr('content') || '').substr(0,250);
+		var cano = $('link[rel=canonical]')[0];
+		var url = cano ? cano.href : document.location.href;
+		var ul = $('<ul><\/ul>');
+		var esc = function(x){return encodeURIComponent(x).replace(/\s/g,' ');};
+		var ref = document.referrer.match(/^.*\/\/([^\/]+)\//);
+		
+
+		if (ref && ref[1].match(/\.facebook\./))
+			$.cookie('social_facebook', 1, { path: '/', expires: 30 }); // 30 jours
+
+		$.each(socialtags, function(){ if (this.u) {
+			if (this.a == 'bookmark' && !document.all) return;
+
+			
+
+			$('<a rel="nofollow"><img class="socialtags-hovers" src="'+ this.i +'"\/><\/a>')
+			.attr('href',
+				this.u
+				.replace(/%u/g, esc(url))
+				.replace(/%t/g, esc(title))
+				.replace(/%d/g, esc(description))
+				.replace(/%u_site/g, esc(this.u_site))
+			)
+			.attr('title', this.n)
+			.wrap('<li><\/li>')
+			.parent().appendTo(ul);
+		}});
+
+		selector.after(ul.wrap('<div class="socialtags"><\/div>').parent());
+
+		
+
+		};
+	$(function(){
+		$(socialtags_init);
+	});
+})(jQuery);
+";s:9:"squelette";s:37:"html_9e8bd124f68188340d48ab41dfd802e7";s:6:"source";s:42:"plugins/auto/socialtags/socialtags.js.html";s:11:"process_ins";s:4:"html";s:11:"invalideurs";a:1:{s:5:"cache";s:35:"e/socialtags.js-ar--7a59ab7edeac85a";}s:7:"entetes";a:2:{s:12:"Content-Type";s:15:"text/javascript";s:12:"X-Spip-Cache";i:86400;}s:5:"duree";i:0;s:5:"notes";s:0:"";s:8:"contexte";a:5:{s:4:"lang";s:2:"ar";s:4:"date";s:19:"2016-10-23 19:01:28";s:12:"date_default";b:1;s:10:"date_redac";s:19:"2016-10-23 19:01:28";s:18:"date_redac_default";b:1;}s:12:"lastmodified";i:1477242088;s:2:"gz";b:0;}
