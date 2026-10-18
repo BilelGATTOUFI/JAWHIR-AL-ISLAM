@@ -5,6 +5,3 @@
 .idea/
 .vscode/sftp.json
 
-
-# ملفات السجلات والأخطاء
-*.log
