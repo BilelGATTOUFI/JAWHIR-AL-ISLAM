@@ -1,4 +1,5 @@
 <?php
+// TEST ok ici code 
 ini_set("display_errors", "0");
 
 session_start();
