@@ -35,6 +35,11 @@
     <div class="container">
         <div id="navbar-collapse-1" class="navbar-collapse collapse">
             <ul class="nav navbar-nav" dir="rtl">
+
+            
+            <li class="has-children">
+            </li>
+
                 <?php
                 $categories = categoryController::listCategoriesByParent(0);
                 $categories = array_reverse($categories);
@@ -46,9 +51,6 @@
                     }
                     ?>
                 <!-- Classic list -->
-                 <li>
-                    <a href="jawahir-islam.html">مجلة جوهر الإسلام الاصدارات </a>
-                </li>
                 <li class="dropdown yamm-fw"><a href="<?=categoryController::link($category->label,$category->category_id);?>" <?php if(count($categoriesChild)){?>data-toggle="dropdown"<?php }?> class="dropdown-toggle"><?=$caret?><?= $category->label ?></a>
                     <?php
                     if(count($categoriesChild)){
@@ -86,7 +88,7 @@
 
             </ul>
             <div class="navbar-header">
-                <a href="index.html" class="navbar-brand">الصفحة الرئيسية</a>
+                <a href="index.html" class="navbar-brand">الصفحة الرئيسية ffff</a>
             </div>
         </div>
 

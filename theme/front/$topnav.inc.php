@@ -30,6 +30,9 @@
 <div class="cd-overlay" dir="rtl"></div>
 <nav class="cd-nav">
     <ul id="cd-primary-nav" class="cd-primary-nav is-fixed">
+        <li class="has-children">
+            <a href="jawahir-islam.html">مجلة جوهر الإسلام</a>
+        </li>
         <?php
         $categories = categoryController::listCategoriesByParent(0);
         foreach ($categories as $category) {
